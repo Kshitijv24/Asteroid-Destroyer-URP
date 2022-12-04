@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            movementDirection = transform.position - worldPosition;
+            movementDirection = worldPosition - transform.position;
             movementDirection.z = 0f;
             movementDirection.Normalize();
         }
