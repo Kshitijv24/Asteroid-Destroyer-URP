@@ -13,6 +13,6 @@ public class Asteroid : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

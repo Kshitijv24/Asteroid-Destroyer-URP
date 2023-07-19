@@ -64,12 +64,21 @@ public class AsteroidSpawner : MonoBehaviour
 
         GameObject selectedAsteroids = asteroidPrefab[Random.Range(0, asteroidPrefab.Length)];
 
-        GameObject asteroidInstance = Instantiate(
-            selectedAsteroids,
-            worldSpawnPoint,
-            Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+        //GameObject asteroidInstance = Instantiate(
+        //    selectedAsteroids,
+        //    worldSpawnPoint,
+        //    Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
 
-        Rigidbody rb = asteroidInstance.GetComponent<Rigidbody>();
+        GameObject pooledAsteroidsPrefab = ObjectPool.Instance.GetPooledGameObject();
+
+        if(pooledAsteroidsPrefab != null)
+        {
+            pooledAsteroidsPrefab.transform.position = worldSpawnPoint;
+            pooledAsteroidsPrefab.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+            pooledAsteroidsPrefab.SetActive(true);
+        }
+
+        Rigidbody rb = pooledAsteroidsPrefab.GetComponent<Rigidbody>();
 
         rb.velocity = direction.normalized * Random.Range(forceRange.x, forceRange.y);
     }
