@@ -11,7 +11,7 @@ public class AsteroidSpawner : MonoBehaviour
     float timer;
     Camera mainCamera;
 
-    private void Start()
+    private void Awake()
     {
         mainCamera = Camera.main;
     }

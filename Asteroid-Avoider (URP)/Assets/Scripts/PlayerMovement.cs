@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movementDirection;
     Camera mainCamera;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
