@@ -10,6 +10,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     float timer;
     Camera mainCamera;
+    Rigidbody rb;
 
     private void Awake()
     {
@@ -64,11 +65,6 @@ public class AsteroidSpawner : MonoBehaviour
 
         GameObject selectedAsteroids = asteroidPrefab[Random.Range(0, asteroidPrefab.Length)];
 
-        //GameObject asteroidInstance = Instantiate(
-        //    selectedAsteroids,
-        //    worldSpawnPoint,
-        //    Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
-
         GameObject pooledAsteroidsPrefab = ObjectPool.Instance.GetPooledGameObject();
 
         if(pooledAsteroidsPrefab != null)
@@ -76,10 +72,12 @@ public class AsteroidSpawner : MonoBehaviour
             pooledAsteroidsPrefab.transform.position = worldSpawnPoint;
             pooledAsteroidsPrefab.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             pooledAsteroidsPrefab.SetActive(true);
+            rb = pooledAsteroidsPrefab.GetComponent<Rigidbody>();
         }
 
-        Rigidbody rb = pooledAsteroidsPrefab.GetComponent<Rigidbody>();
-
-        rb.velocity = direction.normalized * Random.Range(forceRange.x, forceRange.y);
+        if(rb != null)
+        {
+            rb.velocity = direction.normalized * Random.Range(forceRange.x, forceRange.y);
+        }
     }
 }
