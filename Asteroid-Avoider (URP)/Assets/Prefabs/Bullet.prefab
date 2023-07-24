@@ -200,8 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53042d16f743c8145ae2f85dd2de4a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletMoveSpeed: 1000
-  bulletSpawnPoint: {fileID: 1394863256018380653, guid: e13df11d41c4d3145a2cc8d0f936ced2,
+  asteroidExlostionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
     type: 3}
 --- !u!1 &5015082323646114442
 GameObject:

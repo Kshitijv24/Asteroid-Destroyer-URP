@@ -12,18 +12,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movementDirection;
     Camera mainCamera;
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
-    }
-
-    private void FixedUpdate()
-    {
-        if (movementDirection == Vector3.zero) { return; }
-
-        rb.AddForce(movementDirection * forceMegnitude, ForceMode.Force);
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 
     private void Update()
@@ -32,6 +25,18 @@ public class PlayerMovement : MonoBehaviour
         KeepPlayerOnScreen();
         RotateToFaceVelocity();
     }
+
+    private void FixedUpdate()
+    {
+        if (movementDirection == Vector3.zero) 
+        {
+            return; 
+        }
+
+        rb.AddForce(movementDirection * forceMegnitude, ForceMode.Force);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+    }
+
 
     private void ProcessInput()
     {
