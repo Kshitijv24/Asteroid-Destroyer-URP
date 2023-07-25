@@ -1,12 +1,15 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] GameOverHandler gameOverHandler;
+    [SerializeField] GameObject playerDeathVFX;
 
     public void Crash()
     {
-        gameOverHandler.EndGame();
-        gameObject.SetActive(false);
+        Instantiate(playerDeathVFX, transform.position, Quaternion.identity);
+        gameOverHandler.ShowEndGameScreen();
+        Destroy(gameObject);
     }
 }

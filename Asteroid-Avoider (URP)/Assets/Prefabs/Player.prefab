@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverHandler: {fileID: 0}
+  playerDeathVFX: {fileID: 3324133293989352525, guid: ec9ca152baaeda44db47becd0d8fab7e,
+    type: 3}
 --- !u!114 &-8444705967358910159
 MonoBehaviour:
   m_ObjectHideFlags: 0

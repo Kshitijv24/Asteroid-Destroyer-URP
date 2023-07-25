@@ -9548,7 +9548,7 @@ GameObject:
   - component: {fileID: 4378822699104013174}
   - component: {fileID: 6325389358369843277}
   m_Layer: 0
-  m_Name: PlayerAirShipExploded
+  m_Name: PlayerDeathVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9585,7 +9585,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 2.5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
