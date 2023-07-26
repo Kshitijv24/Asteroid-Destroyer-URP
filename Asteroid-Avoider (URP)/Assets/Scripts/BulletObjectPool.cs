@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class BulletObjectPool : MonoBehaviour
 {
-	public static ObjectPool Instance { get; private set; }
+    public static BulletObjectPool Instance { get; private set; }
 
-    [SerializeField] GameObject[] asteroidsPrefabs;
+    [SerializeField] GameObject[] bulletPrefab;
     [SerializeField] int amountToPool = 10;
 
     List<GameObject> pooledGameObjects = new List<GameObject>();
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -25,9 +25,9 @@ public class ObjectPool : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < amountToPool; i++)
+        for (int i = 0; i < amountToPool; i++)
         {
-            GameObject instantiatedGameObject = Instantiate(asteroidsPrefabs[Random.Range(0, 2)]);
+            GameObject instantiatedGameObject = Instantiate(bulletPrefab[Random.Range(0, bulletPrefab.Length)]);
             instantiatedGameObject.SetActive(false);
             pooledGameObjects.Add(instantiatedGameObject);
         }

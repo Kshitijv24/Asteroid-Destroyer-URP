@@ -20,13 +20,26 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    private bool CanFire() => Time.time >= nextFireTime;    
+    private bool CanFire() => Time.time >= nextFireTime;
 
     private void FireBullet()
     {
         nextFireTime = Time.time + bulletFireRate;
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.AddForce(bulletSpawnPoint.forward * bulletMoveSpeed, ForceMode.Impulse);
+
+        GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
+
+        if (pooledBulletsPrefab != null)
+        {
+            pooledBulletsPrefab.transform.position = bulletSpawnPoint.position;
+            pooledBulletsPrefab.transform.rotation = bulletSpawnPoint.rotation;
+
+            pooledBulletsPrefab.SetActive(true);
+
+            Rigidbody bulletRb = pooledBulletsPrefab.GetComponent<Rigidbody>();
+            bulletRb.velocity = Vector3.zero;
+            bulletRb.angularVelocity = Vector3.zero;
+            bulletRb.AddForce(bulletSpawnPoint.forward * bulletMoveSpeed, ForceMode.Impulse);
+        }
     }
+
 }

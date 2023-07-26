@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,14 +13,19 @@ public class Bullet : MonoBehaviour
         
         if(asteroid)
         {
-            Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
-            asteroid.gameObject.SetActive(false);
-            Destroy(gameObject);
+            DestroyAsteroidAndBullet(asteroid);
         }
+    }
+
+    private void DestroyAsteroidAndBullet(Asteroid asteroid)
+    {
+        Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
+        asteroid.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

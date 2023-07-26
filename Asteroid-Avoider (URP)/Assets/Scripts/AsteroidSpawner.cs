@@ -63,9 +63,7 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 worldSpawnPoint = mainCamera.ViewportToWorldPoint(spawnPoint);
         worldSpawnPoint.z = 0;
 
-        GameObject selectedAsteroids = asteroidPrefab[Random.Range(0, asteroidPrefab.Length)];
-
-        GameObject pooledAsteroidsPrefab = ObjectPool.Instance.GetPooledGameObject();
+        GameObject pooledAsteroidsPrefab = AsteroidsObjectPool.Instance.GetPooledGameObject();
 
         if(pooledAsteroidsPrefab != null)
         {
