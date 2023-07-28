@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        audioSource = GetComponent<AudioSource>();
+
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -19,8 +21,6 @@ public class AudioManager : MonoBehaviour
             Debug.Log("There are more than one AudioManager");
             Destroy(gameObject);
         }
-
-        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlaySound(AudioClip clip)
