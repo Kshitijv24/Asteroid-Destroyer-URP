@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementDirection == Vector3.zero) 
         {
-            return; 
+            return;
         }
 
         rb.AddForce(movementDirection * forceMegnitude, ForceMode.Force);
