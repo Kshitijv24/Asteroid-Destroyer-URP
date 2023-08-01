@@ -5,7 +5,7 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] asteroidPrefab;
-    [SerializeField] float secondsBetweenAsteroidsSpawn;
+    [SerializeField] float spawnTime;
     [SerializeField] Vector2 forceRange;
 
     float timer;
@@ -25,7 +25,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             SpawnAsteroids();
 
-            timer += secondsBetweenAsteroidsSpawn;
+            timer += spawnTime;
         }
     }
 
