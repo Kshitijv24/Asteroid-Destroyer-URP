@@ -17,7 +17,7 @@ public class Asteroid : MonoBehaviour
     public void DestroyAsteroid()
     {
         AudioManager.Instance.PlaySound(asteroidDestroySFX);
-        Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
+        Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity, transform);
         gameObject.SetActive(false);
     }
 
