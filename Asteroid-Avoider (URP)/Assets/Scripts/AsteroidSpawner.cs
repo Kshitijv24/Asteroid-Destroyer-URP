@@ -75,6 +75,8 @@ public class AsteroidSpawner : MonoBehaviour
 
         if(rb != null)
         {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             rb.velocity = direction.normalized * Random.Range(forceRange.x, forceRange.y);
         }
     }

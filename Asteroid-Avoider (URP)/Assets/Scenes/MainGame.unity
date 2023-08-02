@@ -662,7 +662,7 @@ MonoBehaviour:
   - {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429, type: 3}
   - {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1, type: 3}
   spawnTime: 1
-  forceRange: {x: 4, y: 6}
+  forceRange: {x: 4, y: 4}
 --- !u!1 &681113803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,6 +6170,11 @@ PrefabInstance:
     - target: {fileID: 1394863256018380653, guid: e13df11d41c4d3145a2cc8d0f936ced2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394863256018380655, guid: e13df11d41c4d3145a2cc8d0f936ced2,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6936637044186661104, guid: e13df11d41c4d3145a2cc8d0f936ced2,

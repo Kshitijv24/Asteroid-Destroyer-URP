@@ -29,10 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (movementDirection == Vector3.zero) 
-        {
-            return;
-        }
+        if (movementDirection == Vector3.zero) return;
 
         rb.AddForce(movementDirection * forceMegnitude, ForceMode.Force);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
@@ -84,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateToFaceVelocity()
     {
-        if (rb.velocity == Vector3.zero) { return; }
+        if (rb.velocity == Vector3.zero) return;
 
         Quaternion targetRotation = Quaternion.LookRotation(rb.velocity, Vector3.back);
         
