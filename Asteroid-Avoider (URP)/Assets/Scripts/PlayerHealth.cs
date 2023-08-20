@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Crash()
     {
-        AudioManager.Instance.PlaySound(playerSpaceShipDeathSFX);
+        AudioManager.Instance.PlaySound(playerSpaceShipDeathSFX, 1f);
         Instantiate(playerDeathVFX, transform.position, Quaternion.identity);
         gameOverHandler.ShowEndGameScreen();
         Destroy(gameObject);

@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
 	[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletFireRate;
     [SerializeField] float bulletMoveSpeed = 10f;
+    [SerializeField] AudioClip bulletSFX;
 
     float nextFireTime;
 
@@ -24,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void FireBullet()
     {
+        AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
         nextFireTime = Time.time + bulletFireRate;
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();

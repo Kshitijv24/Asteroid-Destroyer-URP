@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +24,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, float volumeLevel)
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip, volumeLevel);
     }
 }

@@ -4,6 +4,7 @@ public class Asteroid : MonoBehaviour
 {
     [SerializeField] GameObject asteroidExlostionVFX;
     [SerializeField] AudioClip asteroidDestroySFX;
+    [SerializeField] float targetFollowSpeed;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,7 @@ public class Asteroid : MonoBehaviour
 
     public void DestroyAsteroid()
     {
-        AudioManager.Instance.PlaySound(asteroidDestroySFX);
+        AudioManager.Instance.PlaySound(asteroidDestroySFX, 1f);
         Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }

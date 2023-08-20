@@ -137,6 +137,7 @@ MonoBehaviour:
     type: 3}
   bulletFireRate: 0.2
   bulletMoveSpeed: 10
+  bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &4454188096492823359
 GameObject:
   m_ObjectHideFlags: 0
