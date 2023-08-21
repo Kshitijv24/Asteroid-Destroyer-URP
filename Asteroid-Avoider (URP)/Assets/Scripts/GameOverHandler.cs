@@ -8,7 +8,6 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] GameObject gameOverDisplay;
     [SerializeField] AsteroidSpawner asteroidSpawner;
     [SerializeField] TextMeshProUGUI gameOverText;
-    [SerializeField] ScoreSystem scoreSystem;
 
     public void ShowEndGameScreen()
     {
@@ -19,8 +18,8 @@ public class GameOverHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(1.7f);
         asteroidSpawner.enabled = false;
-        int finalScore = scoreSystem.EndTimer();
-        gameOverText.text = $"Your Score: {finalScore}";
+        //int finalScore = scoreSystem.EndTimer();
+        //gameOverText.text = $"Your Score: {finalScore}";
         gameOverDisplay.SetActive(true);
     }
 

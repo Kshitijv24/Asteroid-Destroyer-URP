@@ -3,25 +3,27 @@ using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
+    [HideInInspector] public int score;
+
     [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] float scoreMultiplier;
 
-    float score;
-    bool shouldCount = true;
+    public static ScoreSystem Instance { get; private set; }
 
-    private void Update()
+    private void Awake()
     {
-        if(!shouldCount) { return; }
-
-        score += Time.deltaTime * scoreMultiplier;
-        scoreText.text = Mathf.FloorToInt(score).ToString();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public int EndTimer()
+    public void IncrementScore()
     {
-        shouldCount = false;
-        scoreText.text = string.Empty;
-        
-        return Mathf.FloorToInt(score);
+        score++;
+        scoreText.text = score.ToString();
     }
 }

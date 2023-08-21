@@ -17,6 +17,8 @@ public class Asteroid : MonoBehaviour
 
     public void DestroyAsteroid()
     {
+        PlayerLevelUpManager.Instance.IncrementKilledEnemies();
+        ScoreSystem.Instance.IncrementScore();
         AudioManager.Instance.PlaySound(asteroidDestroySFX, 1f);
         Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
