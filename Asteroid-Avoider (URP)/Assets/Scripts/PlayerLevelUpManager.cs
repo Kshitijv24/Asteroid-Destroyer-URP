@@ -34,7 +34,7 @@ public class PlayerLevelUpManager : MonoBehaviour
 
     public void LevelUP()
     {
-        if(killedEnemies == 1)
+        if(killedEnemies == 10)
         {
             GameManager.Instance.PauseGame();
             LevelUpCanvas.SetActive(true);

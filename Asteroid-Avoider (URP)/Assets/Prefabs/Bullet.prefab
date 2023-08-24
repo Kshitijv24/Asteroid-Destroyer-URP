@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: -5735719217983952232}
   - component: {fileID: 1826208269829380128}
   - component: {fileID: 2934824219025623433}
+  - component: {fileID: 6569386450238068634}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -200,8 +201,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53042d16f743c8145ae2f85dd2de4a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidExlostionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
-    type: 3}
+--- !u!114 &6569386450238068634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293066014174508092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c6595929b49ba499bdd77827a4e37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5015082323646114442
 GameObject:
   m_ObjectHideFlags: 0

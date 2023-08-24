@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float forceMegnitude;
+    [SerializeField] float forceMagnitude;
     [SerializeField] float maxVelocity;
     [SerializeField] float rotationSpeed;
 
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementDirection == Vector3.zero) return;
 
-        rb.AddForce(movementDirection * forceMegnitude, ForceMode.Force);
+        rb.AddForce(movementDirection * forceMagnitude, ForceMode.Force);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 

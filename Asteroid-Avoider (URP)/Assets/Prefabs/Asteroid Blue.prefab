@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9070680830010857783}
   - component: {fileID: 3658190732013305382}
   - component: {fileID: 2817161960309284916}
+  - component: {fileID: 1581554572212679339}
   m_Layer: 0
   m_Name: Asteroid Blue
   m_TagString: Untagged
@@ -151,3 +152,15 @@ MonoBehaviour:
     type: 3}
   asteroidDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
   targetFollowSpeed: 2
+--- !u!114 &1581554572212679339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064304041773876471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c6595929b49ba499bdd77827a4e37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
