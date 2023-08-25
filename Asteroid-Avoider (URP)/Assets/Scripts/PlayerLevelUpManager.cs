@@ -6,7 +6,7 @@ public class PlayerLevelUpManager : MonoBehaviour
 {
 	public static PlayerLevelUpManager Instance { get; private set; }
 
-    [SerializeField] GameObject LevelUpCanvas;
+    [SerializeField] int noOfEnemiesNeededToKillToLevelUp = 5;
 
     int killedEnemies;
 
@@ -34,11 +34,12 @@ public class PlayerLevelUpManager : MonoBehaviour
 
     public void LevelUP()
     {
-        if(killedEnemies == 10)
+        if(killedEnemies == noOfEnemiesNeededToKillToLevelUp)
         {
+            killedEnemies = 0;
             GameManager.Instance.PauseGame();
-            LevelUpCanvas.SetActive(true);
             ScoreSystem.Instance.gameObject.SetActive(false);
+            noOfEnemiesNeededToKillToLevelUp++;
         }
     }
 }

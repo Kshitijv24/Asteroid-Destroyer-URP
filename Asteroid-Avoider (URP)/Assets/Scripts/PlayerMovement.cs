@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance { get; private set; }
+
     [SerializeField] float forceMagnitude;
     [SerializeField] float maxVelocity;
     [SerializeField] float rotationSpeed;
@@ -16,6 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
     }
@@ -25,6 +36,16 @@ public class PlayerMovement : MonoBehaviour
         ProcessInput();
         KeepPlayerOnScreen();
         RotateToFaceVelocity();
+    }
+
+    public float GetPlayerForceMagnitude()
+    {
+        return forceMagnitude;
+    }
+
+    public void SetPlayerForceMagnitude(float forceMagnitude)
+    {
+        this.forceMagnitude = forceMagnitude;
     }
 
     private void FixedUpdate()
