@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
         //isPaused = true;
         Time.timeScale = 0;
         levelUpCanvas.SetActive(true);
-        Debug.Log("Game is paused");
+        ScoreSystem.Instance.gameObject.SetActive(false);
+        //Debug.Log("Game is paused");
     }
 
     public void ResumeGame()
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         //isPaused = false;
         Time.timeScale = 1;
         levelUpCanvas.SetActive(false);
-        Debug.Log("Game is unpaused");
+        ScoreSystem.Instance.gameObject.SetActive(true);
+        //Debug.Log("Game is unpaused");
     }
 }

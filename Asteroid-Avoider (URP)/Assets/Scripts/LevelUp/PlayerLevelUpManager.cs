@@ -38,8 +38,7 @@ public class PlayerLevelUpManager : MonoBehaviour
         {
             killedEnemies = 0;
             GameManager.Instance.PauseGame();
-            ScoreSystem.Instance.gameObject.SetActive(false);
-            noOfEnemiesNeededToKillToLevelUp++;
+            //noOfEnemiesNeededToKillToLevelUp++;
         }
     }
 }

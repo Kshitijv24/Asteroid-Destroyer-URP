@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public static PlayerShooting Instance { get; private set; }
+
 	[SerializeField] Transform bulletSpawnPoint;
 	[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletFireRate;
@@ -13,12 +15,34 @@ public class PlayerShooting : MonoBehaviour
 
     float nextFireTime;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Update()
     {
         if (Touchscreen.current.primaryTouch.press.isPressed && CanFire())
         {
             FireBullet();
         }
+    }
+
+    public float GetBulletFireRate()
+    {
+        return bulletFireRate;
+    }
+
+    public void SetBulletFiringRate(float bulletFireRate)
+    {
+        this.bulletFireRate = bulletFireRate;
     }
 
     private bool CanFire() => Time.time >= nextFireTime;
