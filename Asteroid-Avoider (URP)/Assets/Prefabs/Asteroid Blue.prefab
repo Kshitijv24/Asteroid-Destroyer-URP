@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c45b8fb33584942ae5b38473ce892e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidExlostionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
+  asteroidExplosionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
     type: 3}
   asteroidDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
   targetFollowSpeed: 2

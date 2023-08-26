@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    [SerializeField] GameObject asteroidExlostionVFX;
+    [SerializeField] GameObject asteroidExplosionVFX;
     [SerializeField] AudioClip asteroidDestroySFX;
     [SerializeField] float targetFollowSpeed;
 
@@ -12,7 +12,7 @@ public class Asteroid : MonoBehaviour
 
         if(playerHealth == null) { return; }
 
-        playerHealth.Crash();
+        playerHealth.DamagePlayer(1);
     }
 
     public void DestroyAsteroid()
@@ -20,7 +20,7 @@ public class Asteroid : MonoBehaviour
         PlayerLevelUpManager.Instance.IncrementKilledEnemies();
         ScoreSystem.Instance.IncrementScore();
         AudioManager.Instance.PlaySound(asteroidDestroySFX, 1f);
-        Instantiate(asteroidExlostionVFX, transform.position, Quaternion.identity);
+        Instantiate(asteroidExplosionVFX, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }
 }

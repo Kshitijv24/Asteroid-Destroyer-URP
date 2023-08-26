@@ -7409,20 +7409,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8444705967358910159, guid: e13df11d41c4d3145a2cc8d0f936ced2,
-        type: 3}
-      propertyPath: bulletFireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8444705967358910159, guid: e13df11d41c4d3145a2cc8d0f936ced2,
-        type: 3}
-      propertyPath: bulletMoveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 293823964, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1394863256018380652, guid: e13df11d41c4d3145a2cc8d0f936ced2,
         type: 3}
       propertyPath: m_Name
@@ -7483,19 +7469,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1394863256018380654, guid: e13df11d41c4d3145a2cc8d0f936ced2,
+    - target: {fileID: 2008007998606458342, guid: e13df11d41c4d3145a2cc8d0f936ced2,
         type: 3}
-      propertyPath: maxVelocity
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394863256018380654, guid: e13df11d41c4d3145a2cc8d0f936ced2,
-        type: 3}
-      propertyPath: forceMagnitude
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394863256018380655, guid: e13df11d41c4d3145a2cc8d0f936ced2,
-        type: 3}
-      propertyPath: m_UseGravity
+      propertyPath: clearBehavior
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6936637044186661104, guid: e13df11d41c4d3145a2cc8d0f936ced2,
