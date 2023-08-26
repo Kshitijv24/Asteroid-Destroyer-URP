@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour
         //isPaused = true;
         Time.timeScale = 0;
         levelUpCanvas.SetActive(true);
-        ScoreSystem.Instance.gameObject.SetActive(false);
+        ScoreSystem.Instance.GetScoreTextUI().enabled = false;
+        PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = false;
         //Debug.Log("Game is paused");
     }
 
@@ -47,7 +49,8 @@ public class GameManager : MonoBehaviour
         //isPaused = false;
         Time.timeScale = 1;
         levelUpCanvas.SetActive(false);
-        ScoreSystem.Instance.gameObject.SetActive(true);
+        ScoreSystem.Instance.GetScoreTextUI().enabled = true;
+        PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = true;
         //Debug.Log("Game is unpaused");
     }
 }

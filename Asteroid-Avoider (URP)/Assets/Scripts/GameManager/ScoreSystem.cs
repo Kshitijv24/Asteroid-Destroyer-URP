@@ -21,9 +21,11 @@ public class ScoreSystem : MonoBehaviour
         }
     }
 
+    public TextMeshProUGUI GetScoreTextUI() => scoreText;
+
     public void IncrementScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = $"Enemies Killed: {score}";
     }
 }
