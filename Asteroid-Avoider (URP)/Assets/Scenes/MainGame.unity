@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Add One More Gun
+  m_text: Increase Bullet Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1541,6 +1541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseBulletFireRateLevelUp: {fileID: 28039054}
+  increaseShipSpeedLevelUp: {fileID: 1554458849}
+  increaseBulletSpeedLevelUp: {fileID: 1799388194}
 --- !u!4 &1372301431
 Transform:
   m_ObjectHideFlags: 0
@@ -1554,7 +1556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385137531
 GameObject:
@@ -1737,7 +1739,7 @@ RectTransform:
   m_Children:
   - {fileID: 384775572}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7046,8 +7048,9 @@ GameObject:
   - component: {fileID: 1799388198}
   - component: {fileID: 1799388197}
   - component: {fileID: 1799388196}
+  - component: {fileID: 1799388199}
   m_Layer: 5
-  m_Name: GunPoint++ Button
+  m_Name: BulletSpeed++ Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7117,7 +7120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1799388197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1799388199}
+        m_TargetAssemblyTypeName: IncreaseBulletSpeedLevelUp, Assembly-CSharp
+        m_MethodName: IncreaseBulletSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1799388197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7156,6 +7171,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799388194}
   m_CullTransparentMesh: 1
+--- !u!114 &1799388199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799388194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb6723cc369db740a3120040c131f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1894439615
 GameObject:
   m_ObjectHideFlags: 0

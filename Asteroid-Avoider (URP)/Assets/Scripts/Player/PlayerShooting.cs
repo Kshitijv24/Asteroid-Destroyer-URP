@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour
 	[SerializeField] Transform bulletSpawnPoint;
 	[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletFireRate;
-    [SerializeField] float bulletMoveSpeed = 10f;
+    [SerializeField] float bulletSpeed = 10f;
     [SerializeField] AudioClip bulletSFX;
 
     float nextFireTime;
@@ -35,14 +35,18 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public float GetBulletFireRate()
-    {
-        return bulletFireRate;
-    }
+    public float GetBulletSpeed() => bulletSpeed;
+
+    public float GetBulletFireRate() => bulletFireRate;
 
     public void SetBulletFiringRate(float bulletFireRate)
     {
         this.bulletFireRate = bulletFireRate;
+    }
+
+    public void SetBulletSpeed(float bulletSpeed)
+    {
+        this.bulletSpeed = bulletSpeed;
     }
 
     private bool CanFire() => Time.time >= nextFireTime;
@@ -64,7 +68,7 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody bulletRb = pooledBulletsPrefab.GetComponent<Rigidbody>();
             bulletRb.velocity = Vector3.zero;
             bulletRb.angularVelocity = Vector3.zero;
-            bulletRb.AddForce(bulletSpawnPoint.forward * bulletMoveSpeed, ForceMode.Impulse);
+            bulletRb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
         }
     }
 
