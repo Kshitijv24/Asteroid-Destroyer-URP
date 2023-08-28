@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelUpsHandler : MonoBehaviour
+public class LevelUpsLimiter : MonoBehaviour
 {
 	[SerializeField] GameObject increaseBulletFireRateLevelUp;
     [SerializeField] GameObject increaseShipSpeedLevelUp;
     [SerializeField] GameObject increaseBulletSpeedLevelUp;
+    [SerializeField] float maxBulletFireRate = 0.3f;
+    [SerializeField] float maxPlayerShipSpeed = 20f;
+    [SerializeField] float maxBulletSpeed = 15f;
 
     private void Update()
     {
@@ -17,7 +20,7 @@ public class LevelUpsHandler : MonoBehaviour
 
     private void LimitIncreaseOnBulletFireRate()
     {
-        if (PlayerShooting.Instance.GetBulletFireRate() < 0.3)
+        if (PlayerShooting.Instance.GetBulletFireRate() == maxBulletFireRate)
         {
             increaseBulletFireRateLevelUp.SetActive(false);
         }
@@ -25,7 +28,7 @@ public class LevelUpsHandler : MonoBehaviour
 
     private void LimitIncreaseOnShipSpeed()
     {
-        if(PlayerMovement.Instance.GetPlayerForceMagnitude() > 20)
+        if(PlayerMovement.Instance.GetPlayerForceMagnitude() == maxPlayerShipSpeed)
         {
             increaseShipSpeedLevelUp.SetActive(false);
         }
@@ -33,7 +36,7 @@ public class LevelUpsHandler : MonoBehaviour
 
     private void LimitIncreaseOnBulletSpeed()
     {
-        if(PlayerShooting.Instance.GetBulletSpeed() > 20)
+        if(PlayerShooting.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
             increaseBulletSpeedLevelUp.SetActive(false);
         }

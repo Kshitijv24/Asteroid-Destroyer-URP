@@ -1760,7 +1760,7 @@ GameObject:
   - component: {fileID: 1372301431}
   - component: {fileID: 1372301430}
   m_Layer: 0
-  m_Name: LevelUpsHandler
+  m_Name: LevelUpsLimiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,6 +1781,9 @@ MonoBehaviour:
   increaseBulletFireRateLevelUp: {fileID: 28039054}
   increaseShipSpeedLevelUp: {fileID: 1554458849}
   increaseBulletSpeedLevelUp: {fileID: 1799388194}
+  maxBulletFireRate: 0.3
+  maxPlayerShipSpeed: 20
+  maxBulletSpeed: 15
 --- !u!4 &1372301431
 Transform:
   m_ObjectHideFlags: 0
