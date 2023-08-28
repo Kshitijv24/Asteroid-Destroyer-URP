@@ -1,4 +1,4 @@
-# Asteroid-Avoider-URP
+# Asteroid-Destroyer-URP
 
 ![Asteroid Avoider](https://user-images.githubusercontent.com/95018078/215318832-5c69d5a1-48d8-4bd2-acab-c422958a0e79.PNG)
 
