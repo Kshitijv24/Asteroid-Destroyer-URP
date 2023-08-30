@@ -6,18 +6,19 @@ public class Asteroid : MonoBehaviour
     [SerializeField] AudioClip asteroidDestroySFX;
     [SerializeField] float targetFollowSpeed;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.GetComponent<Asteroid>())
+        if (other.GetComponent<Asteroid>())
         {
             AsteroidDestroyedByOtherAsteroid();
         }
 
-        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
 
-        if (playerHealth == null) { return; }
-
-        playerHealth.DamagePlayer(1);
+        if (playerHealth != null)
+        {
+            playerHealth.DamagePlayer(1);
+        }
     }
 
     public void AsteroidDestroyedByOtherAsteroid()
