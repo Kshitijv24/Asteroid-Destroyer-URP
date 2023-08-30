@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Asteroid asteroid = other.GetComponent<Asteroid>();
-        
-        if(asteroid)
+        Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+
+        if (asteroid)
         {
-            asteroid.DestroyAsteroid();
+            asteroid.AsteroidDestroyedByPlayer();
             gameObject.SetActive(false);
         }
     }
