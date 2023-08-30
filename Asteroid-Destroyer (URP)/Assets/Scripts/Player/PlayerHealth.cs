@@ -25,6 +25,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        healthText.text = $"HP: {playerHP}";
+    }
+
     public TextMeshProUGUI GetPlayerHealthTextUI() => healthText;
 
     public void DamagePlayer(int damageAmount)
