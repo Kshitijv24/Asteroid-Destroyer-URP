@@ -151,8 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidExplosionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
     type: 3}
+  shieldPickUp: {fileID: 7531378753900394522, guid: 5b7b2df9c00fe1c43a6b192724a26170,
+    type: 3}
+  spawnChanceOfSpawningShieldPickUp: 0.1
   asteroidDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
-  targetFollowSpeed: 2
 --- !u!114 &1581554572212679339
 MonoBehaviour:
   m_ObjectHideFlags: 0
