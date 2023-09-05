@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class PlayerShield : MonoBehaviour
 {
-    public static PlayerShield Instance { get; private set; }
+    public float elapsedTime = 0.0f;
 
-    SpriteRenderer spriteRenderer;
-    CapsuleCollider capsuleCollider;
+    float timeToWait = 5.0f;
 
-    private void Awake()
+    private void Update()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        elapsedTime += Time.deltaTime;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
-    }
-
-    public void ActivatePlayerShield()
-    {
-        spriteRenderer.enabled = true;
-        capsuleCollider.enabled = true;
+        if(elapsedTime >= timeToWait)
+        {
+            elapsedTime = 0.0f;
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

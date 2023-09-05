@@ -61,7 +61,6 @@ public class Asteroid : MonoBehaviour
         if (Random.value < spawnChanceOfSpawningShieldPickUp)
         {
             Instantiate(shieldPickUp, transform.position, Quaternion.identity);
-            Debug.Log("Shield Spawned");
         }
     }
 }

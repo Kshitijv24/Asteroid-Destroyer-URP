@@ -8,7 +8,7 @@ public class ShieldPickUp : MonoBehaviour
     {
         if(other.GetComponent<PlayerMovement>())
         {
-            PlayerShield.Instance.ActivatePlayerShield();
+            PlayerShieldManager.Instance.ActivatePlayerShield();
             Destroy(gameObject);
         }
     }

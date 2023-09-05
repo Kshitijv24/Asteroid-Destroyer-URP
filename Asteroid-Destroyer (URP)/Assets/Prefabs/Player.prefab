@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1394863256018380654}
   - component: {fileID: 6936637044186661104}
   - component: {fileID: -8444705967358910159}
+  - component: {fileID: 1439989299840219136}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -143,6 +144,19 @@ MonoBehaviour:
   bulletFireRate: 0.5
   bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
+--- !u!114 &1439989299840219136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394863256018380652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a926938a3de626741899bfc4748fc01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShield: {fileID: 2856190541526700015}
 --- !u!1 &4454188096492823359
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +293,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554260096052982718, guid: a8733ef7a0e727b4ab3a738d417ede52,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908295216517500317, guid: a8733ef7a0e727b4ab3a738d417ede52,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 345478104197144738, guid: a8733ef7a0e727b4ab3a738d417ede52, type: 3}
