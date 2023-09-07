@@ -151,9 +151,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidExplosionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
     type: 3}
-  shieldPickUp: {fileID: 7531378753900394522, guid: 5b7b2df9c00fe1c43a6b192724a26170,
+  shieldPickUp: {fileID: -7089191574311390551, guid: 5b7b2df9c00fe1c43a6b192724a26170,
     type: 3}
-  spawnChanceOfSpawningShieldPickUp: 0.9
+  healthPickUp: {fileID: 8404427099662862715, guid: b828fc695aa17c347a9be84cce11a141,
+    type: 3}
+  spawnChanceOfShieldPickUp: 0.5
+  spawnChanceOfHealthPickUp: 0.5
   asteroidDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!114 &-5218316632728452584
 MonoBehaviour:

@@ -3,8 +3,10 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     [SerializeField] GameObject asteroidExplosionVFX;
-    [SerializeField] GameObject shieldPickUp;
-    [SerializeField] float spawnChanceOfSpawningShieldPickUp;
+    [SerializeField] ShieldPickUp shieldPickUp;
+    [SerializeField] HealthPickUp healthPickUp; 
+    [SerializeField] float spawnChanceOfShieldPickUp;
+    [SerializeField] float spawnChanceOfHealthPickUp;
     [SerializeField] AudioClip asteroidDestroySFX;
 
     private void OnTriggerEnter(Collider other)
@@ -39,6 +41,7 @@ public class Asteroid : MonoBehaviour
     public void AsteroidDestroyedByPlayer()
     {
         SpawnShieldPickUp();
+        SpawnHealthPickUp();
         IncrementScore();
         PlayEffectsAndDisableAsteroid();
     }
@@ -58,9 +61,17 @@ public class Asteroid : MonoBehaviour
 
     private void SpawnShieldPickUp()
     {
-        if (Random.value < spawnChanceOfSpawningShieldPickUp)
+        if (Random.value < spawnChanceOfShieldPickUp)
         {
             Instantiate(shieldPickUp, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void SpawnHealthPickUp()
+    {
+        if (Random.value < spawnChanceOfHealthPickUp)
+        {
+            Instantiate(healthPickUp, transform.position, Quaternion.identity);
         }
     }
 }

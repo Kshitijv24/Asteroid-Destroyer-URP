@@ -46,4 +46,12 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void IncrementPlayerHealth()
+    {
+        if (playerHP >= 3) return;
+
+        playerHP++;
+        healthText.text = $"HP: {playerHP}";
+    }
 }

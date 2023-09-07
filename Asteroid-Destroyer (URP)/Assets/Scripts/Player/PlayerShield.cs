@@ -12,7 +12,7 @@ public class PlayerShield : MonoBehaviour
     {
         elapsedTime += Time.deltaTime;
 
-        if(elapsedTime >= timeToWait)
+        if (elapsedTime >= timeToWait)
         {
             elapsedTime = 0.0f;
             gameObject.SetActive(false);
