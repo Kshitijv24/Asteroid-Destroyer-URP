@@ -5,9 +5,16 @@ public class Asteroid : MonoBehaviour
     [SerializeField] GameObject asteroidExplosionVFX;
     [SerializeField] ShieldPickUp shieldPickUp;
     [SerializeField] HealthPickUp healthPickUp; 
-    [SerializeField] float spawnChanceOfShieldPickUp;
-    [SerializeField] float spawnChanceOfHealthPickUp;
     [SerializeField] AudioClip asteroidDestroySFX;
+
+    float shieldPickUpDropRate;
+    float healthPickUpDropRate;
+
+    private void OnEnable()
+    {
+        shieldPickUpDropRate = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate();
+        healthPickUpDropRate = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,7 +68,7 @@ public class Asteroid : MonoBehaviour
 
     private void SpawnShieldPickUp()
     {
-        if (Random.value < spawnChanceOfShieldPickUp)
+        if (Random.value < shieldPickUpDropRate)
         {
             Instantiate(shieldPickUp, transform.position, Quaternion.identity);
         }
@@ -69,7 +76,7 @@ public class Asteroid : MonoBehaviour
 
     private void SpawnHealthPickUp()
     {
-        if (Random.value < spawnChanceOfHealthPickUp)
+        if (Random.value < healthPickUpDropRate)
         {
             Instantiate(healthPickUp, transform.position, Quaternion.identity);
         }
