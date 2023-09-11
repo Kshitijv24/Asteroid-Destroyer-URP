@@ -503,7 +503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88, y: -57}
+  m_AnchoredPosition: {x: 88, y: -56}
   m_SizeDelta: {x: 324.0587, y: 100.8959}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &270900411
@@ -2245,9 +2245,11 @@ MonoBehaviour:
   increaseBulletFireRateLevelUp: {fileID: 28039054}
   increaseShipSpeedLevelUp: {fileID: 1554458849}
   increaseBulletSpeedLevelUp: {fileID: 1799388194}
+  increaseHealthPickUpDropRateLevelUp: {fileID: 478626067}
   maxBulletFireRate: 0.3
-  maxPlayerShipSpeed: 20
+  maxPlayerShipSpeed: 16
   maxBulletSpeed: 15
+  maxHealthPickUpDropRate: 0.4
 --- !u!4 &1372301431
 Transform:
   m_ObjectHideFlags: 0
