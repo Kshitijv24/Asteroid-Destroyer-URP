@@ -6,8 +6,10 @@ public class IncreaseBulletFiringRateLevelUp : MonoBehaviour
 {
     public void IncreaseBulletFiringRate()
     {
-        float firingRate = PlayerShooting.Instance.GetBulletFireRate();
-        PlayerShooting.Instance.SetBulletFiringRate(firingRate - 0.1f);
+        float firingRateOfUp = PlayerShootingFromUp.Instance.GetBulletFireRate();
+        float firingRateOfLeft = PlayerShootingFromLeft.Instance.GetBulletFireRate();
+        PlayerShootingFromUp.Instance.SetBulletFiringRate(firingRateOfUp - 0.1f);
+        PlayerShootingFromLeft.Instance.SetBulletFiringRate(firingRateOfLeft - 0.1f);
         GameManager.Instance.ResumeGame();
     }
 }

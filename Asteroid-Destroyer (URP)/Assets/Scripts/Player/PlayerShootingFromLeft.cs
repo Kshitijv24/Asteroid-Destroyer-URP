@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class PlayerShootingFromLeft : MonoBehaviour
 {
-    public static PlayerShooting Instance { get; private set; }
+    public static PlayerShootingFromLeft Instance { get; private set; }
 
-	[SerializeField] Transform bulletSpawnPoint;
-	[SerializeField] GameObject bulletPrefab;
-    [SerializeField] float bulletFireRate;
+    [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float bulletFireRate = 0.5f;
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] AudioClip bulletSFX;
 
@@ -71,5 +71,4 @@ public class PlayerShooting : MonoBehaviour
             bulletRb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
         }
     }
-
 }

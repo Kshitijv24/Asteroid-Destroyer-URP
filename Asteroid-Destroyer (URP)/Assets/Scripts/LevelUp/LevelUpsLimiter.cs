@@ -23,9 +23,14 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletFireRate()
     {
-        if (PlayerShooting.Instance.GetBulletFireRate() == maxBulletFireRate)
+        if (PlayerShootingFromUp.Instance.GetBulletFireRate() == maxBulletFireRate)
         {
             increaseBulletFireRateLevelUp.SetActive(false);
+        }
+
+        if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
+        {
+            increaseBulletSpeedLevelUp.SetActive(false);
         }
     }
 
@@ -39,7 +44,12 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletSpeed()
     {
-        if(PlayerShooting.Instance.GetBulletSpeed() == maxBulletSpeed)
+        if(PlayerShootingFromUp.Instance.GetBulletSpeed() == maxBulletSpeed)
+        {
+            increaseBulletSpeedLevelUp.SetActive(false);
+        }
+
+        if(PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
             increaseBulletSpeedLevelUp.SetActive(false);
         }
