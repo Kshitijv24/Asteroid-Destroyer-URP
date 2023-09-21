@@ -28,9 +28,20 @@ public class LevelUpsLimiter : MonoBehaviour
             increaseBulletFireRateLevelUp.SetActive(false);
         }
 
-        if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
+        if(PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
         {
-            increaseBulletSpeedLevelUp.SetActive(false);
+            if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
+            {
+                increaseBulletSpeedLevelUp.SetActive(false);
+            }
+        }
+
+        if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
+        {
+            if (PlayerShootingFromRight.Instance.GetBulletSpeed() == maxBulletSpeed)
+            {
+                increaseBulletSpeedLevelUp.SetActive(false);
+            }
         }
     }
 
@@ -49,9 +60,20 @@ public class LevelUpsLimiter : MonoBehaviour
             increaseBulletSpeedLevelUp.SetActive(false);
         }
 
-        if(PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
+        if (PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
         {
-            increaseBulletSpeedLevelUp.SetActive(false);
+            if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
+            {
+                increaseBulletSpeedLevelUp.SetActive(false);
+            }
+        }
+
+        if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
+        {
+            if (PlayerShootingFromRight.Instance.GetBulletSpeed() == maxBulletSpeed)
+            {
+                increaseBulletSpeedLevelUp.SetActive(false);
+            }
         }
     }
 
