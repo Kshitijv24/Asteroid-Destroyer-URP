@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &28039055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1395,7 +1395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &478626068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1805,7 +1805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &701804927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2689,6 +2689,8 @@ MonoBehaviour:
   increaseShipSpeedLevelUp: {fileID: 1554458849}
   increaseBulletSpeedLevelUp: {fileID: 1799388194}
   increaseHealthPickUpDropRateLevelUp: {fileID: 478626067}
+  shootingPointRight: {fileID: 701804926}
+  shootingPointLeft: {fileID: 1841792983}
   maxBulletFireRate: 0.3
   maxPlayerShipSpeed: 16
   maxBulletSpeed: 15
@@ -3207,7 +3209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1554458850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8259,7 +8261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1799388195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8406,7 +8408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1841792984
 RectTransform:
   m_ObjectHideFlags: 0

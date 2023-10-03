@@ -8,6 +8,8 @@ public class LevelUpsLimiter : MonoBehaviour
     [SerializeField] GameObject increaseShipSpeedLevelUp;
     [SerializeField] GameObject increaseBulletSpeedLevelUp;
     [SerializeField] GameObject increaseHealthPickUpDropRateLevelUp;
+    [SerializeField] GameObject shootingPointRight;
+    [SerializeField] GameObject shootingPointLeft;
     [SerializeField] float maxBulletFireRate = 0.3f;
     [SerializeField] float maxPlayerShipSpeed = 16f;
     [SerializeField] float maxBulletSpeed = 15f;
@@ -19,6 +21,7 @@ public class LevelUpsLimiter : MonoBehaviour
         LimitIncreaseOnShipSpeed();
         LimitIncreaseOnBulletSpeed();
         LimitIncreaseDropRateOfHealthPickUp();
+        LimitShootingPoints();
     }
 
     private void LimitIncreaseOnBulletFireRate()
@@ -77,11 +80,23 @@ public class LevelUpsLimiter : MonoBehaviour
         }
     }
 
-    public void LimitIncreaseDropRateOfHealthPickUp()
+    private void LimitIncreaseDropRateOfHealthPickUp()
     {
         if(PickUpsDropRateManager.Instance.GetHealthPickUpDropRate() == maxHealthPickUpDropRate)
         {
             increaseHealthPickUpDropRateLevelUp.SetActive(false);
+        }
+    }
+
+    private void LimitShootingPoints()
+    {
+        if (PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
+        {
+            shootingPointLeft.SetActive(false);
+        }
+        if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
+        {
+            shootingPointRight.SetActive(false);
         }
     }
 }
