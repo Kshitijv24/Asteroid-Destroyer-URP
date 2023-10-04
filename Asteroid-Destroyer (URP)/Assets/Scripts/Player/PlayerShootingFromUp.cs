@@ -39,14 +39,16 @@ public class PlayerShootingFromUp : MonoBehaviour
 
     public float GetBulletFireRate() => bulletFireRate;
 
-    public void SetBulletFiringRate(float bulletFireRate)
+    public float SetBulletFiringRate(float bulletFireRate)
     {
         this.bulletFireRate = bulletFireRate;
+        return bulletFireRate;
     }
 
-    public void SetBulletSpeed(float bulletSpeed)
+    public float SetBulletSpeed(float bulletSpeed)
     {
         this.bulletSpeed = bulletSpeed;
+        return bulletSpeed;
     }
 
     private bool CanFire() => Time.time >= nextFireTime;

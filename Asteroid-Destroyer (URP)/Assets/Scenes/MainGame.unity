@@ -2912,7 +2912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6d7b2cccd5abe40911a76647028d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPowerUpShownAtATime: 2
+  numberOfPowerUpShownAtATime: 3
   allPowerUpsList:
   - {fileID: 1799388194}
   - {fileID: 1554458849}
