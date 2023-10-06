@@ -30,22 +30,6 @@ public class LevelUpsLimiter : MonoBehaviour
         {
             increaseBulletFireRateLevelUp.SetActive(false);
         }
-
-        if(PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
-        {
-            if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
-            {
-                increaseBulletSpeedLevelUp.SetActive(false);
-            }
-        }
-
-        if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
-        {
-            if (PlayerShootingFromRight.Instance.GetBulletSpeed() == maxBulletSpeed)
-            {
-                increaseBulletSpeedLevelUp.SetActive(false);
-            }
-        }
     }
 
     private void LimitIncreaseOnShipSpeed()
@@ -61,22 +45,6 @@ public class LevelUpsLimiter : MonoBehaviour
         if(PlayerShootingFromUp.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
             increaseBulletSpeedLevelUp.SetActive(false);
-        }
-
-        if (PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
-        {
-            if (PlayerShootingFromLeft.Instance.GetBulletSpeed() == maxBulletSpeed)
-            {
-                increaseBulletSpeedLevelUp.SetActive(false);
-            }
-        }
-
-        if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
-        {
-            if (PlayerShootingFromRight.Instance.GetBulletSpeed() == maxBulletSpeed)
-            {
-                increaseBulletSpeedLevelUp.SetActive(false);
-            }
         }
     }
 

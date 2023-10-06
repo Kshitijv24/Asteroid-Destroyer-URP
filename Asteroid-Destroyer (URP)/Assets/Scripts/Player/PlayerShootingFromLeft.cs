@@ -9,8 +9,6 @@ public class PlayerShootingFromLeft : MonoBehaviour
 
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float bulletFireRate = 0.5f;
-    [SerializeField] float bulletSpeed = 10f;
     [SerializeField] AudioClip bulletSFX;
 
     float nextFireTime;
@@ -35,26 +33,12 @@ public class PlayerShootingFromLeft : MonoBehaviour
         }
     }
 
-    public float GetBulletSpeed() => bulletSpeed;
-
-    public float GetBulletFireRate() => bulletFireRate;
-
-    public void SetBulletFiringRate(float bulletFireRate)
-    {
-        this.bulletFireRate = bulletFireRate;
-    }
-
-    public void SetBulletSpeed(float bulletSpeed)
-    {
-        this.bulletSpeed = bulletSpeed;
-    }
-
     private bool CanFire() => Time.time >= nextFireTime;
 
     private void FireBullet()
     {
         AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
-        nextFireTime = Time.time + bulletFireRate;
+        nextFireTime = Time.time + PlayerShootingFromUp.Instance.GetBulletFireRate();
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
 
@@ -68,7 +52,11 @@ public class PlayerShootingFromLeft : MonoBehaviour
             Rigidbody bulletRb = pooledBulletsPrefab.GetComponent<Rigidbody>();
             bulletRb.velocity = Vector3.zero;
             bulletRb.angularVelocity = Vector3.zero;
-            bulletRb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
+
+            bulletRb.AddForce(
+                bulletSpawnPoint.forward * 
+                PlayerShootingFromUp.Instance.GetBulletSpeed(), 
+                ForceMode.Impulse);
         }
     }
 }
