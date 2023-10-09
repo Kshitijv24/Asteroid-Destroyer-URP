@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = $"HP: {playerHP}";
     }
 
+    public int GetPlayerHealth() => playerHP;
+
     public TextMeshProUGUI GetPlayerHealthTextUI() => healthText;
 
     public void DamagePlayer(int damageAmount)
@@ -43,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Instantiate(playerDeathVFX, transform.position, Quaternion.identity);
             gameOverHandler.ShowEndGameScreen();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
