@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
 {
-    [SerializeField] int numberOfPowerUpShownAtATime = 2;
+    [SerializeField] int numberOfPowerUpShownAtATime = 3;
     [SerializeField] List<GameObject> allPowerUpsList;
 
     private void OnEnable()
     {
         DisableAllPowerUpsAtTheStart();
-
         ShowRandomPowerUp();
     }
 
@@ -18,7 +17,7 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
     {
         foreach (GameObject powerUp in allPowerUpsList) 
         { 
-            powerUp.SetActive(false); 
+            powerUp.SetActive(false);
         }
     }
 
@@ -26,23 +25,25 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
     {
         List<GameObject> selectedPowerUpsList = new List<GameObject>();
 
-        while (selectedPowerUpsList.Count < numberOfPowerUpShownAtATime)
+        // Shuffle the list of power-ups to make the selection random
+        List<GameObject> shuffledPowerUps = new List<GameObject>(allPowerUpsList);
+        int n = shuffledPowerUps.Count;
+        while (n > 1)
         {
-            GameObject selectedPowerUp = allPowerUpsList[Random.Range(0, allPowerUpsList.Count)];
-
-            if (!selectedPowerUpsList.Contains(selectedPowerUp))
-            {
-                selectedPowerUpsList.Add(selectedPowerUp);
-                selectedPowerUp.SetActive(true);
-            }
+            n--;
+            int k = Random.Range(0, n + 1);
+            GameObject powerUp = shuffledPowerUps[k];
+            shuffledPowerUps[k] = shuffledPowerUps[n];
+            shuffledPowerUps[n] = powerUp;
         }
 
-        foreach (GameObject notSelectedPowerUp in selectedPowerUpsList)
+        int powerUpsToShow = Mathf.Min(numberOfPowerUpShownAtATime, shuffledPowerUps.Count);
+
+        for (int i = 0; i < powerUpsToShow; i++)
         {
-            if (!allPowerUpsList.Contains(notSelectedPowerUp))
-            {
-                notSelectedPowerUp.gameObject.SetActive(false);
-            }
+            GameObject selectedPowerUp = shuffledPowerUps[i];
+            selectedPowerUp.SetActive(true);
+            selectedPowerUpsList.Add(selectedPowerUp);
         }
     }
 }
