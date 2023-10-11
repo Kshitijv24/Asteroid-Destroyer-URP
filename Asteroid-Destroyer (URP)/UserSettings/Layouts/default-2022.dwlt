@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1360
     height: 695
   m_ShowMode: 4
-  m_Title: Simulator
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 29
+  controlID: 95
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 322
     width: 840
     height: 323
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -659,9 +659,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 868.75024, y: 527.7788, z: -6.056891}
+    m_Target: {x: 1176.6677, y: 517.68317, z: -8.117926}
     speed: 2
-    m_Value: {x: 868.75024, y: 527.7788, z: -6.056891}
+    m_Value: {x: 1176.6677, y: 517.68317, z: -8.117926}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 02b2eafff6faffff
+      m_ExpandedIDs: f6faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -882,7 +882,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 1
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -924,7 +925,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 5}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff00000000aa750000ac750000ae750000b0750000b2750000b4750000b6750000b8750000ba750000bc750000be750000c0750000c2750000
@@ -1070,7 +1071,7 @@ MonoBehaviour:
   - UnityEditor.GameView
   m_SerializedViewValues:
   - C:\Users\Kshitij\Desktop\Unity Projects\Asteroid-Destroyer-URP\Asteroid-Destroyer
-    (URP)\Library\PlayModeViewStates\6ce10303b88ac9641af51748f64bbd5c
+    (URP)\Library\PlayModeViewStates\d90a6c2480555714cb186afc7fbe9734
   m_PlayModeViewName: Device Simulator
   m_ShowGizmos: 0
   m_TargetDisplay: 0
