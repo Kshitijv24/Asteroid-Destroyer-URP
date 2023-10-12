@@ -21,9 +21,12 @@ public class PickUpsDropRateManager : MonoBehaviour
         }
     }
 
-    public float GetHealthPickUpDropRate()
+    public float GetShieldPickUpDropRate() => shieldPickUpDropRate;
+    public float GetHealthPickUpDropRate() => healthPickUpDropRate;
+
+    public void SetShieldPickUpDropRate(float shieldPickUpDropRate)
     {
-        return healthPickUpDropRate;
+        this.shieldPickUpDropRate = shieldPickUpDropRate;
     }
 
     public void SetHealthPickUpDropRate(float healthPickUpDropRate)
@@ -31,13 +34,4 @@ public class PickUpsDropRateManager : MonoBehaviour
         this.healthPickUpDropRate = healthPickUpDropRate;
     }
 
-    public float GetShieldPickUpDropRate()
-    {
-        return shieldPickUpDropRate;
-    }
-
-    public void SetShieldPickUpDropRate(float shieldPickUpDropRate)
-    {
-        this.shieldPickUpDropRate = shieldPickUpDropRate;
-    }
 }

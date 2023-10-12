@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject levelUpCanvas;
 
-    bool isPaused;
-
     private void Awake()
     {
         if(Instance == null)
@@ -24,10 +22,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject GetLevelUpCanvas()
-    {
-        return levelUpCanvas;
-    }
+    public GameObject GetLevelUpCanvas() => levelUpCanvas;
 
     public void PauseGame()
     {

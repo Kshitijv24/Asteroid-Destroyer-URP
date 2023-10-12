@@ -42,7 +42,7 @@ public class Asteroid : MonoBehaviour
 
     private void AsteroidDestroyedByOtherAsteroid()
     {
-        PlayEffectsAndDisableAsteroid();
+        DestroyAsteroid();
     }
 
     public void AsteroidDestroyedByPlayer()
@@ -50,10 +50,10 @@ public class Asteroid : MonoBehaviour
         SpawnShieldPickUp();
         SpawnHealthPickUp();
         IncrementScore();
-        PlayEffectsAndDisableAsteroid();
+        DestroyAsteroid();
     }
 
-    private void PlayEffectsAndDisableAsteroid()
+    private void DestroyAsteroid()
     {
         AudioManager.Instance.PlaySound(asteroidDestroySFX, 1f);
         Instantiate(asteroidExplosionVFX, transform.position, Quaternion.identity);

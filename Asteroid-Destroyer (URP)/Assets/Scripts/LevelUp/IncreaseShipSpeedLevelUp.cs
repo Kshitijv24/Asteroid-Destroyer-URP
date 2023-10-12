@@ -8,6 +8,7 @@ public class IncreaseShipSpeedLevelUp : MonoBehaviour
 	{
         float playerForceMagnitude = PlayerMovement.Instance.GetPlayerForceMagnitude();
         PlayerMovement.Instance.SetPlayerForceMagnitude(playerForceMagnitude + 2.0f);
+
         GameManager.Instance.ResumeGame();
 	}
 }

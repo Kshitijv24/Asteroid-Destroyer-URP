@@ -33,7 +33,10 @@ public class PlayerShootingFromLeft : MonoBehaviour
         }
     }
 
-    private bool CanFire() => Time.time >= nextFireTime;
+    private bool CanFire()
+    {
+        return Time.time >= nextFireTime;
+    }
 
     private void FireBullet()
     {

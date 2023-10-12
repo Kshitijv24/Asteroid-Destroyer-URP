@@ -38,16 +38,6 @@ public class PlayerMovement : MonoBehaviour
         RotateToFaceVelocity();
     }
 
-    public float GetPlayerForceMagnitude()
-    {
-        return forceMagnitude;
-    }
-
-    public void SetPlayerForceMagnitude(float forceMagnitude)
-    {
-        this.forceMagnitude = forceMagnitude;
-    }
-
     private void FixedUpdate()
     {
         if (movementDirection == Vector3.zero) return;
@@ -56,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 
+    public float GetPlayerForceMagnitude() => forceMagnitude;
+
+    public void SetPlayerForceMagnitude(float forceMagnitude)
+    {
+        this.forceMagnitude = forceMagnitude;
+    }
 
     private void ProcessInput()
     {
@@ -82,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(viewportPosition.x > 1)
         {
-            newPosition.x = -newPosition.x + 0.1f; 
+            newPosition.x = -newPosition.x + 0.1f;
         }
         else if(viewportPosition.x < 0)
         {
