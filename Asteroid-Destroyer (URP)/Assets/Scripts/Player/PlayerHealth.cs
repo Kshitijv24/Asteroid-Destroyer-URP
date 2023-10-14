@@ -27,7 +27,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        healthText.text = $"HP: {playerHP}";
+        if(healthText != null)
+        {
+            healthText.text = $"HP: {playerHP}";
+        }
     }
 
     public int GetPlayerHealth() => playerHP;
