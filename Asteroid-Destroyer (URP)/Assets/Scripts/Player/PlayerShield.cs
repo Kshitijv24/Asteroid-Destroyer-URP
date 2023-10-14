@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerShield : MonoBehaviour
 {
-    public float elapsedTime = 0.0f;
-
+    float elapsedTime = 0.0f;
     float timeToWait = 5.0f;
 
     private void Update()

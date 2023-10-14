@@ -1849,7 +1849,7 @@ GameObject:
   - component: {fileID: 532873986}
   - component: {fileID: 532873987}
   m_Layer: 0
-  m_Name: Asteroid Spawner
+  m_Name: AsteroidSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3696,7 +3696,7 @@ GameObject:
   - component: {fileID: 1731175742}
   - component: {fileID: 1731175741}
   m_Layer: 0
-  m_Name: Starfield Particle System
+  m_Name: StarfieldParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8817,7 +8817,7 @@ GameObject:
   - component: {fileID: 1894439616}
   - component: {fileID: 1894439617}
   m_Layer: 0
-  m_Name: Score System
+  m_Name: ScoreSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9493,7 +9493,7 @@ GameObject:
   - component: {fileID: 7444278473567532293}
   - component: {fileID: 7242578260998111128}
   m_Layer: 0
-  m_Name: Game Over Handler
+  m_Name: GameOverHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
