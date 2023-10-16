@@ -6,12 +6,13 @@ public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth Instance { get; private set; }
 
-    [SerializeField] GameOverHandler gameOverHandler;
+    GameOverHandler gameOverHandler;
     [SerializeField] GameObject playerDeathVFX;
     [SerializeField] ParticleSystem playerDamagedVFX;
     [SerializeField] AudioClip playerSpaceShipDeathSFX;
     [SerializeField] int playerHP = 3;
-    [SerializeField] TextMeshProUGUI healthText;
+    
+    TextMeshProUGUI healthText;
 
     private void Awake()
     {
@@ -27,10 +28,14 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        if(healthText != null)
+        healthText = FindObjectOfType<TextMeshProUGUI>();
+
+        if (healthText != null)
         {
             healthText.text = $"HP: {playerHP}";
         }
+
+        gameOverHandler = FindObjectOfType<GameOverHandler>();
     }
 
     public int GetPlayerHealth() => playerHP;
