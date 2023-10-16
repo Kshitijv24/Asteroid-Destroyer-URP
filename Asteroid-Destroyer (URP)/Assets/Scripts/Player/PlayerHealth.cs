@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        healthText = FindObjectOfType<TextMeshProUGUI>();
+        healthText = GameObject.FindGameObjectWithTag("PlayerHealthTextUI").GetComponent<TextMeshProUGUI>();
 
         if (healthText != null)
         {
