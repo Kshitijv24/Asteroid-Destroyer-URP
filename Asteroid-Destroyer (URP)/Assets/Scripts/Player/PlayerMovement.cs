@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
 
-    [SerializeField] float forceMagnitude;
-    [SerializeField] float maxVelocity;
-    [SerializeField] float rotationSpeed;
+    [SerializeField] float forceMagnitude = 10;
+    [SerializeField] float maxVelocity = 6;
+    [SerializeField] float rotationSpeed = 10;
 
     Rigidbody rb;
     Vector3 movementDirection;

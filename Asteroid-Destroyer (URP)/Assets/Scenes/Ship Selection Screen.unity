@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 190893177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1109078013}
+        m_TargetAssemblyTypeName: ListOfPlayerSpaceShips, Assembly-CSharp
+        m_MethodName: SelectSpaceShip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &190893177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1109078013}
         m_TargetAssemblyTypeName: ListOfPlayerSpaceShips, Assembly-CSharp
-        m_MethodName: ShowRightSpaceShip
+        m_MethodName: ShowNextSpaceShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -564,7 +576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1109078013}
         m_TargetAssemblyTypeName: ListOfPlayerSpaceShips, Assembly-CSharp
-        m_MethodName: ShowLeftSpaceShip
+        m_MethodName: ShowPreviousSpaceShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1371,6 +1383,7 @@ PrefabInstance:
     - {fileID: 6936637044186661104, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
     - {fileID: 1439989299840219136, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
     - {fileID: 407924477243478522, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
+    - {fileID: 293823964, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 731268434873920327, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
     - {fileID: 1277513869455609296, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ListOfPlayerSpaceShips : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class ListOfPlayerSpaceShips : MonoBehaviour
         allPlayerSpaceShips[0].SetActive(true);
     }
 
-    public void ShowLeftSpaceShip()
+    public void ShowPreviousSpaceShip()
 	{
         allPlayerSpaceShips[selectedSpaceShip].SetActive(false);
         selectedSpaceShip--;
@@ -27,13 +28,20 @@ public class ListOfPlayerSpaceShips : MonoBehaviour
         {
             selectedSpaceShip += allPlayerSpaceShips.Count;
         }
+
         allPlayerSpaceShips[selectedSpaceShip].SetActive(true);
     }
 
-    public void ShowRightSpaceShip()
+    public void ShowNextSpaceShip()
     {
         allPlayerSpaceShips[selectedSpaceShip].SetActive(false);
         selectedSpaceShip = (selectedSpaceShip + 1) % allPlayerSpaceShips.Count;
         allPlayerSpaceShips[selectedSpaceShip].SetActive(true);
+    }
+
+    public void SelectSpaceShip()
+    {
+        PlayerPrefs.SetInt("selectedSpaceShip", selectedSpaceShip);
+        SceneManager.LoadScene(2);
     }
 }
