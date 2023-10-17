@@ -23,8 +23,6 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
 
     private void ShowRandomPowerUp()
     {
-        List<GameObject> selectedPowerUpsList = new List<GameObject>();
-
         // Shuffle the list of power-ups to make the selection random
         List<GameObject> shuffledPowerUps = new List<GameObject>(allPowerUpsList);
         int n = shuffledPowerUps.Count;
@@ -37,13 +35,17 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
             shuffledPowerUps[n] = powerUp;
         }
 
+        // Determine the number of power-ups to show (up to numberOfPowerUpShownAtATime)
         int powerUpsToShow = Mathf.Min(numberOfPowerUpShownAtATime, shuffledPowerUps.Count);
 
-        for (int i = 0; i < powerUpsToShow; i++)
+        // Show exactly numberOfPowerUpShownAtATime power-ups
+        for (int i = 0; i < numberOfPowerUpShownAtATime; i++)
         {
-            GameObject selectedPowerUp = shuffledPowerUps[i];
-            selectedPowerUp.SetActive(true);
-            selectedPowerUpsList.Add(selectedPowerUp);
+            if (i < powerUpsToShow)
+            {
+                GameObject selectedPowerUp = shuffledPowerUps[i];
+                selectedPowerUp.SetActive(true);
+            }
         }
     }
 }
