@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7390783829899146584}
   - component: {fileID: 7973584220019032286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 1826208269829380128}
   - component: {fileID: 2934824219025623433}
   - component: {fileID: 6569386450238068634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2504256630756480129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
