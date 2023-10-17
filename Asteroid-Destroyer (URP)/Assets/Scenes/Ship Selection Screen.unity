@@ -1587,7 +1587,12 @@ PrefabInstance:
     - target: {fileID: 1776576682002790113, guid: 60f78ccedc087a7469f7f4f86db6f324,
         type: 3}
       propertyPath: m_Name
-      value: StarSparrow5
+      value: DarkBlueSpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776576682002790113, guid: 60f78ccedc087a7469f7f4f86db6f324,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8718182038341001546, guid: 60f78ccedc087a7469f7f4f86db6f324,
         type: 3}
@@ -1727,7 +1732,12 @@ PrefabInstance:
     - target: {fileID: 7855826607745455717, guid: 3e43fc5f4ad56d940ae00f08cb19d3bc,
         type: 3}
       propertyPath: m_Name
-      value: PlayerSpaceShip
+      value: LightBlueSpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855826607745455717, guid: 3e43fc5f4ad56d940ae00f08cb19d3bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1746,6 +1756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StarSparrow10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232401597992433877, guid: d552d08bc05d7104d9796fbfecf0a8b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7813964028923392526, guid: d552d08bc05d7104d9796fbfecf0a8b6,
         type: 3}

@@ -3654,7 +3654,7 @@ MonoBehaviour:
   allSpaceShips:
   - {fileID: 1394863256018380652, guid: e13df11d41c4d3145a2cc8d0f936ced2, type: 3}
   - {fileID: 4440680328288250295, guid: 462f8a18090c4ad458b4835e0495871f, type: 3}
-  - {fileID: 5232401597992433877, guid: d552d08bc05d7104d9796fbfecf0a8b6, type: 3}
+  - {fileID: 2818874732403686578, guid: ae4099df0df2d374897300bd0b3007ea, type: 3}
   - {fileID: 385047763858713959, guid: f403006164263c342bafc84ca4c520a3, type: 3}
 --- !u!1 &1697580714
 GameObject:

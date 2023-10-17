@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 8419103454832953675}
   - component: {fileID: 3616119904576434472}
   m_Layer: 0
-  m_Name: StarSparrow5
+  m_Name: DarkBlueSpaceShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -47,8 +47,6 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 5505302580420560991}
   bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
     type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &1277513869455609296
 GameObject:
@@ -97,8 +95,6 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 6179871745993473666}
   bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
     type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &1394863256018380652
 GameObject:
@@ -142,7 +138,7 @@ Transform:
   - {fileID: 735027280682204765}
   - {fileID: 955403887184301808}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!54 &1394863256018380655
 Rigidbody:
@@ -169,7 +165,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!64 &293823964
 MeshCollider:
@@ -220,14 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae16821c1cee9b4e9098b0f539e6230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverHandler: {fileID: 0}
   playerDeathVFX: {fileID: 3324133293989352525, guid: ec9ca152baaeda44db47becd0d8fab7e,
     type: 3}
   playerDamagedVFX: {fileID: 6670534559313003938}
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
   playerHP: 3
-  healthText: {fileID: 0}
 --- !u!114 &1439989299840219136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd99d6fac5ebd74898c0f44950eb57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elapsedTime: 0
 --- !u!1001 &1172480482768165732
 PrefabInstance:
   m_ObjectHideFlags: 0
