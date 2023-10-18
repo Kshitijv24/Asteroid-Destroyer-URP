@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 8040300891241138317}
   - component: {fileID: 6616807942665993490}
   m_Layer: 0
-  m_Name: StarSparrow10
+  m_Name: LongLightBlueSpaceShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
