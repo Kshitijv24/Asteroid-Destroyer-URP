@@ -9,6 +9,6 @@ public class IncreaseHealthPickUpDropRateLevelUp : MonoBehaviour
 		float healthPickUpDropRate = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
 		PickUpsDropRateManager.Instance.SetHealthPickUpDropRate(healthPickUpDropRate + 0.1f);
 
-		GameManager.Instance.ResumeGame();
+		GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 }

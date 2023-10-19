@@ -34,10 +34,11 @@ public class PlayerLevelUpManager : MonoBehaviour
 
     public void LevelUP()
     {
-        if(killedEnemies == noOfEnemiesNeededToKillToLevelUp && PlayerHealth.Instance.GetPlayerHealth() > 0)
+        if(killedEnemies == noOfEnemiesNeededToKillToLevelUp 
+            && PlayerHealth.Instance.GetPlayerHealth() > 0)
         {
             killedEnemies = 0;
-            GameManager.Instance.PauseGame();
+            GameManager.Instance.PauseGameAndShowLevelUpPanel();
             //noOfEnemiesNeededToKillToLevelUp++;
         }
     }

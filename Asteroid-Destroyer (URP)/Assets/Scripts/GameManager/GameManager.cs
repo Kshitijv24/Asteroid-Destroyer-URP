@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject levelUpCanvas;
 
+    bool isPlayerLevelingUp;
+
     private void Awake()
     {
         if(Instance == null)
@@ -24,19 +26,26 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetLevelUpCanvas() => levelUpCanvas;
 
-    public void PauseGame()
+    public void PauseGameAndShowLevelUpPanel()
     {
         Time.timeScale = 0;
         levelUpCanvas.SetActive(true);
         ScoreSystem.Instance.GetScoreTextUI().enabled = false;
         PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = false;
+        isPlayerLevelingUp = true;
     }
 
-    public void ResumeGame()
+    public void ResumeGameAndHideLevelUpPanel()
     {
         Time.timeScale = 1;
         levelUpCanvas.SetActive(false);
         ScoreSystem.Instance.GetScoreTextUI().enabled = true;
         PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = true;
+        isPlayerLevelingUp = false;
+    }
+
+    public bool IsPlayerLevelingUp()
+    {
+        return isPlayerLevelingUp;
     }
 }

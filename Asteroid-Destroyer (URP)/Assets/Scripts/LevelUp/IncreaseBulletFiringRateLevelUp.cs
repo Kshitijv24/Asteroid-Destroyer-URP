@@ -9,6 +9,6 @@ public class IncreaseBulletFiringRateLevelUp : MonoBehaviour
         float firingRateOfUp = PlayerShootingFromUp.Instance.GetBulletFireRate();
         PlayerShootingFromUp.Instance.SetBulletFiringRate(firingRateOfUp - 0.1f);
 
-        GameManager.Instance.ResumeGame();
+        GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 }

@@ -9,6 +9,6 @@ public class IncreaseBulletSpeedLevelUp : MonoBehaviour
 		float bulletSpeedOfUp = PlayerShootingFromUp.Instance.GetBulletSpeed();
 		PlayerShootingFromUp.Instance.SetBulletSpeed(bulletSpeedOfUp + 1.0f);
         
-		GameManager.Instance.ResumeGame();
+		GameManager.Instance.ResumeGameAndHideLevelUpPanel();
 	}
 }
