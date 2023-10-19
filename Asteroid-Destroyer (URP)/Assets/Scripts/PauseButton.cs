@@ -4,21 +4,7 @@ using UnityEngine;
 
 public class PauseButton : MonoBehaviour
 {
-    public static PauseButton Instance { get; private set; }
-
     [SerializeField] GameObject pauseMenu;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void PauseGame()
 	{

@@ -16,11 +16,13 @@ public class PauseMenu : MonoBehaviour
 
 	public void ExitToMainMenu()
 	{
-		SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
 	}
 
 	public void ExitGame()
 	{
-		Application.Quit();
+        Time.timeScale = 1;
+        Application.Quit();
 	}
 }
