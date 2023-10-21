@@ -70,7 +70,12 @@ public class Asteroid : MonoBehaviour
     {
         if (Random.value < shieldPickUpDropRate)
         {
-            Instantiate(shieldPickUp, transform.position, Quaternion.identity);
+            ShieldPickUp shieldGameObject = GameObject.FindObjectOfType<ShieldPickUp>();
+
+            if(shieldGameObject == null)
+            {
+                Instantiate(shieldPickUp, transform.position, Quaternion.identity);
+            }
         }
     }
 
@@ -78,7 +83,12 @@ public class Asteroid : MonoBehaviour
     {
         if (Random.value < healthPickUpDropRate)
         {
-            Instantiate(healthPickUp, transform.position, Quaternion.identity);
+            HealthPickUp healthGameObject = GameObject.FindObjectOfType<HealthPickUp>();
+
+            if (healthGameObject == null)
+            {
+                Instantiate(healthPickUp, transform.position, Quaternion.identity);
+            }
         }
     }
 }
