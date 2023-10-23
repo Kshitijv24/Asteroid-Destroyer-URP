@@ -14,6 +14,7 @@ public class PlayerPoints : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -21,13 +22,19 @@ public class PlayerPoints : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        playerPoints = GetPlayerPoints();
+    }
+
     public int GetPlayerPoints()
     {
-        return playerPoints;
+        return PlayerPrefs.GetInt("playerPoints", playerPoints);
     }
 
     public void IncrementPlayerPoints()
     {
         playerPoints++;
+        PlayerPrefs.SetInt("playerPoints", playerPoints);
     }
 }
