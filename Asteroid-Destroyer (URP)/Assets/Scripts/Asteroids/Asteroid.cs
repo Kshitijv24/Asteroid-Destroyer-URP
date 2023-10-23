@@ -62,7 +62,7 @@ public class Asteroid : MonoBehaviour
 
     private static void IncrementScore()
     {
-        PlayerLevelUpManager.Instance.IncrementKilledEnemies();
+        PlayerLevelUpManager.Instance.IncrementKilledEnemiesAndPlayerPoints();
         ScoreSystem.Instance.IncrementScore();
     }
 
