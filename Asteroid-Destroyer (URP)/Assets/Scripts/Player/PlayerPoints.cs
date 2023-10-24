@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPoints : MonoBehaviour
 {
@@ -26,6 +27,24 @@ public class PlayerPoints : MonoBehaviour
     }
 
     private void Start()
+    {
+        UpdatePlayerPointsTextUI();
+    }
+
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            playerPointsText.gameObject.SetActive(false);
+        }
+        else
+        {
+            UpdatePlayerPointsTextUI();
+            playerPointsText.gameObject.SetActive(true);
+        }
+    }
+
+    private void UpdatePlayerPointsTextUI()
     {
         playerPoints = GetPlayerPoints();
         playerPointsText.text = "Available Points: " + playerPoints.ToString();
