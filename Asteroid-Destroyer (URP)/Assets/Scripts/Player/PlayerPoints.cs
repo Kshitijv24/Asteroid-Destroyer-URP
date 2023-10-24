@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerPoints : MonoBehaviour
 {
     public static PlayerPoints Instance { get; private set; }
+
+    [SerializeField] TextMeshProUGUI playerPointsText;
 
     int playerPoints = 0;
 
@@ -25,6 +28,7 @@ public class PlayerPoints : MonoBehaviour
     private void Start()
     {
         playerPoints = GetPlayerPoints();
+        playerPointsText.text = "Available Points: " + playerPoints.ToString();
     }
 
     public int GetPlayerPoints()
