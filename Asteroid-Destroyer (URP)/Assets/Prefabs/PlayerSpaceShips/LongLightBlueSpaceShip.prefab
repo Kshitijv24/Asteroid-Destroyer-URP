@@ -92,7 +92,7 @@ Transform:
   - {fileID: 6913928844131298485}
   - {fileID: 8077298006267372357}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!54 &4592102162108757091
 Rigidbody:
@@ -310,7 +310,12 @@ PrefabInstance:
     - target: {fileID: 5232401597992433877, guid: d552d08bc05d7104d9796fbfecf0a8b6,
         type: 3}
       propertyPath: m_Name
-      value: StarSparrow10
+      value: LongLightBlueSpaceShipVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232401597992433877, guid: d552d08bc05d7104d9796fbfecf0a8b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7813964028923392526, guid: d552d08bc05d7104d9796fbfecf0a8b6,
         type: 3}
