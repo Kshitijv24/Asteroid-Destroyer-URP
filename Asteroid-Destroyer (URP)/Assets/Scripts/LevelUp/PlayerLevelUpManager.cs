@@ -40,7 +40,7 @@ public class PlayerLevelUpManager : MonoBehaviour
         {
             killedEnemies = 0;
             GameManager.Instance.PauseGameAndShowLevelUpPanel();
-            noOfEnemiesNeededToKillToLevelUp++;
+            //noOfEnemiesNeededToKillToLevelUp++;
         }
     }
 }
