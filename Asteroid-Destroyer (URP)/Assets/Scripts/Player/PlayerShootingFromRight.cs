@@ -40,7 +40,7 @@ public class PlayerShootingFromRight : MonoBehaviour
 
     private void FireBullet()
     {
-        AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
+        AudioManager.Instance.PlaySound(bulletSFX, 0.1f);
         nextFireTime = Time.time + PlayerShootingFromUp.Instance.GetBulletFireRate();
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
