@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class ListOfPlayerSpaceShips : MonoBehaviour
 {
 	[SerializeField] List<GameObject> allPlayerSpaceShips = new List<GameObject>();
-    [SerializeField] Image lockedImage;
-    [SerializeField] List<int> requiredPlayerPointsToUnlockShip = new List<int>();
 
     int selectedSpaceShip = 0;
 
@@ -24,11 +22,6 @@ public class ListOfPlayerSpaceShips : MonoBehaviour
 
     public void ShowPreviousSpaceShip()
 	{
-        if(PlayerPoints.Instance.GetPlayerPoints() > requiredPlayerPointsToUnlockShip[selectedSpaceShip])
-        {
-            lockedImage.gameObject.SetActive(false);
-        }
-
         allPlayerSpaceShips[selectedSpaceShip].SetActive(false);
         selectedSpaceShip--;
 

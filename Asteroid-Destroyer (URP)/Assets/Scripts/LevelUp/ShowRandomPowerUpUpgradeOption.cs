@@ -15,8 +15,8 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
 
     private void DisableAllPowerUpsAtTheStart()
     {
-        foreach (GameObject powerUp in allPowerUpsList) 
-        { 
+        foreach (GameObject powerUp in allPowerUpsList)
+        {
             powerUp.SetActive(false);
         }
     }
