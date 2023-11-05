@@ -28,6 +28,7 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if (PlayerShootingFromUp.Instance.GetBulletFireRate() == maxBulletFireRate)
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletFireRateLevelUp);
             increaseBulletFireRateLevelUp.SetActive(false);
         }
     }
@@ -36,6 +37,7 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if(PlayerMovement.Instance.GetPlayerForceMagnitude() == maxPlayerShipSpeed)
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseShipSpeedLevelUp);
             increaseShipSpeedLevelUp.SetActive(false);
         }
     }
@@ -44,6 +46,7 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if(PlayerShootingFromUp.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletSpeedLevelUp);
             increaseBulletSpeedLevelUp.SetActive(false);
         }
     }
@@ -52,6 +55,7 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if(PickUpsDropRateManager.Instance.GetHealthPickUpDropRate() == maxHealthPickUpDropRate)
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseHealthPickUpDropRateLevelUp);
             increaseHealthPickUpDropRateLevelUp.SetActive(false);
         }
     }
@@ -60,10 +64,12 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if (PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointLeft);
             shootingPointLeft.SetActive(false);
         }
         if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
         {
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointRight);
             shootingPointRight.SetActive(false);
         }
     }

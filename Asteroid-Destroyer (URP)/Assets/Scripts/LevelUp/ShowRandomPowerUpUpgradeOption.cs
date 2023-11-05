@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
 {
+    public static ShowRandomPowerUpUpgradeOption Instance { get; private set; }
+
     [SerializeField] int numberOfPowerUpShownAtATime = 3;
-    [SerializeField] List<GameObject> allPowerUpsList;
+    public List<GameObject> allPowerUpsList;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnEnable()
     {
