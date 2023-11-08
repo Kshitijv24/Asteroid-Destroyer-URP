@@ -7,9 +7,9 @@ public class PlayerLevelUpManager : MonoBehaviour
 	public static PlayerLevelUpManager Instance { get; private set; }
 
     public int noOfEnemiesNeededToKillToLevelUp = 5;
+    public int playerLevel = 1;
 
     [HideInInspector] public int killedEnemies;
-    [HideInInspector] public int playerLevel = 1;
 
     private void Awake()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AsteroidSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] asteroidPrefab;
-    [SerializeField] float spawnTime;
+    [SerializeField] float spawnTime = 1;
     [SerializeField] Vector2 forceRange;
 
     float timer;
@@ -19,13 +19,30 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void Update()
     {
+        SpawnAsteroidAtATime();
+    }
+
+    private void SpawnAsteroidAtATime()
+    {
         timer -= Time.deltaTime;
 
-        if(timer <= 0)
+        if (timer <= 0)
         {
             SpawnAsteroids();
-
             timer += spawnTime;
+
+            if(PlayerLevelUpManager.Instance.playerLevel == 2)
+            {
+                spawnTime = 0.8f;
+            }
+            else if (PlayerLevelUpManager.Instance.playerLevel == 4)
+            {
+                spawnTime = 0.6f;
+            }
+            else if (PlayerLevelUpManager.Instance.playerLevel == 6)
+            {
+                spawnTime = 0.4f;
+            }
         }
     }
 
