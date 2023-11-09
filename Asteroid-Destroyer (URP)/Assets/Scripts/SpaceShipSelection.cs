@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ListOfPlayerSpaceShips : MonoBehaviour
+public class SpaceShipSelection : MonoBehaviour
 {
 	[SerializeField] List<GameObject> allPlayerSpaceShips = new List<GameObject>();
+    [SerializeField] float spaceShipRotationSpeed = 50.0f;
 
     int selectedSpaceShip = 0;
 
@@ -18,6 +19,11 @@ public class ListOfPlayerSpaceShips : MonoBehaviour
         }
 
         allPlayerSpaceShips[0].SetActive(true);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(0, spaceShipRotationSpeed * Time.deltaTime, 0);
     }
 
     public void ShowPreviousSpaceShip()
