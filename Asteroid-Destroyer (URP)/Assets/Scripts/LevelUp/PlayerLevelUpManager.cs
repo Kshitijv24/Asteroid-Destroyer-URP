@@ -31,7 +31,7 @@ public class PlayerLevelUpManager : MonoBehaviour
     public void IncrementKilledEnemiesAndPlayerPoints()
     {
         killedEnemies++;
-        PlayerPoints.Instance.IncrementPlayerPoints();
+        PlayerPoints.Instance.IncrementPlayerPointByOne();
     }
 
     public void LevelUP()

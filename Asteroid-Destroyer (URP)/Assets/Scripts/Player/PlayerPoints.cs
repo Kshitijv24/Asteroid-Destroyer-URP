@@ -55,7 +55,21 @@ public class PlayerPoints : MonoBehaviour
         return PlayerPrefs.GetInt("playerPoints", playerPoints);
     }
 
-    public void IncrementPlayerPoints()
+    public void DecreasePlayerPoints(int points)
+    {
+        int currentPlayerPoints = PlayerPrefs.GetInt("playerPoints", playerPoints);
+        currentPlayerPoints -= points;
+        PlayerPrefs.SetInt("playerPoints", currentPlayerPoints);
+    }
+
+    public void AddPlayerPoints(int points)
+    {
+        int currentPlayerPoints = PlayerPrefs.GetInt("playerPoints", playerPoints);
+        currentPlayerPoints += points;
+        PlayerPrefs.SetInt("playerPoints", currentPlayerPoints);
+    }
+
+    public void IncrementPlayerPointByOne()
     {
         playerPoints++;
         PlayerPrefs.SetInt("playerPoints", playerPoints);
