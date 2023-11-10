@@ -109,10 +109,18 @@ public class SpaceShipSelection : MonoBehaviour
         else
         {
             ShowLockSpaceShipUI();
-
-            buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Buy: " + spaceShip.price;
-
-            buyButton.interactable = spaceShip.price <= PlayerPoints.Instance.GetPlayerPoints();
+            ShowPriceOfSpaceShipInBuyButton(spaceShip);
+            BuySpaceShipIfHaveEnoughMoney(spaceShip);
         }
+    }
+
+    private void ShowPriceOfSpaceShipInBuyButton(SpaceShip spaceShip)
+    {
+        buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Buy: " + spaceShip.price;
+    }
+
+    private void BuySpaceShipIfHaveEnoughMoney(SpaceShip spaceShip)
+    {
+        buyButton.interactable = spaceShip.price <= PlayerPoints.Instance.GetPlayerPoints();
     }
 }
