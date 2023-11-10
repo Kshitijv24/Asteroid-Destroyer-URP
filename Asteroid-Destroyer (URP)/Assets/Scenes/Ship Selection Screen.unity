@@ -1823,6 +1823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109078012}
   - component: {fileID: 1109078013}
+  - component: {fileID: 1109078014}
   m_Layer: 0
   m_Name: SpaceShipSelection
   m_TagString: Untagged
@@ -1869,6 +1870,19 @@ MonoBehaviour:
   - {fileID: 2079920311695038374}
   - {fileID: 6014697724528084281}
   spaceShipRotationSpeed: 50
+--- !u!114 &1109078014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109078011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965dd5a7a3e018b4eb5c0fd219ea7803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceShipSelection: {fileID: 1109078013}
   spaceShipArray:
   - name: LightBlueSpaceShip
     index: 0
@@ -1888,7 +1902,7 @@ MonoBehaviour:
     isUnlocked: 0
   - name: RedSpaceShip
     index: 4
-    price: 1000
+    price: 400
     isUnlocked: 0
   buyButton: {fileID: 1927622764}
   selectButton: {fileID: 190893176}
@@ -2624,8 +2638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1109078013}
-        m_TargetAssemblyTypeName: SpaceShipSelection, Assembly-CSharp
+      - m_Target: {fileID: 1109078014}
+        m_TargetAssemblyTypeName: SpaceShipPurchaseHandler, Assembly-CSharp
         m_MethodName: BuySpaceShip
         m_Mode: 1
         m_Arguments:
