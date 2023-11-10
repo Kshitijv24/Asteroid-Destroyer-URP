@@ -18,24 +18,33 @@ public class SpaceShipSelection : MonoBehaviour
 
     private void Start()
     {
-        foreach (SpaceShip spaceShip in spaceShipArray)
-        {
-            if(spaceShip.price == 0)
-            {
-                spaceShip.isUnlocked = true;
-            }
-            else
-            {
-                spaceShip.isUnlocked = PlayerPrefs.GetInt(spaceShip.name, 0) == 0 ? false : true;
-            }
-        }
+        CheckIfSpaceShipIsUnlocked();
+        OnlyShowingFirstSpaceShipAtTheStart();
+    }
 
+    private void OnlyShowingFirstSpaceShipAtTheStart()
+    {
         foreach (GameObject playerSpaceShip in allPlayerSpaceShipList)
         {
             playerSpaceShip.SetActive(false);
         }
 
         allPlayerSpaceShipList[0].SetActive(true);
+    }
+
+    private void CheckIfSpaceShipIsUnlocked()
+    {
+        foreach (SpaceShip spaceShip in spaceShipArray)
+        {
+            if (spaceShip.price == 0)
+            {
+                spaceShip.isUnlocked = true;
+            }
+            else
+            {
+                spaceShip.isUnlocked = PlayerPrefs.GetInt(spaceShip.name) == 0 ? false : true;
+            }
+        }
     }
 
     private void Update()
