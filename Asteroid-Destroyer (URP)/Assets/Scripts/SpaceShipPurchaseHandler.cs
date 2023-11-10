@@ -37,29 +37,6 @@ public class SpaceShipPurchaseHandler : MonoBehaviour
         }
     }
 
-    public void BuySpaceShip()
-    {
-        SpaceShip spaceShip = spaceShipArray[spaceShipSelection.GetSelectedSpaceShip()];
-        PlayerPrefs.SetInt(spaceShip.name, 1);
-
-        spaceShip.isUnlocked = true;
-        PlayerPoints.Instance.DecreasePlayerPoints(spaceShip.price);
-    }
-
-    private void ShowUnlockSpaceShipUI()
-    {
-        buyButton.gameObject.SetActive(false);
-        lockedSpaceShipImage.gameObject.SetActive(false);
-        selectButton.gameObject.SetActive(true);
-    }
-
-    private void ShowLockSpaceShipUI()
-    {
-        buyButton.gameObject.SetActive(true);
-        selectButton.gameObject.SetActive(false);
-        lockedSpaceShipImage.gameObject.SetActive(true);
-    }
-
     private void HandleSpaceShipPurchase()
     {
         SpaceShip spaceShip = spaceShipArray[spaceShipSelection.GetSelectedSpaceShip()];
@@ -76,6 +53,20 @@ public class SpaceShipPurchaseHandler : MonoBehaviour
         }
     }
 
+    private void ShowUnlockSpaceShipUI()
+    {
+        buyButton.gameObject.SetActive(false);
+        lockedSpaceShipImage.gameObject.SetActive(false);
+        selectButton.gameObject.SetActive(true);
+    }
+
+    private void ShowLockSpaceShipUI()
+    {
+        buyButton.gameObject.SetActive(true);
+        selectButton.gameObject.SetActive(false);
+        lockedSpaceShipImage.gameObject.SetActive(true);
+    }
+
     private void ShowPriceOfSpaceShipInBuyButton(SpaceShip spaceShip)
     {
         buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Buy: " + spaceShip.price;
@@ -84,5 +75,14 @@ public class SpaceShipPurchaseHandler : MonoBehaviour
     private void BuySpaceShipIfHaveEnoughMoney(SpaceShip spaceShip)
     {
         buyButton.interactable = spaceShip.price <= PlayerPoints.Instance.GetPlayerPoints();
+    }
+
+    public void BuySpaceShip()
+    {
+        SpaceShip spaceShip = spaceShipArray[spaceShipSelection.GetSelectedSpaceShip()];
+        PlayerPrefs.SetInt(spaceShip.name, 1);
+
+        spaceShip.isUnlocked = true;
+        PlayerPoints.Instance.DecreasePlayerPoints(spaceShip.price);
     }
 }

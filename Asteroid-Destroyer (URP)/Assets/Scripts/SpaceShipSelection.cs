@@ -16,6 +16,10 @@ public class SpaceShipSelection : MonoBehaviour
     {
         OnlyShowingFirstSpaceShipAtTheStart();
     }
+    private void Update()
+    {
+        RotateSpaceShips();
+    }
 
     private void OnlyShowingFirstSpaceShipAtTheStart()
     {
@@ -25,11 +29,6 @@ public class SpaceShipSelection : MonoBehaviour
         }
 
         allPlayerSpaceShipList[0].SetActive(true);
-    }
-
-    private void Update()
-    {
-        RotateSpaceShips();
     }
 
     private void RotateSpaceShips()
