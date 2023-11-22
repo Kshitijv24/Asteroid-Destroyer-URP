@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movementDirection;
     Camera mainCamera;
 
-
     private void Awake()
     {
         if (Instance == null)
@@ -48,10 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float GetPlayerForceMagnitude() => forceMagnitude;
 
-    public void SetPlayerForceMagnitude(float forceMagnitude)
-    {
-        this.forceMagnitude = forceMagnitude;
-    }
+    public void SetPlayerForceMagnitude(float forceMagnitude) => this.forceMagnitude = forceMagnitude;
 
     private void ProcessInput()
     {

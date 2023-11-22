@@ -44,8 +44,5 @@ public class GameManager : MonoBehaviour
         isPlayerLevelingUp = false;
     }
 
-    public bool IsPlayerLevelingUp()
-    {
-        return isPlayerLevelingUp;
-    }
+    public bool IsPlayerLevelingUp() => isPlayerLevelingUp;
 }

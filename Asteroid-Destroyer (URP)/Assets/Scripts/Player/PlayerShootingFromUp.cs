@@ -35,10 +35,7 @@ public class PlayerShootingFromUp : MonoBehaviour
         }
     }
 
-    private bool CanFire()
-    {
-        return Time.time >= nextFireTime;
-    }
+    private bool CanFire() => Time.time >= nextFireTime;
 
     public float GetBulletSpeed() => bulletSpeed;
 

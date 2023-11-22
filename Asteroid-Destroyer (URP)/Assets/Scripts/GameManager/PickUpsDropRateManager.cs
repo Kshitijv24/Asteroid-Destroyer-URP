@@ -24,14 +24,8 @@ public class PickUpsDropRateManager : MonoBehaviour
     public float GetShieldPickUpDropRate() => shieldPickUpDropRate;
     public float GetHealthPickUpDropRate() => healthPickUpDropRate;
 
-    public void SetShieldPickUpDropRate(float shieldPickUpDropRate)
-    {
-        this.shieldPickUpDropRate = shieldPickUpDropRate;
-    }
+    public void SetShieldPickUpDropRate(float shieldPickUpDropRate) => this.shieldPickUpDropRate = shieldPickUpDropRate;
 
-    public void SetHealthPickUpDropRate(float healthPickUpDropRate)
-    {
-        this.healthPickUpDropRate = healthPickUpDropRate;
-    }
+    public void SetHealthPickUpDropRate(float healthPickUpDropRate) => this.healthPickUpDropRate = healthPickUpDropRate;
 
 }

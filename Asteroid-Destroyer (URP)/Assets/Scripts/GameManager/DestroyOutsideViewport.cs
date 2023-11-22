@@ -4,11 +4,7 @@ public class DestroyOutsideViewport : MonoBehaviour
 {
     Camera mainCamera;
 
-    void Start()
-    {
-        // Get a reference to the main camera
-        mainCamera = Camera.main;
-    }
+    void Start() => mainCamera = Camera.main;
 
     void Update()
     {

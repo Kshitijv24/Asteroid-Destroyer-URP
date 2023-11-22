@@ -40,10 +40,7 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    private void AsteroidDestroyedByOtherAsteroid()
-    {
-        DestroyAsteroid();
-    }
+    private void AsteroidDestroyedByOtherAsteroid() => DestroyAsteroid();
 
     public void AsteroidDestroyedByPlayer()
     {

@@ -26,10 +26,7 @@ public class PlayerPoints : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        UpdatePlayerPointsTextUI();
-    }
+    private void Start() => UpdatePlayerPointsTextUI();
 
     private void Update()
     {
@@ -50,10 +47,7 @@ public class PlayerPoints : MonoBehaviour
         playerPointsText.text = "Available Points: " + playerPoints.ToString();
     }
 
-    public int GetPlayerPoints()
-    {
-        return PlayerPrefs.GetInt("playerPoints", playerPoints);
-    }
+    public int GetPlayerPoints() => PlayerPrefs.GetInt("playerPoints", playerPoints);
 
     public void DecreasePlayerPoints(int points)
     {

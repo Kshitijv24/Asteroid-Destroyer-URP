@@ -24,8 +24,5 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip, float volumeLevel)
-    {
-        audioSource.PlayOneShot(clip, volumeLevel);
-    }
+    public void PlaySound(AudioClip clip, float volumeLevel) => audioSource.PlayOneShot(clip, volumeLevel);
 }

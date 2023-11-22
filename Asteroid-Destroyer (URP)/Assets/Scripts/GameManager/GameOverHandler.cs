@@ -9,10 +9,7 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] AsteroidSpawner asteroidSpawner;
     [SerializeField] TextMeshProUGUI endScreenScoreCard;
 
-    public void ShowEndGameScreen()
-    {
-        StartCoroutine(EndGame());
-    }
+    public void ShowEndGameScreen() => StartCoroutine(EndGame());
 
     IEnumerator EndGame()
     {
@@ -22,13 +19,7 @@ public class GameOverHandler : MonoBehaviour
         gameOverDisplay.SetActive(true);
     }
 
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(2);
-    }
+    public void PlayAgain() => SceneManager.LoadScene(2);
 
-    public void ReturnToMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
+    public void ReturnToMenu() => SceneManager.LoadScene(0);
 }

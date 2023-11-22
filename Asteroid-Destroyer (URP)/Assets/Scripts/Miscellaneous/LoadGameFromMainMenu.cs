@@ -11,7 +11,7 @@ public class LoadGameFromMainMenu : MonoBehaviour
     {
         if (!hasLoadedScene0)
         {
-            SceneManager.LoadScene(0); // Load Scene 0
+            SceneManager.LoadScene(0);
             hasLoadedScene0 = true;
         }
     }

@@ -9,12 +9,7 @@ public class PlayerLevelUpBar : MonoBehaviour
 	[SerializeField] Slider playerLevelUpBarSlider;
     [SerializeField] TextMeshProUGUI playerLevelText;
 
-    
-
-    private void Start()
-    {
-        playerLevelUpBarSlider.value = 0;
-    }
+    private void Start() => playerLevelUpBarSlider.value = 0;
 
     private void Update()
     {

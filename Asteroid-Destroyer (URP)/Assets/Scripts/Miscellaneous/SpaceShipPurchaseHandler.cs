@@ -12,15 +12,9 @@ public class SpaceShipPurchaseHandler : MonoBehaviour
     [SerializeField] Button selectButton;
     [SerializeField] Image lockedSpaceShipImage;
 
-    private void Start()
-    {
-        CheckIfSpaceShipIsUnlocked();
-    }
+    private void Start() => CheckIfSpaceShipIsUnlocked();
 
-    private void Update()
-    {
-        HandleSpaceShipPurchase();
-    }
+    private void Update() => HandleSpaceShipPurchase();
 
     private void CheckIfSpaceShipIsUnlocked()
     {

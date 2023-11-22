@@ -12,15 +12,9 @@ public class AsteroidSpawner : MonoBehaviour
     Camera mainCamera;
     Rigidbody rb;
 
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-    }
+    private void Awake() => mainCamera = Camera.main;
 
-    private void Update()
-    {
-        SpawnAsteroidAtATime();
-    }
+    private void Update() => SpawnAsteroidAtATime();
 
     private void SpawnAsteroidAtATime()
     {

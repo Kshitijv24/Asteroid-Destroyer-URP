@@ -23,10 +23,7 @@ public class PlayerLevelUpManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        LevelUP();
-    }
+    private void Update() => LevelUP();
 
     public void IncrementKilledEnemiesAndPlayerPoints()
     {

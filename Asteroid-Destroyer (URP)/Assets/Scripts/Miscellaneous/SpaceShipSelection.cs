@@ -12,14 +12,9 @@ public class SpaceShipSelection : MonoBehaviour
 
     int selectedSpaceShip = 0;
 
-    private void Start()
-    {
-        OnlyShowingFirstSpaceShipAtTheStart();
-    }
-    private void Update()
-    {
-        RotateSpaceShips();
-    }
+    private void Start() => OnlyShowingFirstSpaceShipAtTheStart();
+
+    private void Update() => RotateSpaceShips();
 
     private void OnlyShowingFirstSpaceShipAtTheStart()
     {
@@ -31,10 +26,7 @@ public class SpaceShipSelection : MonoBehaviour
         allPlayerSpaceShipList[0].SetActive(true);
     }
 
-    private void RotateSpaceShips()
-    {
-        transform.Rotate(0, spaceShipRotationSpeed * Time.deltaTime, 0);
-    }
+    private void RotateSpaceShips() => transform.Rotate(0, spaceShipRotationSpeed * Time.deltaTime, 0);
 
     public void ShowPreviousSpaceShip()
 	{
@@ -62,8 +54,5 @@ public class SpaceShipSelection : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public int GetSelectedSpaceShip()
-    {
-        return selectedSpaceShip;
-    }
+    public int GetSelectedSpaceShip() => selectedSpaceShip;
 }
