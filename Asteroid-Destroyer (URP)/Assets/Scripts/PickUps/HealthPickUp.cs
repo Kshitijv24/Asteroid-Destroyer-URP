@@ -6,7 +6,9 @@ public class HealthPickUp : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerMovement>())
+        PlayerMovement player = other.GetComponent<PlayerMovement>();
+        
+        if (player)
         {
             PlayerHealth.Instance.IncrementPlayerHealth();
             Destroy(gameObject);

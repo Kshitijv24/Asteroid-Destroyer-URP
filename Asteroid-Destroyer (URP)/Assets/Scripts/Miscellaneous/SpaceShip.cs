@@ -6,6 +6,4 @@ public class SpaceShip
 	public int index;
 	public int price;
 	public bool isUnlocked;
-
-
 }

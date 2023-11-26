@@ -6,7 +6,9 @@ public class ShieldPickUp : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerMovement>())
+        PlayerMovement player = other.GetComponent<PlayerMovement>();
+
+        if (player)
         {
             PlayerShieldManager.Instance.ActivatePlayerShield();
             Destroy(gameObject);

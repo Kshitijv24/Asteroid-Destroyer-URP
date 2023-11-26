@@ -30,11 +30,9 @@ public class PlayerHealth : MonoBehaviour
     {
         healthText = GameObject.FindGameObjectWithTag("PlayerHealthTextUI").GetComponent<TextMeshProUGUI>();
 
-        if (healthText != null)
-        {
-            healthText.text = $"HP: {playerHP}";
-        }
+        if (healthText == null) return;
 
+        healthText.text = $"HP: {playerHP}";
         gameOverHandler = FindObjectOfType<GameOverHandler>();
     }
 
@@ -51,10 +49,15 @@ public class PlayerHealth : MonoBehaviour
 
         if (playerHP <= 0)
         {
-            Instantiate(playerDeathVFX, transform.position, Quaternion.identity);
-            gameOverHandler.ShowEndGameScreen();
-            gameObject.SetActive(false);
+            PlayerDied();
         }
+    }
+
+    private void PlayerDied()
+    {
+        Instantiate(playerDeathVFX, transform.position, Quaternion.identity);
+        gameOverHandler.ShowEndGameScreen();
+        gameObject.SetActive(false);
     }
 
     public void IncrementPlayerHealth()
