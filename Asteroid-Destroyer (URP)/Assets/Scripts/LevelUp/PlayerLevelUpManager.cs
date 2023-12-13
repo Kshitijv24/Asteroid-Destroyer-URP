@@ -25,12 +25,6 @@ public class PlayerLevelUpManager : MonoBehaviour
 
     private void Update() => LevelUP();
 
-    public void IncrementKilledEnemiesAndPlayerPoints()
-    {
-        killedEnemies++;
-        PlayerPoints.Instance.IncrementPlayerPointByOne();
-    }
-
     public void LevelUP()
     {
         if(killedEnemies >= noOfEnemiesNeededToKillToLevelUp 
@@ -41,5 +35,10 @@ public class PlayerLevelUpManager : MonoBehaviour
             GameManager.Instance.PauseGameAndShowLevelUpPanel();
             noOfEnemiesNeededToKillToLevelUp++;
         }
+    }
+    public void IncrementKilledEnemiesAndPlayerPoints()
+    {
+        killedEnemies++;
+        PlayerPoints.Instance.IncrementPlayerPointByOne();
     }
 }

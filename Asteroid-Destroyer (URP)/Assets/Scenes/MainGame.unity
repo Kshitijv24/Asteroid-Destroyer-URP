@@ -4097,6 +4097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noOfEnemiesNeededToKillToLevelUp: 2
+  playerLevel: 1
   killedEnemies: 0
 --- !u!1 &1370504840
 GameObject:

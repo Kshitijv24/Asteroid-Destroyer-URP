@@ -40,6 +40,7 @@ public class ShowRandomPowerUpUpgradeOption : MonoBehaviour
         // Shuffle the list of power-ups to make the selection random
         List<GameObject> shuffledPowerUps = new List<GameObject>(allPowerUpsList);
         int n = shuffledPowerUps.Count;
+
         while (n > 1)
         {
             n--;

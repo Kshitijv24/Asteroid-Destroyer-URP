@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetLevelUpCanvas() => levelUpCanvas;
 
+    public bool IsPlayerLevelingUp() => isPlayerLevelingUp;
+
     public void PauseGameAndShowLevelUpPanel()
     {
         Time.timeScale = 0;
@@ -43,6 +45,4 @@ public class GameManager : MonoBehaviour
         PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = true;
         isPlayerLevelingUp = false;
     }
-
-    public bool IsPlayerLevelingUp() => isPlayerLevelingUp;
 }

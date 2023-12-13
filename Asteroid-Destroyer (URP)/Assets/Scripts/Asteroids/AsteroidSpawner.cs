@@ -25,18 +25,7 @@ public class AsteroidSpawner : MonoBehaviour
             SpawnAsteroids();
             timer += spawnTime;
 
-            if(PlayerLevelUpManager.Instance.playerLevel == 2)
-            {
-                spawnTime = 0.8f;
-            }
-            else if (PlayerLevelUpManager.Instance.playerLevel == 4)
-            {
-                spawnTime = 0.6f;
-            }
-            else if (PlayerLevelUpManager.Instance.playerLevel == 6)
-            {
-                spawnTime = 0.4f;
-            }
+            ChangeAsteroidSpawnRateAccordingToThePlayerLevel();
         }
     }
 
@@ -89,6 +78,22 @@ public class AsteroidSpawner : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.velocity = direction.normalized * Random.Range(forceRange.x, forceRange.y);
+        }
+    }
+
+    private void ChangeAsteroidSpawnRateAccordingToThePlayerLevel()
+    {
+        if (PlayerLevelUpManager.Instance.playerLevel == 2)
+        {
+            spawnTime = 0.8f;
+        }
+        else if (PlayerLevelUpManager.Instance.playerLevel == 4)
+        {
+            spawnTime = 0.6f;
+        }
+        else if (PlayerLevelUpManager.Instance.playerLevel == 6)
+        {
+            spawnTime = 0.4f;
         }
     }
 }
