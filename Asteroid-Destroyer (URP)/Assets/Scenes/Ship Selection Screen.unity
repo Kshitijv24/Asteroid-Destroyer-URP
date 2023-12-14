@@ -3029,6 +3029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DarkBlueSpaceShipVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 1776576682002790113, guid: 60f78ccedc087a7469f7f4f86db6f324,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8718182038341001546, guid: 60f78ccedc087a7469f7f4f86db6f324,
         type: 3}
       propertyPath: m_RootOrder
@@ -3216,6 +3221,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongLightBlueSpaceShipVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 5232401597992433877, guid: d552d08bc05d7104d9796fbfecf0a8b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7813964028923392526, guid: d552d08bc05d7104d9796fbfecf0a8b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -3294,6 +3304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlackSpaceShipVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 385047763858713959, guid: f403006164263c342bafc84ca4c520a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8588651164890845353, guid: f403006164263c342bafc84ca4c520a3,
         type: 3}
