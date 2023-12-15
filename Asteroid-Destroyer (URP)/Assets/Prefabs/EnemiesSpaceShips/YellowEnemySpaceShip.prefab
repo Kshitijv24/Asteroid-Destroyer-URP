@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6854841563341167232}
   - component: {fileID: 6343358343753673846}
   - component: {fileID: 324683710895358528}
-  - component: {fileID: 4075776530778856344}
   m_Layer: 0
   m_Name: YellowEnemySpaceShip
   m_TagString: Untagged
@@ -37,7 +36,7 @@ Transform:
   - {fileID: 7022323597945969341}
   - {fileID: 4855501310840797487}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!54 &6343358343753673846
 Rigidbody:
@@ -88,18 +87,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3907833751807807751, guid: 935092da8210ce844895c8a67045f830, type: 3}
---- !u!114 &4075776530778856344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2257462330249482115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b3cd0ee1070444198f01a1f3098075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2317927021654668555
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +96,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3467983810227633083}
-  - component: {fileID: 333687959344459862}
   m_Layer: 0
   m_Name: BulletSpawnPointUpper
   m_TagString: Untagged
@@ -132,24 +118,6 @@ Transform:
   m_Father: {fileID: 6854841563341167232}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &333687959344459862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2317927021654668555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3427a5e5cb8c440b4881ac15a0ee8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 3467983810227633083}
-  bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
-    type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
-  bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &2499780636175265152
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +127,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6648843314925581728}
-  - component: {fileID: 5526709893898380863}
   m_Layer: 0
   m_Name: BulletSpawnPointLeft
   m_TagString: Untagged
@@ -182,22 +149,6 @@ Transform:
   m_Father: {fileID: 6854841563341167232}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5526709893898380863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2499780636175265152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4451af39b53c649ae8743e4f4ff205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 6648843314925581728}
-  bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
-    type: 3}
-  bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &2529543687457253367
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +158,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7022323597945969341}
-  - component: {fileID: 4588679809147763543}
   m_Layer: 0
   m_Name: BulletSpawnPointRight
   m_TagString: Untagged
@@ -230,22 +180,6 @@ Transform:
   m_Father: {fileID: 6854841563341167232}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4588679809147763543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2529543687457253367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c262209dacbc5c54f9082adbc4c8ad58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 7022323597945969341}
-  bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
-    type: 3}
-  bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1001 &2681360937251090782
 PrefabInstance:
   m_ObjectHideFlags: 0

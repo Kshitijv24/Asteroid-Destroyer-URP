@@ -6,7 +6,7 @@ public class PlayerShield : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Asteroid asteroid = other.GetComponent<Asteroid>();
+        AsteroidCollision asteroid = other.GetComponent<AsteroidCollision>();
 
         if (asteroid == null) return;
 

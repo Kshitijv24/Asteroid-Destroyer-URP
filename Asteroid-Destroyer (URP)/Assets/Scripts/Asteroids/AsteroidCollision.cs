@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class AsteroidCollision : MonoBehaviour
 {
     [SerializeField] GameObject asteroidExplosionVFX;
     [SerializeField] ShieldPickUp shieldPickUp;
@@ -23,7 +23,7 @@ public class Asteroid : MonoBehaviour
     }
     private void HandleAsteroidCollisionWithOtherAsteroids(Collider other)
     {
-        if (other.GetComponent<Asteroid>())
+        if (other.GetComponent<AsteroidCollision>())
         {
             AsteroidDestroyedByOtherAsteroid();
         }
