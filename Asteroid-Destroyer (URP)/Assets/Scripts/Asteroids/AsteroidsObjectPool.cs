@@ -6,10 +6,10 @@ public class AsteroidsObjectPool : MonoBehaviour
 {
 	public static AsteroidsObjectPool Instance { get; private set; }
         
-    [SerializeField] GameObject[] asteroidsPrefabs;
+    [SerializeField] GameObject[] asteroidsPrefabArray;
     [SerializeField] int amountToPool = 10;
 
-    List<GameObject> pooledGameObjects = new List<GameObject>();
+    List<GameObject> pooledGameObjectList = new List<GameObject>();
 
     private void Awake()
     {
@@ -28,19 +28,19 @@ public class AsteroidsObjectPool : MonoBehaviour
         for(int i = 0; i < amountToPool; i++)
         {
             GameObject instantiatedGameObject = 
-                Instantiate(asteroidsPrefabs[Random.Range(0, asteroidsPrefabs.Length)], transform);
+                Instantiate(asteroidsPrefabArray[Random.Range(0, asteroidsPrefabArray.Length)], transform);
             instantiatedGameObject.SetActive(false);
-            pooledGameObjects.Add(instantiatedGameObject);
+            pooledGameObjectList.Add(instantiatedGameObject);
         }
     }
 
     public GameObject GetPooledGameObject()
     {
-        for (int i = 0; i < pooledGameObjects.Count; i++)
+        for (int i = 0; i < pooledGameObjectList.Count; i++)
         {
-            if (!pooledGameObjects[i].activeInHierarchy)
+            if (!pooledGameObjectList[i].activeInHierarchy)
             {
-                return pooledGameObjects[i];
+                return pooledGameObjectList[i];
             }
         }
         return null;

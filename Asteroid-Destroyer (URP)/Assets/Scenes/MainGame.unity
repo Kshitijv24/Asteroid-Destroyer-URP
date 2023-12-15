@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11433045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11433046}
+  - component: {fileID: 11433047}
+  m_Layer: 0
+  m_Name: EnemySpaceShipObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &11433046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11433045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 681113804}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11433047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11433045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d90da59fd6d19f4da1edf11d5c81d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &28039054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,55 +2515,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldPickUpDropRate: 0.1
   healthPickUpDropRate: 0.1
---- !u!1 &532873985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 532873986}
-  - component: {fileID: 532873987}
-  m_Layer: 0
-  m_Name: AsteroidSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &532873986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532873985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4949763, y: 0.18345922, z: 1.3580687}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &532873987
+--- !u!114 &532873987 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+    type: 3}
+  m_PrefabInstance: {fileID: 3361705718555743219}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532873985}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71e042fecf4acc74d8150f99ff1e790f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab:
-  - {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429, type: 3}
-  - {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1, type: 3}
-  spawnTime: 1
-  forceRange: {x: 4, y: 4}
 --- !u!1 &584662762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +2827,7 @@ Transform:
   m_Children:
   - {fileID: 181330602}
   - {fileID: 60328077}
+  - {fileID: 11433046}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5303,6 +5311,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1101668106}
+--- !u!1 &1664397596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664397598}
+  - component: {fileID: 1664397597}
+  m_Layer: 0
+  m_Name: EnemySpaceShipSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1664397597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664397596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465728de3ebdee948b70288d924da2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpaceShipPrefab:
+  - {fileID: 2257462330249482115, guid: 4ba12bf68405f704ebe015eadc6d6f63, type: 3}
+  spawnTime: 1
+  forceRange: {x: 4, y: 4}
+--- !u!4 &1664397598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664397596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697580714
 GameObject:
   m_ObjectHideFlags: 0
@@ -11452,6 +11508,84 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &3361705718555743219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4949763
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18345922
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3580687
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 267296826557818547, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681206899399747855, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_Name
+      value: AsteroidSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681206899399747855, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 401cedf7b2b168545983e36ae398c663, type: 3}
 --- !u!1 &3479391148376126587
 GameObject:
   m_ObjectHideFlags: 0

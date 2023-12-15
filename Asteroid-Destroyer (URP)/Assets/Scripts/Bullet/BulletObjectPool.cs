@@ -6,10 +6,10 @@ public class BulletObjectPool : MonoBehaviour
 {
     public static BulletObjectPool Instance { get; private set; }
 
-    [SerializeField] GameObject[] bulletPrefab;
+    [SerializeField] GameObject[] bulletPrefabArray;
     [SerializeField] int amountToPool = 10;
 
-    List<GameObject> pooledGameObjects = new List<GameObject>();
+    List<GameObject> pooledGameObjectList = new List<GameObject>();
 
     private void Awake()
     {
@@ -27,19 +27,19 @@ public class BulletObjectPool : MonoBehaviour
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            GameObject instantiatedGameObject = Instantiate(bulletPrefab[Random.Range(0, bulletPrefab.Length)], transform);
+            GameObject instantiatedGameObject = Instantiate(bulletPrefabArray[Random.Range(0, bulletPrefabArray.Length)], transform);
             instantiatedGameObject.SetActive(false);
-            pooledGameObjects.Add(instantiatedGameObject);
+            pooledGameObjectList.Add(instantiatedGameObject);
         }
     }
 
     public GameObject GetPooledGameObject()
     {
-        for (int i = 0; i < pooledGameObjects.Count; i++)
+        for (int i = 0; i < pooledGameObjectList.Count; i++)
         {
-            if (!pooledGameObjects[i].activeInHierarchy)
+            if (!pooledGameObjectList[i].activeInHierarchy)
             {
-                return pooledGameObjects[i];
+                return pooledGameObjectList[i];
             }
         }
         return null;
