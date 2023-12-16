@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6854841563341167232}
   - component: {fileID: 6343358343753673846}
   - component: {fileID: 324683710895358528}
+  - component: {fileID: 4964518485846555225}
+  - component: {fileID: -22469022789242502}
   m_Layer: 0
   m_Name: YellowEnemySpaceShip
   m_TagString: Untagged
@@ -87,6 +89,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3907833751807807751, guid: 935092da8210ce844895c8a67045f830, type: 3}
+--- !u!114 &4964518485846555225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257462330249482115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef38dc1e154e960439c45ea40b4dae84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpaceShipExplosionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
+    type: 3}
+  shieldPickUp: {fileID: -7089191574311390551, guid: 5b7b2df9c00fe1c43a6b192724a26170,
+    type: 3}
+  healthPickUp: {fileID: 8404427099662862715, guid: b828fc695aa17c347a9be84cce11a141,
+    type: 3}
+  enemySpaceShipDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f,
+    type: 3}
+--- !u!114 &-22469022789242502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257462330249482115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c6595929b49ba499bdd77827a4e37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2317927021654668555
 GameObject:
   m_ObjectHideFlags: 0

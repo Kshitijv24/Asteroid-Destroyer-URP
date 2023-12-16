@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d90da59fd6d19f4da1edf11d5c81d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpaceShipPrefabArray:
+  - {fileID: 2257462330249482115, guid: 4ba12bf68405f704ebe015eadc6d6f63, type: 3}
+  amountToPool: 10
 --- !u!1 &28039054
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d214bf8dea4df8a468371eee4eb49b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab:
+  bulletPrefabArray:
   - {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d, type: 3}
   amountToPool: 20
 --- !u!1 &74312204
@@ -540,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb5c43f579fb3c4589df8e0cbb9187f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidsPrefabs:
+  asteroidsPrefabArray:
   - {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429, type: 3}
   - {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1, type: 3}
   amountToPool: 15
@@ -987,7 +990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72, y: -60}
+  m_AnchoredPosition: {x: 72, y: 0}
   m_SizeDelta: {x: 324.0587, y: 100.8959}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &270900411
@@ -1537,7 +1540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 34}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1789.846, y: 107.7916}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &371669432
@@ -5327,7 +5330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1664397597
 MonoBehaviour:
   m_ObjectHideFlags: 0

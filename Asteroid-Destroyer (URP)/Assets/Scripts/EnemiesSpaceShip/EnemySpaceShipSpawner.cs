@@ -63,14 +63,14 @@ public class EnemySpaceShipSpawner : MonoBehaviour
         Vector3 worldSpawnPoint = mainCamera.ViewportToWorldPoint(spawnPoint);
         worldSpawnPoint.z = 0;
 
-        GameObject pooledAsteroidsPrefab = AsteroidsObjectPool.Instance.GetPooledGameObject();
+        GameObject pooledEnemySpaceShipPrefab = EnemySpaceShipObjectPool.Instance.GetPooledGameObject();
 
-        if (pooledAsteroidsPrefab != null)
+        if (pooledEnemySpaceShipPrefab != null)
         {
-            pooledAsteroidsPrefab.transform.position = worldSpawnPoint;
-            pooledAsteroidsPrefab.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-            pooledAsteroidsPrefab.SetActive(true);
-            rb = pooledAsteroidsPrefab.GetComponent<Rigidbody>();
+            pooledEnemySpaceShipPrefab.transform.position = worldSpawnPoint;
+            //pooledEnemySpaceShipPrefab.transform.rotation = transform.rotation;
+            pooledEnemySpaceShipPrefab.SetActive(true);
+            rb = pooledEnemySpaceShipPrefab.GetComponent<Rigidbody>();
         }
 
         if (rb != null)

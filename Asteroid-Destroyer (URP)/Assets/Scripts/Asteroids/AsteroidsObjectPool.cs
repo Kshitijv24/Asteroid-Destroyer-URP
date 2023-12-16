@@ -29,6 +29,7 @@ public class AsteroidsObjectPool : MonoBehaviour
         {
             GameObject instantiatedGameObject = 
                 Instantiate(asteroidsPrefabArray[Random.Range(0, asteroidsPrefabArray.Length)], transform);
+
             instantiatedGameObject.SetActive(false);
             pooledGameObjectList.Add(instantiatedGameObject);
         }
