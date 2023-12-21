@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float GetPlayerForceMagnitude() => forceMagnitude;
 
+    public Vector3 GetPlayerPosition() => transform.position;
+
     public void SetPlayerForceMagnitude(float forceMagnitude) => this.forceMagnitude = forceMagnitude;
 
     private void ProcessInput()
