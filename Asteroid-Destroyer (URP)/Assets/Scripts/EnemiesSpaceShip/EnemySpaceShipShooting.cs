@@ -5,6 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemySpaceShipShooting : MonoBehaviour
 {
+    public float fixedXRotation = 90f;
+
     PlayerMovement player;
 
     private void Start()

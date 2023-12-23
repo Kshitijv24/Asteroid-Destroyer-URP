@@ -68,7 +68,6 @@ public class EnemySpaceShipSpawner : MonoBehaviour
         if (pooledEnemySpaceShipPrefab != null)
         {
             pooledEnemySpaceShipPrefab.transform.position = worldSpawnPoint;
-            //pooledEnemySpaceShipPrefab.transform.rotation = transform.rotation;
             pooledEnemySpaceShipPrefab.SetActive(true);
             rb = pooledEnemySpaceShipPrefab.GetComponent<Rigidbody>();
         }
