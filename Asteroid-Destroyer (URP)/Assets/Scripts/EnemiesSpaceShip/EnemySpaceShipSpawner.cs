@@ -25,7 +25,7 @@ public class EnemySpaceShipSpawner : MonoBehaviour
             SpawnEnemySpaceShip();
             timer += spawnTime;
 
-            ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
+            //ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
         }
     }
 
@@ -61,7 +61,7 @@ public class EnemySpaceShipSpawner : MonoBehaviour
         }
 
         Vector3 worldSpawnPoint = mainCamera.ViewportToWorldPoint(spawnPoint);
-        worldSpawnPoint.z = 0;
+        worldSpawnPoint.y = 0;
 
         GameObject pooledEnemySpaceShipPrefab = EnemySpaceShipObjectPool.Instance.GetPooledGameObject();
 

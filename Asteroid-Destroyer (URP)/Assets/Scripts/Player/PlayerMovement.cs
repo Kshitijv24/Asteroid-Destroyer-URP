@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
             movementDirection = worldPosition - transform.position;
-            movementDirection.z = 0f;
+            movementDirection.y = 0f;
             movementDirection.Normalize();
         }
         else
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb.velocity == Vector3.zero) return;
 
-        Quaternion targetRotation = Quaternion.LookRotation(rb.velocity, Vector3.back);
+        Quaternion targetRotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
         
         transform.rotation = Quaternion.Lerp(
             transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
