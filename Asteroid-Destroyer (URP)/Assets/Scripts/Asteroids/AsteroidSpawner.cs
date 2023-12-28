@@ -61,7 +61,7 @@ public class AsteroidSpawner : MonoBehaviour
         }
 
         Vector3 worldSpawnPoint = mainCamera.ViewportToWorldPoint(spawnPoint);
-        worldSpawnPoint.z = 0;
+        worldSpawnPoint.y = 0;
 
         GameObject pooledAsteroidsPrefab = AsteroidsObjectPool.Instance.GetPooledGameObject();
 

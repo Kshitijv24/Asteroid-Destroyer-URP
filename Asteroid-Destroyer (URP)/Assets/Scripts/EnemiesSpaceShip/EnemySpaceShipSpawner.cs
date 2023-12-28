@@ -25,7 +25,7 @@ public class EnemySpaceShipSpawner : MonoBehaviour
             SpawnEnemySpaceShip();
             timer += spawnTime;
 
-            //ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
+            ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
         }
     }
 
@@ -33,30 +33,30 @@ public class EnemySpaceShipSpawner : MonoBehaviour
     {
         int side = Random.Range(0, 4);
 
-        Vector2 spawnPoint = Vector2.zero;
-        Vector2 direction = Vector2.zero;
+        Vector3 spawnPoint = Vector2.zero;
+        Vector3 direction = Vector2.zero;
 
         switch (side)
         {
             case 0:
                 spawnPoint.x = 0;
-                spawnPoint.y = Random.value;
-                direction = new Vector2(1f, Random.Range(-1f, 1f));
+                spawnPoint.z = Random.value;
+                direction = new Vector3(1f, 0f, Random.Range(-1f, 1f));
                 break;
             case 1:
                 spawnPoint.x = 1;
-                spawnPoint.y = Random.value;
-                direction = new Vector2(-1f, Random.Range(-1f, 1f));
+                spawnPoint.z = Random.value;
+                direction = new Vector3(-1f, 0f, Random.Range(-1f, 1f));
                 break;
             case 2:
                 spawnPoint.x = Random.value;
-                spawnPoint.y = 0;
-                direction = new Vector2(Random.Range(-1f, 1f), 1f);
+                spawnPoint.z = 0;
+                direction = new Vector3(Random.Range(-1f, 1f), 0f, 1f);
                 break;
             case 3:
                 spawnPoint.x = Random.value;
-                spawnPoint.y = 1;
-                direction = new Vector2(Random.Range(-1f, 1f), -1f);
+                spawnPoint.z = 1;
+                direction = new Vector3(Random.Range(-1f, 1f), 0f, -1f);
                 break;
         }
 
