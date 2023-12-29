@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpaceShipPrefab:
   - {fileID: 2257462330249482115, guid: 4ba12bf68405f704ebe015eadc6d6f63, type: 3}
-  spawnTime: 1
+  spawnTime: 2
   forceRange: {x: 4, y: 4}
 --- !u!4 &1664397598
 Transform:
