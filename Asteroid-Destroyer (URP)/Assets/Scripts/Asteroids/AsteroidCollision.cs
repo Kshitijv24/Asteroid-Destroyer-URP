@@ -71,7 +71,7 @@ public class AsteroidCollision : MonoBehaviour
 
             if(shieldGameObject == null)
             {
-                Instantiate(shieldPickUp, transform.position, Quaternion.identity);
+                Instantiate(shieldPickUp, transform.position, shieldPickUp.transform.rotation);
             }
         }
     }
@@ -84,7 +84,7 @@ public class AsteroidCollision : MonoBehaviour
 
             if (healthGameObject == null)
             {
-                Instantiate(healthPickUp, transform.position, Quaternion.identity);
+                Instantiate(healthPickUp, transform.position, healthPickUp.transform.rotation);
             }
         }
     }

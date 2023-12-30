@@ -48,4 +48,4 @@ MonoBehaviour:
   - {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429, type: 3}
   - {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1, type: 3}
   spawnTime: 1
-  forceRange: {x: 6, y: 6}
+  forceRange: {x: 4, y: 4}

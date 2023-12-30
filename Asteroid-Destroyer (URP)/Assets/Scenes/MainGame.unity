@@ -2516,8 +2516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff1c66237176504198c52611203ba33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldPickUpDropRate: 0.1
-  healthPickUpDropRate: 0.1
+  shieldPickUpDropRate: 0.9
+  healthPickUpDropRate: 0.9
 --- !u!114 &532873987 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
@@ -4261,7 +4261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1372301430
 MonoBehaviour:
   m_ObjectHideFlags: 0
