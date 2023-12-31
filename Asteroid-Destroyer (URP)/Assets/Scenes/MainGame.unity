@@ -1317,7 +1317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 4.01, z: 0.3}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4390,7 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77482a393535d814882c76829b0c70b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfEnemiesNeededToKillToLevelUp: 1
+  noOfEnemiesNeededToKillToLevelUp: 2
   playerLevel: 1
   killedEnemies: 0
 --- !u!1 &1370504840
@@ -5616,7 +5616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1664397597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11864,11 +11864,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AsteroidSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 3681206899399747855, guid: 401cedf7b2b168545983e36ae398c663,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

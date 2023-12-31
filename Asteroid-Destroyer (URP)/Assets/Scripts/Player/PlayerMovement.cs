@@ -86,11 +86,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(viewportPosition.y > 1)
         {
-            newPosition.y = -newPosition.y + 0.1f;
+            newPosition.z = -newPosition.z + 0.1f;
         }
         else if(viewportPosition.y < 0)
         {
-            newPosition.y = -newPosition.y - 0.1f;
+            newPosition.z = -newPosition.z - 0.1f;
         }
 
         transform.position = newPosition;

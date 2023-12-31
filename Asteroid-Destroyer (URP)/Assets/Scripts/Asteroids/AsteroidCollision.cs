@@ -4,7 +4,7 @@ public class AsteroidCollision : MonoBehaviour
 {
     [SerializeField] GameObject asteroidExplosionVFX;
     [SerializeField] ShieldPickUp shieldPickUp;
-    [SerializeField] HealthPickUp healthPickUp; 
+    [SerializeField] HealthPickUp healthPickUp;
     [SerializeField] AudioClip asteroidDestroySFX;
 
     float shieldPickUpDropRate;
