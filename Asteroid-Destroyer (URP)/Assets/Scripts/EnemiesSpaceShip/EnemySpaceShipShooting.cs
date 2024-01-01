@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+[SelectionBase]
 public class EnemySpaceShipShooting : MonoBehaviour
 {
     public float fixedZRotation = 90f;
@@ -26,13 +27,4 @@ public class EnemySpaceShipShooting : MonoBehaviour
 
         transform.LookAt(player.transform.position);
     }
-
-    //private void OldCode()
-    //{
-    //    transform.LookAt(player.transform.position);
-
-    //    Quaternion desiredRotation = Quaternion.Euler(transform.eulerAngles.x, fixedYRotation, fixedZRotation);
-    //    transform.rotation = desiredRotation;
-    //    // rotation y = -90, z = 90.
-    //}
 }
