@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class PowerUpsDemoSO : MonoBehaviour
 {
-	[SerializeField] TextMeshProUGUI currentTextSerializeField;
+    [SerializeField] TextMeshProUGUI currentStats;
 	[SerializeField] PowerUpsScriptableObjectData powerUpsScriptableObjectData;
 
-    private void Start()
+    private void OnEnable()
     {
-        powerUpsScriptableObjectData.currentStats.text = currentTextSerializeField.text;
+        powerUpsScriptableObjectData.currentStats = PlayerMovement.Instance.GetPlayerForceMagnitude();
+        powerUpsScriptableObjectData.upgradedStats = PlayerMovement.Instance.GetPlayerForceMagnitude() + 2;
+
+        currentStats.SetText(
+            powerUpsScriptableObjectData.powerUPDetails,
+            powerUpsScriptableObjectData.currentStats,
+            powerUpsScriptableObjectData.upgradedStats);
     }
 }

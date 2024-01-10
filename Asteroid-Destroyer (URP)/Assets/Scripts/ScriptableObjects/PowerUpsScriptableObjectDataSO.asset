@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad92112e2f823b842af635fadc112741, type: 3}
   m_Name: PowerUpsScriptableObjectDataSO
   m_EditorClassIdentifier: 
+  powerUPDetails: 'Current Stats: {0}, Upgraded Stats: {1}'
+  currentStats: 10
+  upgradedStats: 11

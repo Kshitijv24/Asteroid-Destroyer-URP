@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PowerUpsScriptableObjectDataSO", menuName = "ScriptableObjectFolder/IncreasePlayerForceMagnitudeSO")]
 public class PowerUpsScriptableObjectData : ScriptableObject
 {
-    public TextMeshProUGUI currentStats;
-
-    //private void OnEnable()
-    //{
-    //    currentStats.text = "Current SpaceShip Speed: " + PlayerMovement.Instance.GetPlayerForceMagnitude();
-    //}
+    public string powerUPDetails;
+    public float currentStats;
+    public float upgradedStats;
 
     public void IncreasePlayerForceMagnitudeSO()
     {
