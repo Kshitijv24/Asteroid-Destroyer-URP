@@ -5,20 +5,17 @@ using UnityEngine;
 
 public class IncreaseBulletSpeedLevelUp : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI currentText;
-    [SerializeField] TextMeshProUGUI nextText;
+    [SerializeField] TextMeshProUGUI currentStats;
+    [SerializeField] PowerUpsSO increaseBulletSpeedSO;
 
     private void OnEnable()
     {
-        currentText.SetText("Current: " + PlayerShootingFromUp.Instance.GetBulletSpeed());
-        nextText.SetText("Upgraded: " + PlayerShootingFromUp.Instance.GetBulletSpeed() + 1);
-    }
+        increaseBulletSpeedSO.currentStats = PlayerShootingFromUp.Instance.GetBulletSpeed();
+        increaseBulletSpeedSO.upgradedStats = PlayerShootingFromUp.Instance.GetBulletSpeed() + 1.0f;
 
-    public void IncreaseBulletSpeed()
-	{
-		float bulletSpeedOfUp = PlayerShootingFromUp.Instance.GetBulletSpeed();
-		PlayerShootingFromUp.Instance.SetBulletSpeed(bulletSpeedOfUp + 1.0f);
-        
-		GameManager.Instance.ResumeGameAndHideLevelUpPanel();
-	}
+        currentStats.SetText(
+            increaseBulletSpeedSO.powerUpStatsDetails,
+            increaseBulletSpeedSO.currentStats,
+            increaseBulletSpeedSO.upgradedStats);
+    }
 }

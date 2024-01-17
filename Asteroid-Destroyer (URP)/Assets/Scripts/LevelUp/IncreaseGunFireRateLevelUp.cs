@@ -6,16 +6,16 @@ using UnityEngine;
 public class IncreaseGunFireRateLevelUp : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI currentStats;
-    [SerializeField] PowerUpsSO increaseGunFireRate;
+    [SerializeField] PowerUpsSO increaseGunFireRateSO;
 
     private void OnEnable()
     {
-        increaseGunFireRate.currentStats = PlayerShootingFromUp.Instance.GetBulletFireRate();
-        increaseGunFireRate.upgradedStats = PlayerShootingFromUp.Instance.GetBulletFireRate() - 0.1f;
+        increaseGunFireRateSO.currentStats = PlayerShootingFromUp.Instance.GetBulletFireRate();
+        increaseGunFireRateSO.upgradedStats = PlayerShootingFromUp.Instance.GetBulletFireRate() - 0.1f;
 
         currentStats.SetText(
-            increaseGunFireRate.powerUpStatsDetails,
-            increaseGunFireRate.currentStats,
-            increaseGunFireRate.upgradedStats);
+            increaseGunFireRateSO.powerUpStatsDetails,
+            increaseGunFireRateSO.currentStats,
+            increaseGunFireRateSO.upgradedStats);
     }
 }
