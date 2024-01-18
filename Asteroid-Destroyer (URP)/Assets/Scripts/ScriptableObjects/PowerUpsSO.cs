@@ -7,7 +7,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "IncreaseSO", menuName = "ScriptableObjectFolder/PowerUpsScriptableObjectDataSO")]
 public class PowerUpsSO : ScriptableObject
 {
+    [TextArea(5, 10)]
     public string powerUpStatsDetails;
+
+    public Color textColor;
     public float currentStats;
     public float upgradedStats;
 

@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad92112e2f823b842af635fadc112741, type: 3}
   m_Name: IncreaseBulletSpeedSO
   m_EditorClassIdentifier: 
-  powerUpStatsDetails: 'Current Stats: {0} Upgraded Stats: {1}'
-  currentStats: 0
-  upgradedStats: 0
+  powerUpStatsDetails: 'Current Stats: <color=#E50804><b>{0}</b></color>
+
+
+    Upgraded
+    Stats:
+
+    <color=#42E504><b>{1}</b></color>'
+  textColor: {r: 0.8980392, g: 0.02967588, b: 0.011764714, a: 0}
+  currentStats: 10
+  upgradedStats: 11
