@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class IncreaseHealthPickUpDropRateLevelUp : MonoBehaviour
 {
-	public void IncreaseHealthPickUpDropRate()
-	{
-		float healthPickUpDropRate = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
-		PickUpsDropRateManager.Instance.SetHealthPickUpDropRate(healthPickUpDropRate + 0.1f);
+    [SerializeField] TextMeshProUGUI currentStats;
+    [SerializeField] PowerUpsSO increaseHealthPickupDropRateSO;
 
-		GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+    private void OnEnable()
+    {
+        increaseHealthPickupDropRateSO.currentStats = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
+        increaseHealthPickupDropRateSO.upgradedStats = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate() + 0.1f;
+
+        currentStats.SetText(
+            increaseHealthPickupDropRateSO.powerUpStatsDetails,
+            increaseHealthPickupDropRateSO.currentStats,
+            increaseHealthPickupDropRateSO.upgradedStats);
     }
 }

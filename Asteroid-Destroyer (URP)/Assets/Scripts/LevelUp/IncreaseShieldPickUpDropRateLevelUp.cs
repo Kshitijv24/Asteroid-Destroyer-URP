@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class IncreaseShieldPickUpDropRateLevelUp : MonoBehaviour
 {
-    public void IncreaseShieldPickUpDropRate()
-    {
-        float shieldPickUpDropRate = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate();
-        PickUpsDropRateManager.Instance.SetShieldPickUpDropRate(shieldPickUpDropRate + 0.1f);
+    [SerializeField] TextMeshProUGUI currentStats;
+    [SerializeField] PowerUpsSO increaseShieldPickupDropRateSO;
 
-        GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+    private void OnEnable()
+    {
+        increaseShieldPickupDropRateSO.currentStats = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate();
+        increaseShieldPickupDropRateSO.upgradedStats = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate() + 0.1f;
+
+        currentStats.SetText(
+            increaseShieldPickupDropRateSO.powerUpStatsDetails,
+            increaseShieldPickupDropRateSO.currentStats,
+            increaseShieldPickupDropRateSO.upgradedStats);
     }
 }

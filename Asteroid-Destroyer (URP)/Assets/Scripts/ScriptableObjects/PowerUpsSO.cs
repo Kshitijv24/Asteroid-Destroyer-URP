@@ -37,6 +37,22 @@ public class PowerUpsSO : ScriptableObject
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 
+    public void IncreaseHealthPickUpDropRate()
+    {
+        float healthPickUpDropRate = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
+        PickUpsDropRateManager.Instance.SetHealthPickUpDropRate(healthPickUpDropRate + 0.1f);
+
+        GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+    }
+
+    public void IncreaseShieldPickUpDropRate()
+    {
+        float shieldPickUpDropRate = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate();
+        PickUpsDropRateManager.Instance.SetShieldPickUpDropRate(shieldPickUpDropRate + 0.1f);
+
+        GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+    }
+
     public void ActivateLeftShootingPoint()
     {
         PlayerShootingPointManager.Instance.ActivateShootingPointLeft();
