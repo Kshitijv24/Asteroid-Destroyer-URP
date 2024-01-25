@@ -25,7 +25,6 @@ public class PowerUpsSO : ScriptableObject
     {
         float firingRateOfUp = PlayerShootingFromUp.Instance.GetBulletFireRate();
         PlayerShootingFromUp.Instance.SetBulletFiringRate(firingRateOfUp - 0.1f);
-
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 
@@ -33,7 +32,6 @@ public class PowerUpsSO : ScriptableObject
     {
         float bulletSpeedOfUp = PlayerShootingFromUp.Instance.GetBulletSpeed();
         PlayerShootingFromUp.Instance.SetBulletSpeed(bulletSpeedOfUp + 1.0f);
-
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 
@@ -41,7 +39,6 @@ public class PowerUpsSO : ScriptableObject
     {
         float healthPickUpDropRate = PickUpsDropRateManager.Instance.GetHealthPickUpDropRate();
         PickUpsDropRateManager.Instance.SetHealthPickUpDropRate(healthPickUpDropRate + 0.1f);
-
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 
@@ -49,7 +46,6 @@ public class PowerUpsSO : ScriptableObject
     {
         float shieldPickUpDropRate = PickUpsDropRateManager.Instance.GetShieldPickUpDropRate();
         PickUpsDropRateManager.Instance.SetShieldPickUpDropRate(shieldPickUpDropRate + 0.1f);
-
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 

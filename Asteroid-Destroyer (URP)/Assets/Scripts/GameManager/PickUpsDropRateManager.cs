@@ -25,7 +25,6 @@ public class PickUpsDropRateManager : MonoBehaviour
     public float GetHealthPickUpDropRate() => healthPickUpDropRate;
 
     public void SetShieldPickUpDropRate(float shieldPickUpDropRate) => this.shieldPickUpDropRate = shieldPickUpDropRate;
-
     public void SetHealthPickUpDropRate(float healthPickUpDropRate) => this.healthPickUpDropRate = healthPickUpDropRate;
 
 }
