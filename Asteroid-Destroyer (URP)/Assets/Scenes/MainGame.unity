@@ -1129,7 +1129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 72, y: 0}
+  m_AnchoredPosition: {x: 89, y: -48}
   m_SizeDelta: {x: 324.0587, y: 100.8959}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &270900411
@@ -1679,7 +1679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 26}
   m_SizeDelta: {x: 1789.846, y: 107.7916}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &371669432
@@ -4668,7 +4668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77482a393535d814882c76829b0c70b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfEnemiesNeededToKillToLevelUp: 1
+  noOfEnemiesNeededToKillToLevelUp: 2
   playerLevel: 1
   killedEnemies: 0
 --- !u!1 &1372301429
@@ -6036,7 +6036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1664397597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12552,7 +12552,7 @@ PrefabInstance:
     - target: {fileID: 3681206899399747855, guid: 401cedf7b2b168545983e36ae398c663,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
