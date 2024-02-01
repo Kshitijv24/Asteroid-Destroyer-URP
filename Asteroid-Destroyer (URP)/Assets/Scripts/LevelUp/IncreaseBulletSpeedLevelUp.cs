@@ -10,8 +10,8 @@ public class IncreaseBulletSpeedLevelUp : MonoBehaviour
 
     private void OnEnable()
     {
-        increaseBulletSpeedSO.currentStats = PlayerShooting.Instance.GetBulletSpeed();
-        increaseBulletSpeedSO.upgradedStats = PlayerShooting.Instance.GetBulletSpeed() + 1.0f;
+        increaseBulletSpeedSO.currentStats = PlayerShootingData.Instance.GetBulletSpeed();
+        increaseBulletSpeedSO.currentStats = PlayerShootingData.Instance.GetBulletSpeed() + 1.0f;
 
         currentStats.SetText(
             increaseBulletSpeedSO.powerUpStatsDetails,

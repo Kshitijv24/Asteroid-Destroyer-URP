@@ -23,15 +23,15 @@ public class PowerUpsSO : ScriptableObject
 
     public void IncreaseBulletFiringRate()
     {
-        float firingRateOfUp = PlayerShooting.Instance.GetBulletFireRate();
-        PlayerShooting.Instance.SetBulletFiringRate(firingRateOfUp - 0.1f);
+        float firingRateOfUp = PlayerShootingData.Instance.GetBulletFireRate();
+        PlayerShootingData.Instance.SetBulletFiringRate(firingRateOfUp - 0.1f);
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 
     public void IncreaseBulletSpeed()
     {
-        float bulletSpeedOfUp = PlayerShooting.Instance.GetBulletSpeed();
-        PlayerShooting.Instance.SetBulletSpeed(bulletSpeedOfUp + 1.0f);
+        float bulletSpeedOfUp = PlayerShootingData.Instance.GetBulletSpeed();
+        PlayerShootingData.Instance.SetBulletSpeed(bulletSpeedOfUp + 1.0f);
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
     }
 

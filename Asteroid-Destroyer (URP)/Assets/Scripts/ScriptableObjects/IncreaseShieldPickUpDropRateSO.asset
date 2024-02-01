@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad92112e2f823b842af635fadc112741, type: 3}
   m_Name: IncreaseShieldPickUpDropRateSO
   m_EditorClassIdentifier: 
+  playerShootingDataSO: {fileID: 11400000, guid: 8f724fe610d783e4e8fd8718dd05976a,
+    type: 2}
   powerUpStatsDetails: 'Current Stats: <color=#E50804><b>{0}</b></color>
 
 
@@ -20,5 +22,5 @@ MonoBehaviour:
 
     <color=#42E504><b>{1}</b></color>'
   textColor: {r: 0, g: 0, b: 0, a: 0}
-  currentStats: 0
-  upgradedStats: 0
+  currentStats: 0.2
+  upgradedStats: 0.3

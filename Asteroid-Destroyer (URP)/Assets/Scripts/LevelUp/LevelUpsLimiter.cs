@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelUpsLimiter : MonoBehaviour
 {
-	[SerializeField] GameObject increaseBulletFireRateLevelUp;
+    [SerializeField] GameObject increaseBulletFireRateLevelUp;
     [SerializeField] GameObject increaseShipSpeedLevelUp;
     [SerializeField] GameObject increaseBulletSpeedLevelUp;
     [SerializeField] GameObject increaseHealthPickUpDropRateLevelUp;
@@ -29,7 +29,7 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletFireRate()
     {
-        if (PlayerShooting.Instance.GetBulletFireRate() == maxBulletFireRate)
+        if (PlayerShootingData.Instance.GetBulletFireRate() == maxBulletFireRate)
         {
             ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletFireRateLevelUp);
             increaseBulletFireRateLevelUp.SetActive(false);
@@ -47,7 +47,7 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletSpeed()
     {
-        if(PlayerShooting.Instance.GetBulletSpeed() == maxBulletSpeed)
+        if(PlayerShootingData.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
             ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletSpeedLevelUp);
             increaseBulletSpeedLevelUp.SetActive(false);

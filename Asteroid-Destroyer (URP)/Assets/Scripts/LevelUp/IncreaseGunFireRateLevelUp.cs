@@ -10,8 +10,8 @@ public class IncreaseGunFireRateLevelUp : MonoBehaviour
 
     private void OnEnable()
     {
-        increaseGunFireRateSO.currentStats = PlayerShooting.Instance.GetBulletFireRate();
-        increaseGunFireRateSO.upgradedStats = PlayerShooting.Instance.GetBulletFireRate() - 0.1f;
+        increaseGunFireRateSO.currentStats = PlayerShootingData.Instance.GetBulletFireRate();
+        increaseGunFireRateSO.upgradedStats = PlayerShootingData.Instance.GetBulletFireRate() - 0.1f;
 
         currentStats.SetText(
             increaseGunFireRateSO.powerUpStatsDetails,

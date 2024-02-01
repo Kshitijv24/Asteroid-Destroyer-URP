@@ -5,29 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public static PlayerShooting Instance { get; private set; }
-
-	[SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float bulletFireRate = 0.5f;
-    [SerializeField] float bulletSpeed = 10f;
     [SerializeField] AudioClip bulletSFX;
 
     float nextFireTime;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
-            return;
-        }
-    }
 
     private void Update()
     {
@@ -39,40 +20,24 @@ public class PlayerShooting : MonoBehaviour
 
     private bool CanFire() => Time.time >= nextFireTime;
 
-    public float GetBulletSpeed() => bulletSpeed;
-
-    public float GetBulletFireRate() => bulletFireRate;
-
-    public float SetBulletFiringRate(float bulletFireRate)
-    {
-        this.bulletFireRate = bulletFireRate;
-        return bulletFireRate;
-    }
-
-    public float SetBulletSpeed(float bulletSpeed)
-    {
-        this.bulletSpeed = bulletSpeed;
-        return bulletSpeed;
-    }
-
     private void FireBullet()
     {
         AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
-        nextFireTime = Time.time + bulletFireRate;
+        nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
 
         if (pooledBulletsPrefab != null)
         {
-            pooledBulletsPrefab.transform.position = bulletSpawnPoint.position;
-            pooledBulletsPrefab.transform.rotation = bulletSpawnPoint.rotation;
+            pooledBulletsPrefab.transform.position = transform.position;
+            pooledBulletsPrefab.transform.rotation = transform.rotation;
 
             pooledBulletsPrefab.SetActive(true);
 
             Rigidbody bulletRb = pooledBulletsPrefab.GetComponent<Rigidbody>();
             bulletRb.velocity = Vector3.zero;
             bulletRb.angularVelocity = Vector3.zero;
-            bulletRb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
+            bulletRb.AddForce(transform.forward * PlayerShootingData.Instance.GetBulletSpeed(), ForceMode.Impulse);
         }
     }
 
