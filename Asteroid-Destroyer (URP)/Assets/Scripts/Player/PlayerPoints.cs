@@ -18,11 +18,12 @@ public class PlayerPoints : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
         }
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
     }
 

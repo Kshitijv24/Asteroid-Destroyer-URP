@@ -9,8 +9,8 @@ public class LevelUpsLimiter : MonoBehaviour
     [SerializeField] GameObject increaseBulletSpeedLevelUp;
     [SerializeField] GameObject increaseHealthPickUpDropRateLevelUp;
     [SerializeField] GameObject increaseShieldPickUpDropRateLevelUp;
-    [SerializeField] GameObject shootingPointRight;
-    [SerializeField] GameObject shootingPointLeft;
+    [SerializeField] GameObject shootingPointLeftLevelUp;
+    [SerializeField] GameObject shootingPointRightLevelUp;
     [SerializeField] float maxBulletFireRate = 0.3f;
     [SerializeField] float maxPlayerShipSpeed = 16f;
     [SerializeField] float maxBulletSpeed = 15f;
@@ -29,7 +29,7 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletFireRate()
     {
-        if (PlayerShootingFromUp.Instance.GetBulletFireRate() == maxBulletFireRate)
+        if (PlayerShooting.Instance.GetBulletFireRate() == maxBulletFireRate)
         {
             ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletFireRateLevelUp);
             increaseBulletFireRateLevelUp.SetActive(false);
@@ -47,7 +47,7 @@ public class LevelUpsLimiter : MonoBehaviour
 
     private void LimitIncreaseOnBulletSpeed()
     {
-        if(PlayerShootingFromUp.Instance.GetBulletSpeed() == maxBulletSpeed)
+        if(PlayerShooting.Instance.GetBulletSpeed() == maxBulletSpeed)
         {
             ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(increaseBulletSpeedLevelUp);
             increaseBulletSpeedLevelUp.SetActive(false);
@@ -76,13 +76,13 @@ public class LevelUpsLimiter : MonoBehaviour
     {
         if (PlayerShootingPointManager.Instance.IsShootingPointLeftActive())
         {
-            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointLeft);
-            shootingPointLeft.SetActive(false);
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointLeftLevelUp);
+            shootingPointLeftLevelUp.SetActive(false);
         }
         if (PlayerShootingPointManager.Instance.IsShootingPointRightActive())
         {
-            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointRight);
-            shootingPointRight.SetActive(false);
+            ShowRandomPowerUpUpgradeOption.Instance.allPowerUpsList.Remove(shootingPointRightLevelUp);
+            shootingPointRightLevelUp.SetActive(false);
         }
     }
 }

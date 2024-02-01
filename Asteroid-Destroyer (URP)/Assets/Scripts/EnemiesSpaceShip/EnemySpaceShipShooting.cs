@@ -6,10 +6,10 @@ using static UnityEngine.GraphicsBuffer;
 [SelectionBase]
 public class EnemySpaceShipShooting : MonoBehaviour
 {
-    public float fixedZRotation = 90f;
-    public float fixedYRotation = -90f;
+    [SerializeField] float fireTime;
 
     PlayerMovement player;
+    //bool canFire;
 
     private void Start()
     {
@@ -26,5 +26,13 @@ public class EnemySpaceShipShooting : MonoBehaviour
         if(player == null) return;
 
         transform.LookAt(player.transform.position);
+    }
+
+    private void ShootAtThePlayer()
+    {
+        if(fireTime <= Time.deltaTime)
+        {
+            //canFire = true;
+        }
     }
 }

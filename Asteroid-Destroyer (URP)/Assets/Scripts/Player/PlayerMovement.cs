@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
 
         rb = GetComponent<Rigidbody>();

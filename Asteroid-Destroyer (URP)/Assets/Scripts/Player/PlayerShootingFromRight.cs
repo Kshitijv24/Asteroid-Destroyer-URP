@@ -22,6 +22,8 @@ public class PlayerShootingFromRight : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
     }
 
@@ -38,7 +40,7 @@ public class PlayerShootingFromRight : MonoBehaviour
     private void FireBullet()
     {
         AudioManager.Instance.PlaySound(bulletSFX, 0.1f);
-        nextFireTime = Time.time + PlayerShootingFromUp.Instance.GetBulletFireRate();
+        nextFireTime = Time.time + PlayerShooting.Instance.GetBulletFireRate();
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
 
@@ -55,7 +57,7 @@ public class PlayerShootingFromRight : MonoBehaviour
             
             bulletRb.AddForce(
                 bulletSpawnPoint.forward * 
-                PlayerShootingFromUp.Instance.GetBulletSpeed(), 
+                PlayerShooting.Instance.GetBulletSpeed(), 
                 ForceMode.Impulse);
         }
     }

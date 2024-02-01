@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShootingFromUp : MonoBehaviour
+public class PlayerShooting : MonoBehaviour
 {
-    public static PlayerShootingFromUp Instance { get; private set; }
+    public static PlayerShooting Instance { get; private set; }
 
 	[SerializeField] Transform bulletSpawnPoint;
-	[SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletFireRate = 0.5f;
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] AudioClip bulletSFX;
@@ -24,6 +24,8 @@ public class PlayerShootingFromUp : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
     }
 

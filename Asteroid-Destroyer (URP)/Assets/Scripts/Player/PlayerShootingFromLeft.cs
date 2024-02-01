@@ -7,7 +7,6 @@ public class PlayerShootingFromLeft : MonoBehaviour
 {
     public static PlayerShootingFromLeft Instance { get; private set; }
 
-    [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] AudioClip bulletSFX;
 
@@ -22,6 +21,8 @@ public class PlayerShootingFromLeft : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
     }
 
@@ -38,14 +39,14 @@ public class PlayerShootingFromLeft : MonoBehaviour
     private void FireBullet()
     {
         AudioManager.Instance.PlaySound(bulletSFX, 0.1f);
-        nextFireTime = Time.time + PlayerShootingFromUp.Instance.GetBulletFireRate();
+        nextFireTime = Time.time + PlayerShooting.Instance.GetBulletFireRate();
 
         GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
 
         if (pooledBulletsPrefab != null)
         {
-            pooledBulletsPrefab.transform.position = bulletSpawnPoint.position;
-            pooledBulletsPrefab.transform.rotation = bulletSpawnPoint.rotation;
+            pooledBulletsPrefab.transform.position = transform.position;
+            pooledBulletsPrefab.transform.rotation = transform.rotation;
 
             pooledBulletsPrefab.SetActive(true);
 
@@ -53,10 +54,7 @@ public class PlayerShootingFromLeft : MonoBehaviour
             bulletRb.velocity = Vector3.zero;
             bulletRb.angularVelocity = Vector3.zero;
 
-            bulletRb.AddForce(
-                bulletSpawnPoint.forward * 
-                PlayerShootingFromUp.Instance.GetBulletSpeed(), 
-                ForceMode.Impulse);
+            bulletRb.AddForce(transform.forward * PlayerShooting.Instance.GetBulletSpeed(), ForceMode.Impulse);
         }
     }
 }

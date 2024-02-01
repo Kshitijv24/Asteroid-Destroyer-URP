@@ -18,12 +18,24 @@ public class PlayerShootingPointManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("There are more than one " + this.GetType() + " Instances", this);
+            return;
         }
     }
 
-    public bool IsShootingPointLeftActive() => shootingPointLeft.activeSelf;
+    public bool IsShootingPointLeftActive()
+    {
+        if (shootingPointLeft == null) return false;
 
-    public bool IsShootingPointRightActive() => shootingPointRight.activeSelf;
+        return shootingPointLeft.activeSelf;
+    }
+
+    public bool IsShootingPointRightActive()
+    {
+        if (shootingPointRight == null) return false;
+
+        return shootingPointRight.activeSelf;
+    }
 
     public void ActivateShootingPointLeft() => shootingPointLeft.SetActive(true);
 
