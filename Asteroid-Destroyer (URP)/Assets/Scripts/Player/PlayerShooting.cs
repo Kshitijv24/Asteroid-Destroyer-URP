@@ -18,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    private bool CanFire() => Time.time >= nextFireTime;
+    public bool CanFire() => Time.time >= nextFireTime;
 
     private void FireBullet()
     {
@@ -40,5 +40,4 @@ public class PlayerShooting : MonoBehaviour
             bulletRb.AddForce(transform.forward * PlayerShootingData.Instance.GetBulletSpeed(), ForceMode.Impulse);
         }
     }
-
 }

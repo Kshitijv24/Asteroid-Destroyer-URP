@@ -6,8 +6,12 @@ public class PlayerShootingPointManager : MonoBehaviour
 {
     public static PlayerShootingPointManager Instance { get; private set; }
 
+	[SerializeField] GameObject shootingPointUpper;
     [SerializeField] GameObject shootingPointLeft;
 	[SerializeField] GameObject shootingPointRight;
+
+    bool activatedOnceLeft;
+    bool activatedOnceRight;
 
     private void Awake()
     {
@@ -37,7 +41,41 @@ public class PlayerShootingPointManager : MonoBehaviour
         return shootingPointRight.activeSelf;
     }
 
-    public void ActivateShootingPointLeft() => shootingPointLeft.SetActive(true);
+    public void ActivateShootingPointUpper() => shootingPointUpper.SetActive(true);
 
-    public void ActivateShootingPointRight() => shootingPointRight.SetActive(true);
+    public void ActivateShootingPointLeft()
+    {
+        activatedOnceLeft = true;
+        shootingPointLeft.SetActive(true);
+    }
+
+    public void ActivateShootingPointRight()
+    {
+        activatedOnceRight = true;
+        shootingPointRight.SetActive(true);
+    }
+
+    public void DeactivateAllShootingPoints()
+    {
+        shootingPointUpper.SetActive(false);
+
+        shootingPointLeft.SetActive(false);
+
+        shootingPointRight.SetActive(false);
+    }
+
+    public void ActivateAllShootingPoints()
+    {
+        shootingPointUpper.SetActive(true);
+        
+        if (!shootingPointLeft.activeSelf && activatedOnceLeft)
+        {
+            shootingPointLeft.SetActive(true);
+        }
+
+        if (!shootingPointRight.activeSelf && activatedOnceRight)
+        {
+            shootingPointRight.SetActive(true);
+        }
+    }
 }

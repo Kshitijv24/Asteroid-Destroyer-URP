@@ -51,13 +51,15 @@ public class PowerUpsSO : ScriptableObject
 
     public void ActivateLeftShootingPoint()
     {
-        PlayerShootingPointManager.Instance.ActivateShootingPointLeft();
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+        PlayerShootingPointManager.Instance.ActivateShootingPointLeft();
+        PlayerShootingPointManager.Instance.DeactivateAllShootingPoints();
     }
 
     public void ActivateRightShootingPoint()
     {
-        PlayerShootingPointManager.Instance.ActivateShootingPointRight();
         GameManager.Instance.ResumeGameAndHideLevelUpPanel();
+        PlayerShootingPointManager.Instance.ActivateShootingPointRight();
+        PlayerShootingPointManager.Instance.DeactivateAllShootingPoints();
     }
 }

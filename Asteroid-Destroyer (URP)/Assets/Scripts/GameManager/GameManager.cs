@@ -32,12 +32,8 @@ public class GameManager : MonoBehaviour
 
     public void PauseGameAndShowLevelUpPanel()
     {
-        //foreach (PlayerShooting playerShooting in FindObjectsOfType(typeof(PlayerShooting)))
-        //{
-        //    playerShooting.enabled = false;
-        //}
+        PlayerShootingPointManager.Instance.DeactivateAllShootingPoints();
 
-        //FindObjectOfType<PlayerShooting>().enabled = false;
         Time.timeScale = 0;
         levelUpCanvas.SetActive(true);
         ScoreSystem.Instance.GetScoreTextUI().enabled = false;
@@ -47,16 +43,16 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGameAndHideLevelUpPanel()
     {
-        //foreach (PlayerShooting playerShooting in FindObjectsOfType(typeof(PlayerShooting)))
-        //{
-        //    playerShooting.enabled = true;
-        //}
-
-        //FindObjectOfType<PlayerShooting>().enabled = true;
+        Invoke("WaitToShoot", 0.5f);
         Time.timeScale = 1;
         levelUpCanvas.SetActive(false);
         ScoreSystem.Instance.GetScoreTextUI().enabled = true;
         PlayerHealth.Instance.GetPlayerHealthTextUI().enabled = true;
         isPlayerLevelingUp = false;
+    }
+
+    private void WaitToShoot()
+    {
+        PlayerShootingPointManager.Instance.ActivateAllShootingPoints();
     }
 }

@@ -44,11 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855c87aae7f506d4d9e1eb73cdf56a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 2516753593541605780}
   bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
     type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &1336625012488660876
 GameObject:
@@ -94,11 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855c87aae7f506d4d9e1eb73cdf56a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 1413508423634426407}
   bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
     type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &3846561846097698746
 GameObject:
@@ -144,11 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855c87aae7f506d4d9e1eb73cdf56a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 3003068134820751526}
   bulletPrefab: {fileID: 2293066014174508092, guid: c99ded570fffc68489032eacbcace44d,
     type: 3}
-  bulletFireRate: 0.5
-  bulletSpeed: 10
   bulletSFX: {fileID: 8300000, guid: 9af6759ddde71494da3cb35a2cb747ef, type: 3}
 --- !u!1 &7265907184990835513
 GameObject:
@@ -301,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc277dbe62d2bc41a1e6364f9e48d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingPointUpper: {fileID: 569282548234650826}
   shootingPointLeft: {fileID: 3846561846097698746}
   shootingPointRight: {fileID: 1336625012488660876}
 --- !u!1001 &2125591001633403986
