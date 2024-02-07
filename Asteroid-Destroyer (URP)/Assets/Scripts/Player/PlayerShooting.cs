@@ -25,7 +25,7 @@ public class PlayerShooting : MonoBehaviour
         AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
         nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
 
-        GameObject pooledBulletsPrefab = BulletObjectPool.Instance.GetPooledGameObject();
+        GameObject pooledBulletsPrefab = PlayerBulletObjectPool.Instance.GetPooledGameObject();
 
         if (pooledBulletsPrefab != null)
         {

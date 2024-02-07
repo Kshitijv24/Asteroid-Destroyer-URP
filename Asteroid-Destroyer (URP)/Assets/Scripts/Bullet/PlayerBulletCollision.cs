@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletCollision : MonoBehaviour
+public class PlayerBulletCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

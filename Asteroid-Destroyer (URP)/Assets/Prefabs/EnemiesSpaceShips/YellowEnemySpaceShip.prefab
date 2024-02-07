@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69647105bf8a0944398329d8c77f8a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedZRotation: 90
-  fixedYRotation: -90
+  bulletSpawnPoint: {fileID: 3467983810227633083}
+  nextFireTime: 5
+  bulletSpeed: 10
 --- !u!1 &2317927021654668555
 GameObject:
   m_ObjectHideFlags: 0

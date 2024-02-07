@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletObjectPool : MonoBehaviour
+public class PlayerBulletObjectPool : MonoBehaviour
 {
-    public static BulletObjectPool Instance { get; private set; }
+    public static PlayerBulletObjectPool Instance { get; private set; }
 
     [SerializeField] GameObject[] bulletPrefabArray;
     [SerializeField] int amountToPool = 10;

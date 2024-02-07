@@ -6,10 +6,11 @@ using static UnityEngine.GraphicsBuffer;
 [SelectionBase]
 public class EnemySpaceShipShooting : MonoBehaviour
 {
-    [SerializeField] float fireTime;
+    [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] float nextFireTime;
+    [SerializeField] float bulletSpeed;
 
     PlayerMovement player;
-    //bool canFire;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class EnemySpaceShipShooting : MonoBehaviour
     private void Update()
     {
         LookAtPlayerSpaceShip();
+        ShootAtThePlayer();
     }
 
     private void LookAtPlayerSpaceShip()
@@ -28,11 +30,34 @@ public class EnemySpaceShipShooting : MonoBehaviour
         transform.LookAt(player.transform.position);
     }
 
+    public bool CanFire() => Time.time >= nextFireTime;
+
     private void ShootAtThePlayer()
     {
-        if(fireTime <= Time.deltaTime)
+        if(CanFire())
         {
-            //canFire = true;
+            FireBullet();
+        }
+    }
+
+    private void FireBullet()
+    {
+        //AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
+        //nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
+
+        GameObject pooledBulletsPrefab = EnemyBulletObjectPool.Instance.GetPooledGameObject();
+
+        if (pooledBulletsPrefab != null)
+        {
+            pooledBulletsPrefab.transform.position = bulletSpawnPoint.position;
+            pooledBulletsPrefab.transform.rotation = bulletSpawnPoint.rotation;
+
+            pooledBulletsPrefab.SetActive(true);
+
+            Rigidbody bulletRb = pooledBulletsPrefab.GetComponent<Rigidbody>();
+            bulletRb.velocity = Vector3.zero;
+            bulletRb.angularVelocity = Vector3.zero;
+            bulletRb.AddForce(bulletSpawnPoint.forward * bulletSpeed, ForceMode.Impulse);
         }
     }
 }
