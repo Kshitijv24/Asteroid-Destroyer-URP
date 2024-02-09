@@ -172,7 +172,7 @@ MonoBehaviour:
   playerDamagedVFX: {fileID: 671631295635052362}
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
-  playerHP: 5
+  playerHP: 100
 --- !u!114 &4957015919043350652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 4205100941136379854, guid: 42249240e53e3bd4e8d0b2c289b239e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1
+      value: -5.3
       objectReference: {fileID: 0}
     - target: {fileID: 4205100941136379854, guid: 42249240e53e3bd4e8d0b2c289b239e5,
         type: 3}

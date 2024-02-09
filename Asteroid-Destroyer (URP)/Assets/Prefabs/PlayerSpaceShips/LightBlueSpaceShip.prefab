@@ -219,7 +219,7 @@ MonoBehaviour:
   playerDamagedVFX: {fileID: 6670534559313003938}
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
-  playerHP: 3
+  playerHP: 100
 --- !u!114 &1439989299840219136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc277dbe62d2bc41a1e6364f9e48d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingPointUpper: {fileID: 4454188096492823359}
   shootingPointLeft: {fileID: 1277513869455609296}
   shootingPointRight: {fileID: 731268434873920327}
-  shootingPointUpper: {fileID: 4454188096492823359}
 --- !u!1 &4454188096492823359
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ PrefabInstance:
     - target: {fileID: 4205100941136379854, guid: 42249240e53e3bd4e8d0b2c289b239e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1
+      value: -5.22
       objectReference: {fileID: 0}
     - target: {fileID: 4205100941136379854, guid: 42249240e53e3bd4e8d0b2c289b239e5,
         type: 3}
