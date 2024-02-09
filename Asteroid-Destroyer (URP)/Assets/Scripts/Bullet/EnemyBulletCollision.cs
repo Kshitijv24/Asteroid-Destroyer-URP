@@ -15,7 +15,7 @@ public class EnemyBulletCollision : MonoBehaviour
 
         if (player != null)
         {
-            Destroy(other.gameObject);
+            player.DamagePlayer(1);
             gameObject.SetActive(false);
         }
     }

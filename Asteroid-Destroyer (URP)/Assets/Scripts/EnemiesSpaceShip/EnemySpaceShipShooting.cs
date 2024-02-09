@@ -7,9 +7,10 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemySpaceShipShooting : MonoBehaviour
 {
     [SerializeField] Transform bulletSpawnPoint;
-    [SerializeField] float nextFireTime;
     [SerializeField] float bulletSpeed;
+    [SerializeField] float bulletFireRate;
 
+    float nextFireTime;
     PlayerMovement player;
 
     private void Start()
@@ -43,7 +44,7 @@ public class EnemySpaceShipShooting : MonoBehaviour
     private void FireBullet()
     {
         //AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
-        //nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
+        nextFireTime = Time.time + bulletFireRate;
 
         GameObject pooledBulletsPrefab = EnemyBulletObjectPool.Instance.GetPooledGameObject();
 
