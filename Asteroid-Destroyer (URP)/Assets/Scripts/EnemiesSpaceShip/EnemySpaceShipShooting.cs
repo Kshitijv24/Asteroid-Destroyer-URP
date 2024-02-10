@@ -9,8 +9,8 @@ public class EnemySpaceShipShooting : MonoBehaviour
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] float bulletSpeed;
     [SerializeField] float bulletFireRate;
+    [SerializeField] float nextFireTime;
 
-    float nextFireTime;
     PlayerMovement player;
 
     private void Start()

@@ -137,6 +137,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 3467983810227633083}
   bulletSpeed: 6.5
   bulletFireRate: 3.5
+  nextFireTime: 3.5
 --- !u!1 &2317927021654668555
 GameObject:
   m_ObjectHideFlags: 0
