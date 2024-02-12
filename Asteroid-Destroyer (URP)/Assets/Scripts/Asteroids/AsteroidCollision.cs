@@ -21,6 +21,7 @@ public class AsteroidCollision : MonoBehaviour
         HandleAsteroidCollisionWithOtherAsteroids(other);
         HandleAsteroidCollisionWithPlayer(other);
     }
+
     private void HandleAsteroidCollisionWithOtherAsteroids(Collider other)
     {
         if (other.GetComponent<AsteroidCollision>())

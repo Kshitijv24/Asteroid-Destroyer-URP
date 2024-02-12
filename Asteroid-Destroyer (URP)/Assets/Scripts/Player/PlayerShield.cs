@@ -7,7 +7,8 @@ public class PlayerShield : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AsteroidCollision asteroid = other.GetComponent<AsteroidCollision>();
-        EnemySpaceShipCollision enemySpaceShipCollision = other.GetComponent<EnemySpaceShipCollision>();
+        EnemySpaceShipCollision enemySpaceShip = other.GetComponent<EnemySpaceShipCollision>();
+        EnemyBulletCollision enemyBullet = other.GetComponent<EnemyBulletCollision>();
 
         if (asteroid != null)
         {
@@ -15,9 +16,15 @@ public class PlayerShield : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (enemySpaceShipCollision != null)
+        if (enemySpaceShip != null)
         {
-            enemySpaceShipCollision.EnemySpaceShipDestroyedByPlayer();
+            enemySpaceShip.EnemySpaceShipDestroyedByPlayer();
+            gameObject.SetActive(false);
+        }
+
+        if(enemyBullet != null)
+        {
+            enemyBullet.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }
