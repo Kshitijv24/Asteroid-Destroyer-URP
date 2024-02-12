@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpaceShipPrefabArray:
   - {fileID: 2257462330249482115, guid: 4ba12bf68405f704ebe015eadc6d6f63, type: 3}
-  amountToPool: 30
+  amountToPool: 15
 --- !u!1 &28039054
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
   asteroidsPrefabArray:
   - {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429, type: 3}
   - {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1, type: 3}
-  amountToPool: 30
+  amountToPool: 15
 --- !u!1 &183561887
 GameObject:
   m_ObjectHideFlags: 0
@@ -12704,6 +12704,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: asteroidPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: asteroidPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429,
+        type: 3}
+    - target: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: asteroidPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1,
+        type: 3}
+    - target: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: asteroidPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 3064304041773876471, guid: 5603f8a2a4ef5d9478eb7ad55603d429,
+        type: 3}
+    - target: {fileID: 1832077545041355584, guid: 401cedf7b2b168545983e36ae398c663,
+        type: 3}
+      propertyPath: asteroidPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 3053591599448038047, guid: 0549254cf59188a49bc7dbd21eeb8da1,
+        type: 3}
     - target: {fileID: 3681206899399747855, guid: 401cedf7b2b168545983e36ae398c663,
         type: 3}
       propertyPath: m_Name
