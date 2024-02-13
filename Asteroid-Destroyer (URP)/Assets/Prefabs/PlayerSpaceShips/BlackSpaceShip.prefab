@@ -266,7 +266,7 @@ MonoBehaviour:
   playerDamagedVFX: {fileID: 6263805062974440042}
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
-  playerHP: 100
+  playerHP: 3
 --- !u!114 &3881979076813645061
 MonoBehaviour:
   m_ObjectHideFlags: 0

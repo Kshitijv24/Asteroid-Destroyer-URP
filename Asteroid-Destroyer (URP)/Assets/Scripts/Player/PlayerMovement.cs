@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 10;
 
     Rigidbody rb;
-    Vector3 movementDirection;
+    Vector2 movementDirection;
     Camera mainCamera;
 
     private void Awake()
@@ -35,44 +35,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        ProcessInput();
         KeepPlayerOnScreen();
         RotateToFaceVelocity();
     }
 
     private void FixedUpdate()
     {
-        if (movementDirection == Vector3.zero) return;
+        if (movementDirection == Vector2.zero) return;
 
-        rb.AddForce(movementDirection * forceMagnitude, ForceMode.Force);
+        MovePlayer();
+    }
+
+    private void OnMove(InputValue value)
+    {
+        movementDirection = value.Get<Vector2>();
+        movementDirection.Normalize();
+    }
+
+    private void MovePlayer()
+    {
+        Vector3 movement = new Vector3(movementDirection.x, 0f, movementDirection.y);
+        rb.AddForce(movement * forceMagnitude, ForceMode.Force);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 
     public float GetPlayerForceMagnitude() => forceMagnitude;
 
-    public Vector3 GetPlayerPosition() => transform.position;
-
-    public Quaternion GetPlayerRotation() => transform.rotation;
-
     public void SetPlayerForceMagnitude(float forceMagnitude) => this.forceMagnitude = forceMagnitude;
-
-    private void ProcessInput()
-    {
-        if (Touchscreen.current.primaryTouch.press.isPressed)
-        {
-            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-
-            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
-
-            movementDirection = worldPosition - transform.position;
-            movementDirection.y = 0f;
-            movementDirection.Normalize();
-        }
-        else
-        {
-            movementDirection = Vector3.zero;
-        }
-    }
 
     private void KeepPlayerOnScreen()
     {
