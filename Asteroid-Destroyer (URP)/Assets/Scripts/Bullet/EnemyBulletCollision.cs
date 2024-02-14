@@ -13,6 +13,7 @@ public class EnemyBulletCollision : MonoBehaviour
     {
         PlayerHealth player = other.GetComponent<PlayerHealth>();
         PlayerBulletCollision playerBullet = other.GetComponent<PlayerBulletCollision>();
+        EnemyBulletCollision enemyBullet = other.GetComponent<EnemyBulletCollision>();
 
         if (player != null)
         {
@@ -23,6 +24,11 @@ public class EnemyBulletCollision : MonoBehaviour
         if(playerBullet != null)
         {
             other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
+
+        if(enemyBullet != null)
+        {
             gameObject.SetActive(false);
         }
     }

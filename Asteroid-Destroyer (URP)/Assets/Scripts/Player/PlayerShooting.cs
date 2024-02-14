@@ -12,10 +12,12 @@ public class PlayerShooting : MonoBehaviour
 
     private void Update()
     {
-        if (Touchscreen.current.primaryTouch.press.isPressed && CanFire())
-        {
-            FireBullet();
-        }
+        
+    }
+
+    private void OnFire()
+    {
+        FireBullet();
     }
 
     public bool CanFire() => Time.time >= nextFireTime;
