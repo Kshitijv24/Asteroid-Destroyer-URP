@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
     Vector2 movementDirection;
+    Vector2 mouseScreenPosition;
+    Vector2 facingDirecion;
+    Vector3 mouseWorldPosition;
     Camera mainCamera;
 
     private void Awake()
@@ -36,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         KeepPlayerOnScreen();
-        RotateToFaceVelocity();
+        LookAtMouse();
+        //RotateToFaceVelocity();
     }
 
     private void FixedUpdate()
@@ -52,11 +56,26 @@ public class PlayerMovement : MonoBehaviour
         movementDirection.Normalize();
     }
 
+    private void OnLook(InputValue value)
+    {
+        mouseScreenPosition = value.Get<Vector2>();
+        mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+        //transform.LookAt(new Vector3(mouseWorldPosition.x, 0, mouseWorldPosition.z));
+    }
+
     private void MovePlayer()
     {
         Vector3 movement = new Vector3(movementDirection.x, 0f, movementDirection.y);
         rb.AddForce(movement * forceMagnitude, ForceMode.Force);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
+    }
+
+    private void LookAtMouse()
+    {
+        //facingDirecion = mouseWorldPosition - transform.position;
+        //float angle = MathF.Atan2(facingDirecion.y, facingDirecion.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(new Vector3(angle, 0, angle));
+        transform.LookAt(new Vector3(mouseWorldPosition.x, 0, mouseWorldPosition.z));
     }
 
     public float GetPlayerForceMagnitude() => forceMagnitude;

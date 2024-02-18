@@ -10,13 +10,10 @@ public class PlayerShooting : MonoBehaviour
 
     float nextFireTime;
 
-    private void Update()
-    {
-        
-    }
-
     private void OnFire()
     {
+        if (!CanFire()) return;
+
         FireBullet();
     }
 
