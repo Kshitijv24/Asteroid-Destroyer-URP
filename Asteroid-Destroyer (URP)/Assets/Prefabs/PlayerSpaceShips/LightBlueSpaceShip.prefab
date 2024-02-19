@@ -183,7 +183,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -203,6 +203,7 @@ MonoBehaviour:
   forceMagnitude: 10
   maxVelocity: 6
   rotationSpeed: 10
+  lookSpeed: 5
 --- !u!114 &6936637044186661104
 MonoBehaviour:
   m_ObjectHideFlags: 0

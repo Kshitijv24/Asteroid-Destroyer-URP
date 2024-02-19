@@ -11,12 +11,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float forceMagnitude = 10;
     [SerializeField] float maxVelocity = 6;
     [SerializeField] float rotationSpeed = 10;
+    [SerializeField] float lookSpeed = 5;
 
     Rigidbody rb;
     Vector2 movementDirection;
-    Vector2 mouseScreenPosition;
-    Vector2 facingDirecion;
-    Vector3 mouseWorldPosition;
+    Vector2 lookDirection;
     Camera mainCamera;
 
     private void Awake()
@@ -58,9 +57,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnLook(InputValue value)
     {
-        mouseScreenPosition = value.Get<Vector2>();
-        mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-        //transform.LookAt(new Vector3(mouseWorldPosition.x, 0, mouseWorldPosition.z));
+        lookDirection = value.Get<Vector2>();
+        lookDirection.Normalize();
     }
 
     private void MovePlayer()
@@ -72,10 +70,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookAtMouse()
     {
-        //facingDirecion = mouseWorldPosition - transform.position;
-        //float angle = MathF.Atan2(facingDirecion.y, facingDirecion.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(new Vector3(angle, 0, angle));
-        transform.LookAt(new Vector3(mouseWorldPosition.x, 0, mouseWorldPosition.z));
+        if(lookDirection == Vector2.zero) return;
+
+        Vector3 direction = new Vector3(lookDirection.x, 0, lookDirection.y);
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, lookSpeed * Time.deltaTime);
+        }
     }
 
     public float GetPlayerForceMagnitude() => forceMagnitude;
