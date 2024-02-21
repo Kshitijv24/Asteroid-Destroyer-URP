@@ -2,6 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 [SelectionBase]
 public class PlayerMovement : MonoBehaviour
@@ -33,6 +34,23 @@ public class PlayerMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+    }
+
+    public void Start()
+    {
+        EnhancedTouchSupport.Enable();
+        //playerInput.actions["Move"].performed += HandleMove;
+        //playerInput.actions["Move"].canceled += HandleMove;
+    }
+
+    public void HandleMove(InputAction.CallbackContext input)
+    {
+        //if (playerInput.currentControlScheme != "Gamepad")
+        //{
+        //    return;
+        //}
+        //var dir = input.ReadValue<Vector2>();
+        //OnActionMove.Invoke(dir);
     }
 
     private void Update()
