@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         lookDirection = playerInputAction.Player.Look.ReadValue<Vector2>();
         lookDirection.Normalize();
 
-        Vector3 direction = new Vector3(lookDirection.x, 0, lookDirection.y);
+        Vector3 direction = new Vector3(lookDirection.x, 0f, lookDirection.y);
 
         if (direction != Vector3.zero)
         {
