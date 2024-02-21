@@ -3,12 +3,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
+using static UnityEngine.Rendering.DebugUI;
 
 [SelectionBase]
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
-
     [SerializeField] float forceMagnitude = 10;
     [SerializeField] float maxVelocity = 6;
     [SerializeField] float rotationSpeed = 10;
@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movementDirection;
     Vector2 lookDirection;
     Camera mainCamera;
+    PlayerInputAction playerInputAction;
 
     private void Awake()
     {
@@ -34,53 +35,27 @@ public class PlayerMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
-    }
 
-    public void Start()
-    {
-        EnhancedTouchSupport.Enable();
-        //playerInput.actions["Move"].performed += HandleMove;
-        //playerInput.actions["Move"].canceled += HandleMove;
-    }
-
-    public void HandleMove(InputAction.CallbackContext input)
-    {
-        //if (playerInput.currentControlScheme != "Gamepad")
-        //{
-        //    return;
-        //}
-        //var dir = input.ReadValue<Vector2>();
-        //OnActionMove.Invoke(dir);
+        playerInputAction = new PlayerInputAction();
+        playerInputAction.Enable();
     }
 
     private void Update()
     {
         KeepPlayerOnScreen();
         LookAtMouse();
-        //RotateToFaceVelocity();
     }
 
     private void FixedUpdate()
     {
-        if (movementDirection == Vector2.zero) return;
-
         MovePlayer();
-    }
-
-    private void OnMove(InputValue value)
-    {
-        movementDirection = value.Get<Vector2>();
-        movementDirection.Normalize();
-    }
-
-    private void OnLook(InputValue value)
-    {
-        lookDirection = value.Get<Vector2>();
-        lookDirection.Normalize();
     }
 
     private void MovePlayer()
     {
+        movementDirection = playerInputAction.Player.Move.ReadValue<Vector2>();
+        movementDirection.Normalize();
+
         Vector3 movement = new Vector3(movementDirection.x, 0f, movementDirection.y);
         rb.AddForce(movement * forceMagnitude, ForceMode.Force);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
@@ -88,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookAtMouse()
     {
-        if(lookDirection == Vector2.zero) return;
+        lookDirection = playerInputAction.Player.Look.ReadValue<Vector2>();
+        lookDirection.Normalize();
 
         Vector3 direction = new Vector3(lookDirection.x, 0, lookDirection.y);
 
