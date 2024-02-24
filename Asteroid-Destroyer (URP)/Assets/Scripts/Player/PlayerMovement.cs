@@ -1,5 +1,6 @@
 using System;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -9,6 +10,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
+
     [SerializeField] float forceMagnitude = 10;
     [SerializeField] float maxVelocity = 6;
     [SerializeField] float rotationSpeed = 10;
@@ -37,7 +39,16 @@ public class PlayerMovement : MonoBehaviour
         mainCamera = Camera.main;
 
         playerInputAction = new PlayerInputAction();
+    }
+
+    private void OnEnable()
+    {
         playerInputAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInputAction.Disable();
     }
 
     private void Update()
