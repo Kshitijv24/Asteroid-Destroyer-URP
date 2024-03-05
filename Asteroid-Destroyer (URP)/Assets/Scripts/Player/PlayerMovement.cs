@@ -1,10 +1,7 @@
 using System;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
-using static UnityEngine.Rendering.DebugUI;
 
 [SelectionBase]
 public class PlayerMovement : MonoBehaviour
@@ -54,7 +51,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         KeepPlayerOnScreen();
+
+#if UNITY_EDITOR
         LookAtMouse();
+#endif
+#if UNITY_ANDROID
+        LookAtJoystick();
+#endif
     }
 
     private void FixedUpdate()
@@ -72,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity);
     }
 
-    private void LookAtMouse()
+    private void LookAtJoystick()
     {
         lookDirection = playerInputAction.Player.Look.ReadValue<Vector2>();
         lookDirection.Normalize();
@@ -83,6 +86,20 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion lookRotation = Quaternion.LookRotation(direction, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, lookSpeed * Time.deltaTime);
+        }
+    }
+
+    private void LookAtMouse()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            Vector3 targetLookPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+            Quaternion targetRotation = Quaternion.LookRotation(targetLookPosition - transform.position);
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
         }
     }
 

@@ -210,7 +210,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!64 &8475154840591222383
 MeshCollider:
@@ -250,6 +250,7 @@ MonoBehaviour:
   maxVelocity: 6
   rotationSpeed: 10
   lookSpeed: 5
+  isPc: 0
 --- !u!114 &3926240240718349355
 MonoBehaviour:
   m_ObjectHideFlags: 0
