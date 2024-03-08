@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 505662156}
   - component: {fileID: 505662155}
   m_Layer: 5
-  m_Name: TouchControlsCanvas
+  m_Name: TouchControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

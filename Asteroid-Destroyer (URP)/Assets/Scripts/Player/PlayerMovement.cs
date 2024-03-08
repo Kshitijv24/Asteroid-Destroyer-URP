@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 lookDirection;
     Camera mainCamera;
     PlayerInputAction playerInputAction;
+    bool useMouseLook = true;
 
     private void Awake()
     {
@@ -52,12 +53,27 @@ public class PlayerMovement : MonoBehaviour
     {
         KeepPlayerOnScreen();
 
-#if UNITY_EDITOR
-        LookAtMouse();
-#endif
-#if UNITY_ANDROID
-        LookAtJoystick();
-#endif
+        if (Mouse.current != null && Mouse.current.delta.ReadValue() != Vector2.zero)
+        {
+            LookAtMouse();
+            useMouseLook = true;
+        }
+        else if (playerInputAction.Player.JoyStickLook.ReadValue<Vector2>() != Vector2.zero)
+        {
+            LookAtJoystick();
+            useMouseLook = false;
+        }
+        else
+        {
+            if (useMouseLook)
+            {
+                LookAtMouse();
+            }
+            else
+            {
+                LookAtJoystick();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -77,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookAtJoystick()
     {
-        lookDirection = playerInputAction.Player.Look.ReadValue<Vector2>();
+        lookDirection = playerInputAction.Player.JoyStickLook.ReadValue<Vector2>();
         lookDirection.Normalize();
 
         Vector3 direction = new Vector3(lookDirection.x, 0f, lookDirection.y);
@@ -91,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookAtMouse()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        Ray ray = mainCamera.ScreenPointToRay(playerInputAction.Player.MouseLook.ReadValue<Vector2>());
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
