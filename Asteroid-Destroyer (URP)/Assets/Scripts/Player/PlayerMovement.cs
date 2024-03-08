@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
 
+    public bool useMouseLook = true;
+
     [SerializeField] float forceMagnitude = 10;
     [SerializeField] float maxVelocity = 6;
     [SerializeField] float rotationSpeed = 10;
@@ -18,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     Vector2 lookDirection;
     Camera mainCamera;
     PlayerInputAction playerInputAction;
-    bool useMouseLook = true;
 
     private void Awake()
     {

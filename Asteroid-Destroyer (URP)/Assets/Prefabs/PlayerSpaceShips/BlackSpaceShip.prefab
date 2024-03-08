@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 3926240240718349355}
   - component: {fileID: 3881979076813645061}
   - component: {fileID: 6619517932888890432}
+  - component: {fileID: 4068362995381386953}
   m_Layer: 0
   m_Name: BlackSpaceShip
   m_TagString: Untagged
@@ -250,7 +251,6 @@ MonoBehaviour:
   maxVelocity: 6
   rotationSpeed: 10
   lookSpeed: 5
-  isPc: 0
 --- !u!114 &3926240240718349355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   playerDamagedVFX: {fileID: 6263805062974440042}
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
-  playerHP: 3
+  playerHP: 6
 --- !u!114 &3881979076813645061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +297,37 @@ MonoBehaviour:
   shootingPointUpper: {fileID: 569282548234650826}
   shootingPointLeft: {fileID: 3846561846097698746}
   shootingPointRight: {fileID: 1336625012488660876}
+--- !u!114 &4068362995381386953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265907184990835513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 623d4492b81cc7343ad2a6f361c2f653,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2125591001633403986
 PrefabInstance:
   m_ObjectHideFlags: 0
