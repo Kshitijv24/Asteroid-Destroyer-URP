@@ -6,10 +6,10 @@ public class PlayerLevelUpManager : MonoBehaviour
 {
 	public static PlayerLevelUpManager Instance { get; private set; }
 
-    public int noOfEnemiesNeededToKillToLevelUp = 5;
     public int playerLevel = 1;
 
     [HideInInspector] public int killedEnemies;
+    [HideInInspector] public int noOfEnemiesNeededToKillToLevelUp;
 
     private void Awake()
     {
@@ -23,6 +23,11 @@ public class PlayerLevelUpManager : MonoBehaviour
             Debug.Log("There are more than one " + this.GetType() + " Instances", this);
             return;
         }
+    }
+
+    private void Start()
+    {
+        noOfEnemiesNeededToKillToLevelUp = PlayerPrefs.GetInt("PlayerInput");
     }
 
     private void Update() => LevelUP();
