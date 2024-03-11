@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpaceShipCollision : MonoBehaviour
 {
-    [SerializeField] GameObject enemySpaceShipExplosionVFX;
+    [SerializeField] GameObject[] enemySpaceShipExplosionParticleEffectArray;
     [SerializeField] ShieldPickUp shieldPickUp;
     [SerializeField] HealthPickUp healthPickUp;
     [SerializeField] AudioClip enemySpaceShipDestroySFX;
@@ -28,7 +28,7 @@ public class EnemySpaceShipCollision : MonoBehaviour
     {
         if (other.GetComponent<EnemySpaceShipCollision>())
         {
-            EnemySpaceShipDestroyedByOtherEnemySpaceShip();
+            DestroyEnemySpaceShip();
         }
     }
 
@@ -43,8 +43,6 @@ public class EnemySpaceShipCollision : MonoBehaviour
         }
     }
 
-    private void EnemySpaceShipDestroyedByOtherEnemySpaceShip() => DestroyEnemySpaceShip();
-
     public void EnemySpaceShipDestroyedByPlayer()
     {
         SpawnShieldPickUp();
@@ -56,7 +54,12 @@ public class EnemySpaceShipCollision : MonoBehaviour
     private void DestroyEnemySpaceShip()
     {
         AudioManager.Instance.PlaySound(enemySpaceShipDestroySFX, 1f);
-        Instantiate(enemySpaceShipExplosionVFX, transform.position, Quaternion.identity);
+        
+        Instantiate(
+            enemySpaceShipExplosionParticleEffectArray
+            [Random.Range(0, enemySpaceShipExplosionParticleEffectArray.Length)], 
+            transform.position, Quaternion.identity);
+
         gameObject.SetActive(false);
     }
 

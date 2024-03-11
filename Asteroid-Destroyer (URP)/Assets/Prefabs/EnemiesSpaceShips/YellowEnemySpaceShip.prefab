@@ -102,8 +102,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38dc1e154e960439c45ea40b4dae84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpaceShipExplosionVFX: {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e,
-    type: 3}
+  enemySpaceShipExplosionParticleEffectArray:
+  - {fileID: 1468997291381211181, guid: 5d8998e78654318448d650b4514537ec, type: 3}
+  - {fileID: 3352797120798922302, guid: d6bc29969f91fbb4b85706d2bc9a623e, type: 3}
+  - {fileID: 7420285903321651023, guid: e9c4f2bdf999a474aa5937d7bff971d1, type: 3}
+  - {fileID: 3752655918130743613, guid: 0dfb4fc8a6d3efb459b9d93aaa4b2ff8, type: 3}
+  - {fileID: 488444399284860723, guid: f56027d7e9a4244469d2b9603c0d4f8f, type: 3}
+  - {fileID: 140173036809231906, guid: 1880c451f03842c4680a8c5bdc61196b, type: 3}
+  - {fileID: 474170013611831606, guid: fea1405de36d78d4585f9297bcb1ce61, type: 3}
+  - {fileID: 3385339508343510213, guid: 5fb2f432b686d044f84c7f85be6cfd92, type: 3}
+  - {fileID: 5756901550342109501, guid: e8c0fff14b2011148924e9b71c4b76e0, type: 3}
+  - {fileID: 6144968080748653724, guid: d8b38c1bef87d984197335a83cc69f1a, type: 3}
+  - {fileID: 6660672093985163436, guid: 458183f44c3b31947b1bbeda73663007, type: 3}
+  - {fileID: 3852085240566196298, guid: 5996167f0e16f3b44b641c28948d33f6, type: 3}
+  - {fileID: 4208300564580221505, guid: b092aca64a11f1f44a2e3ce70683106b, type: 3}
+  - {fileID: 3413676591546843511, guid: 6275c64e6c8dd5741b816c754b351742, type: 3}
+  - {fileID: 1465569736659759237, guid: 199f628be3fbe454ea0b8b61ec958fff, type: 3}
+  - {fileID: 176911507093078516, guid: 340ca8f194012bd4d89430b7a903d7be, type: 3}
+  - {fileID: 1727634543656925449, guid: 30b6df06c9176714fa8e1acc3e4e3374, type: 3}
+  - {fileID: 3619368007958168413, guid: 31cacdfb50642204ab51478787a407ee, type: 3}
+  - {fileID: 6107159745764605852, guid: 222d866428739094d84d2e1219752e42, type: 3}
   shieldPickUp: {fileID: -7089191574311390551, guid: 5b7b2df9c00fe1c43a6b192724a26170,
     type: 3}
   healthPickUp: {fileID: 8404427099662862715, guid: b828fc695aa17c347a9be84cce11a141,
