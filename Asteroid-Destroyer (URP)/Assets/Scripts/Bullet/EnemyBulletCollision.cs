@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBulletCollision : MonoBehaviour
 {
+    [SerializeField] GameObject[] bulletCollisionParticleEffectArray;
+
     private void OnTriggerEnter(Collider other)
     {
         DestroyPlayerWithBullet(other);
@@ -23,12 +25,20 @@ public class EnemyBulletCollision : MonoBehaviour
 
         if(playerBullet != null)
         {
+            Instantiate(
+                bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
+                transform.position, transform.rotation);
+
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 
         if(enemyBullet != null)
         {
+            Instantiate(
+                bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
+                transform.position, transform.rotation);
+
             gameObject.SetActive(false);
         }
     }

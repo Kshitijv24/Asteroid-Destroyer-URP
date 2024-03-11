@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] AudioClip bulletSFX;
 
-    float nextFireTime;
+    float nextFireTime = 0.5f;
 
     private void Update()
     {

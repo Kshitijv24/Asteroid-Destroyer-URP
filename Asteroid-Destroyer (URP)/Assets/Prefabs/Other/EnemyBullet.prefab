@@ -213,6 +213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8805ba276d9dd47bd3ad0669594bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletCollisionParticleEffectArray:
+  - {fileID: 4107709172805306655, guid: fd4c51f24fc0ec44dbb9fae8a0dabd71, type: 3}
+  - {fileID: 1311390314564655154, guid: 155c7ae6bc34a174f940969c98d5e61d, type: 3}
+  - {fileID: 1194341583674708891, guid: 00c7b7606e64513429099ed56aedbc9e, type: 3}
+  - {fileID: 3195377837970285220, guid: d52cf96a9498b4747b5834c03f9e7f6f, type: 3}
+  - {fileID: 2011392559380462377, guid: c6a010c3256e5604fbe66a74c858c60a, type: 3}
+  - {fileID: 4209880551034402506, guid: f15786a70a7e4cf49b00a0ebefdf55cd, type: 3}
+  - {fileID: 4249813956651009330, guid: 0dfe38008ec173d4e842f9f2e00ea4ca, type: 3}
+  - {fileID: 3669547782871189845, guid: 92d78d26a0cb9e64886062920630f552, type: 3}
+  - {fileID: 3862995874404395344, guid: 099b4e7194204394bb2cf6ed5f0bc1ca, type: 3}
 --- !u!1 &5015082323646114442
 GameObject:
   m_ObjectHideFlags: 0
