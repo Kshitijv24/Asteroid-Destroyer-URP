@@ -270,6 +270,7 @@ MonoBehaviour:
   playerSpaceShipDeathSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b,
     type: 3}
   playerHP: 8
+  maxPlayerHP: 8
 --- !u!114 &4486777560439913231
 MonoBehaviour:
   m_ObjectHideFlags: 0

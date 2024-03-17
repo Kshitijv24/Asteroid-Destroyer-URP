@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] ParticleSystem playerDamagedVFX;
     [SerializeField] AudioClip playerSpaceShipDeathSFX;
     [SerializeField] int playerHP = 3;
+    [SerializeField] int maxPlayerHP = 5;
     
     TextMeshProUGUI healthText;
 
@@ -64,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncrementPlayerHealth()
     {
-        if (playerHP >= 3) return;
+        if (playerHP >= maxPlayerHP) return;
 
         playerHP++;
         healthText.text = $"HP: {playerHP}";
