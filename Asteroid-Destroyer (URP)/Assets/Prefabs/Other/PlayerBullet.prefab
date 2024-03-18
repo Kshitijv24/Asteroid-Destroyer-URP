@@ -185,7 +185,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.46405315, y: 0.7273312, z: 2.4974036}
   m_Center: {x: 0.002516508, y: -0.0000011920928, z: 0.012177563}
@@ -201,6 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53042d16f743c8145ae2f85dd2de4a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDistance: 0.5
+  raySpreadAngle: 10
+  rayColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &6569386450238068634
 MonoBehaviour:
   m_ObjectHideFlags: 0

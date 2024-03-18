@@ -1,14 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBulletCollision : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] float maxDistance = 0.5f; // Maximum distance the ray can travel
+    [SerializeField] float raySpreadAngle = 10f; // Angle in degrees for the spread of the rays
+    [SerializeField] Color rayColor = Color.red;
+
+    private void Update()
     {
-        DestroyAsteroidWithBullet(other);
-        DestroyEnemySpaceShipWithBullet(other);
+        CheckCollision();
+    }
+
+    private void CheckCollision()
+    {
+        // Cast rays in front and on each side of the bullet's direction
+        CastRay(transform.forward); // Center ray
+        CastRay(transform.forward + transform.right * Mathf.Tan(raySpreadAngle * Mathf.Deg2Rad)); // Right ray
+        CastRay(transform.forward - transform.right * Mathf.Tan(raySpreadAngle * Mathf.Deg2Rad)); // Left ray
+    }
+
+    private void CastRay(Vector3 direction)
+    {
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit hitInfo;
+
+        Debug.DrawRay(transform.position, direction * maxDistance, rayColor);
+
+        if (Physics.Raycast(ray, out hitInfo, maxDistance))
+        {
+            Collider hitCollider = hitInfo.collider;
+
+            DestroyAsteroidWithBullet(hitCollider);
+            DestroyEnemySpaceShipWithBullet(hitCollider);
+        }
     }
 
     private void DestroyAsteroidWithBullet(Collider other)
@@ -18,7 +42,7 @@ public class PlayerBulletCollision : MonoBehaviour
         if (asteroid != null)
         {
             asteroid.AsteroidDestroyedByPlayer();
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Destroy the bullet after hitting the target
         }
     }
 
@@ -29,7 +53,7 @@ public class PlayerBulletCollision : MonoBehaviour
         if (enemySpaceShip != null)
         {
             enemySpaceShip.EnemySpaceShipDestroyedByPlayer();
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Destroy the bullet after hitting the target
         }
     }
 }
