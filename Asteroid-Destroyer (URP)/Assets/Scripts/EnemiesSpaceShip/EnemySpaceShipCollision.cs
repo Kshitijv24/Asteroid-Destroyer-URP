@@ -7,7 +7,6 @@ public class EnemySpaceShipCollision : MonoBehaviour
     [SerializeField] GameObject[] enemySpaceShipExplosionParticleEffectArray;
     [SerializeField] ShieldPickUp shieldPickUp;
     [SerializeField] HealthPickUp healthPickUp;
-    [SerializeField] AudioClip enemySpaceShipDestroySFX;
 
     float shieldPickUpDropRate;
     float healthPickUpDropRate;
@@ -53,7 +52,7 @@ public class EnemySpaceShipCollision : MonoBehaviour
 
     private void DestroyEnemySpaceShip()
     {
-        AudioManager.Instance.PlaySound(enemySpaceShipDestroySFX, 1f);
+        AudioManager.Instance.PlayEnemySpaceShipDestroyedSFX(1f);
         
         Instantiate(
             enemySpaceShipExplosionParticleEffectArray

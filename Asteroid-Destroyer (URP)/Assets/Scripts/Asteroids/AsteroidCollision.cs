@@ -5,7 +5,6 @@ public class AsteroidCollision : MonoBehaviour
     [SerializeField] GameObject asteroidExplosionVFX;
     [SerializeField] ShieldPickUp shieldPickUp;
     [SerializeField] HealthPickUp healthPickUp;
-    [SerializeField] AudioClip asteroidDestroySFX;
 
     float shieldPickUpDropRate;
     float healthPickUpDropRate;
@@ -53,7 +52,7 @@ public class AsteroidCollision : MonoBehaviour
 
     private void DestroyAsteroid()
     {
-        AudioManager.Instance.PlaySound(asteroidDestroySFX, 1f);
+        AudioManager.Instance.PlayAsteroidDestroyedSFX(1f);
         Instantiate(asteroidExplosionVFX, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }

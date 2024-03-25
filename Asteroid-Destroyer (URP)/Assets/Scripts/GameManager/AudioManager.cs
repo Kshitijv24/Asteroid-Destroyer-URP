@@ -7,6 +7,11 @@ public class AudioManager : MonoBehaviour
 {
 	public static AudioManager Instance { get; private set; }
 
+    [SerializeField] AudioClip enemySpaceShipDestroySFX;
+    [SerializeField] AudioClip playerSpaceShipDeathSFX;
+    [SerializeField] AudioClip asteroidDestroySFX;
+    [SerializeField] AudioClip bulletSFX;
+
     AudioSource audioSource;
 
     private void Awake()
@@ -25,5 +30,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip, float volumeLevel) => audioSource.PlayOneShot(clip, volumeLevel);
+    public void PlaySound(AudioClip clip, float volumeLevel) => 
+        audioSource.PlayOneShot(clip, volumeLevel);
+
+    public void PlayAsteroidDestroyedSFX(float volumeLevel) => 
+        audioSource.PlayOneShot(asteroidDestroySFX, volumeLevel);
+
+    public void PlayEnemySpaceShipDestroyedSFX(float volumeLevel) => 
+        audioSource.PlayOneShot(enemySpaceShipDestroySFX, volumeLevel);
+
+    public void PlayPlayerShipDestroyedSFX(float volumeLevel) =>
+        audioSource.PlayOneShot(playerSpaceShipDeathSFX, volumeLevel);
+
+    public void PlayBulletSFX(float volumeLevel) =>
+        audioSource.PlayOneShot(bulletSFX, volumeLevel);
 }

@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] AudioClip bulletSFX;
 
     float nextFireTime = 0.5f;
 
@@ -21,9 +20,9 @@ public class PlayerShooting : MonoBehaviour
 
     private void FireBullet()
     {
-        AudioManager.Instance.PlaySound(bulletSFX, 0.3f);
-        nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
+        AudioManager.Instance.PlayBulletSFX(0.3f);
 
+        nextFireTime = Time.time + PlayerShootingData.Instance.GetBulletFireRate();
         GameObject pooledBulletsPrefab = PlayerBulletObjectPool.Instance.GetPooledGameObject();
 
         if (pooledBulletsPrefab != null)

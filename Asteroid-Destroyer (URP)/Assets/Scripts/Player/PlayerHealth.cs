@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     GameOverHandler gameOverHandler;
     [SerializeField] GameObject playerDeathVFX;
     [SerializeField] ParticleSystem playerDamagedVFX;
-    [SerializeField] AudioClip playerSpaceShipDeathSFX;
     [SerializeField] int playerHP = 3;
     [SerializeField] int maxPlayerHP = 5;
     
@@ -45,15 +44,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damageAmount)
     {
-        AudioManager.Instance.PlaySound(playerSpaceShipDeathSFX, 1f);
+        AudioManager.Instance.PlayPlayerShipDestroyedSFX(1f);
+
         playerDamagedVFX.Play();
         playerHP -= damageAmount;
         healthText.text = $"HP: {playerHP}";
 
-        if (playerHP <= 0)
-        {
-            PlayerDied();
-        }
+        if (playerHP <= 0) PlayerDied();
     }
 
     private void PlayerDied()
