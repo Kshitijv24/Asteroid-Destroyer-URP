@@ -32,6 +32,7 @@ public class PlayerBulletCollision : MonoBehaviour
 
             DestroyAsteroidWithBullet(hitCollider);
             DestroyEnemySpaceShipWithBullet(hitCollider);
+            DestroyEnemyBulletWithBullet(hitCollider);
         }
     }
 
@@ -42,7 +43,7 @@ public class PlayerBulletCollision : MonoBehaviour
         if (asteroid != null)
         {
             asteroid.AsteroidDestroyedByPlayer();
-            gameObject.SetActive(false); // Destroy the bullet after hitting the target
+            gameObject.SetActive(false);
         }
     }
 
@@ -53,7 +54,19 @@ public class PlayerBulletCollision : MonoBehaviour
         if (enemySpaceShip != null)
         {
             enemySpaceShip.EnemySpaceShipDestroyedByPlayer();
-            gameObject.SetActive(false); // Destroy the bullet after hitting the target
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void DestroyEnemyBulletWithBullet(Collider other)
+    {
+        EnemyBulletCollision enemyBullet = other.GetComponent<EnemyBulletCollision>();
+
+        if (enemyBullet != null)
+        {
+            enemyBullet.InstantiateBulletDestroyVFX();
+            other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

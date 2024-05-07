@@ -6,10 +6,7 @@ public class EnemyBulletCollision : MonoBehaviour
 {
     [SerializeField] GameObject[] bulletCollisionParticleEffectArray;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        DestroyPlayerWithBullet(other);
-    }
+    private void OnTriggerEnter(Collider other) => DestroyPlayerWithBullet(other);
 
     private void DestroyPlayerWithBullet(Collider other)
     {
@@ -25,21 +22,22 @@ public class EnemyBulletCollision : MonoBehaviour
 
         if(playerBullet != null)
         {
-            Instantiate(
-                bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
-                transform.position, transform.rotation);
-
+            InstantiateBulletDestroyVFX();
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 
         if(enemyBullet != null)
         {
-            Instantiate(
-                bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
-                transform.position, transform.rotation);
-
+            InstantiateBulletDestroyVFX();
             gameObject.SetActive(false);
         }
+    }
+
+    public void InstantiateBulletDestroyVFX()
+    {
+        Instantiate(
+            bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
+            transform.position, transform.rotation);
     }
 }
