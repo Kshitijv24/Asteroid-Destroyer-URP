@@ -25,10 +25,7 @@ public class PlayerLevelUpManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        noOfEnemiesNeededToKillToLevelUp = PlayerPrefs.GetInt("PlayerInput");
-    }
+    private void Start() => noOfEnemiesNeededToKillToLevelUp = PlayerPrefs.GetInt("PlayerInput");
 
     private void Update() => LevelUP();
 
@@ -40,7 +37,7 @@ public class PlayerLevelUpManager : MonoBehaviour
             playerLevel++;
             killedEnemies = 0;
             GameManager.Instance.PauseGameAndShowLevelUpPanel();
-            noOfEnemiesNeededToKillToLevelUp++;
+            //noOfEnemiesNeededToKillToLevelUp++;
         }
     }
     public void IncrementKilledEnemiesAndPlayerPoints()
