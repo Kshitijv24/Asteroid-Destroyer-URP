@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     public void PauseGameAndShowLevelUpPanel()
     {
         PlayerShootingPointManager.Instance.DeactivateAllShootingPoints();
-
         Time.timeScale = 0;
         levelUpCanvas.SetActive(true);
         ScoreSystem.Instance.GetScoreTextUI().enabled = false;
@@ -51,8 +50,5 @@ public class GameManager : MonoBehaviour
         isPlayerLevelingUp = false;
     }
 
-    private void WaitToShoot()
-    {
-        PlayerShootingPointManager.Instance.ActivateAllShootingPoints();
-    }
+    private void WaitToShoot() => PlayerShootingPointManager.Instance.ActivateAllShootingPoints();
 }

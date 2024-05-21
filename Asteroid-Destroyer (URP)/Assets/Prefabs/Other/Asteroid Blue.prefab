@@ -136,7 +136,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &1581554572212679339
 MonoBehaviour:
@@ -168,7 +168,6 @@ MonoBehaviour:
     type: 3}
   healthPickUp: {fileID: 8404427099662862715, guid: b828fc695aa17c347a9be84cce11a141,
     type: 3}
-  asteroidDestroySFX: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!114 &-1865806392232208280
 MonoBehaviour:
   m_ObjectHideFlags: 0

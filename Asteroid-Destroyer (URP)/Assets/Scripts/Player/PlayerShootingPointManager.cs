@@ -58,9 +58,7 @@ public class PlayerShootingPointManager : MonoBehaviour
     public void DeactivateAllShootingPoints()
     {
         shootingPointUpper.SetActive(false);
-
         shootingPointLeft.SetActive(false);
-
         shootingPointRight.SetActive(false);
     }
 
@@ -69,13 +67,9 @@ public class PlayerShootingPointManager : MonoBehaviour
         shootingPointUpper.SetActive(true);
         
         if (!shootingPointLeft.activeSelf && activatedOnceLeft)
-        {
             shootingPointLeft.SetActive(true);
-        }
 
         if (!shootingPointRight.activeSelf && activatedOnceRight)
-        {
             shootingPointRight.SetActive(true);
-        }
     }
 }
