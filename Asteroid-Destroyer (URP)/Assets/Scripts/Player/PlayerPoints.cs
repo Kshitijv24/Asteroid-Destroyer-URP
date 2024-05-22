@@ -32,9 +32,7 @@ public class PlayerPoints : MonoBehaviour
     private void Update()
     {
         if(SceneManager.GetActiveScene().buildIndex != 1)
-        {
             playerPointsText.gameObject.SetActive(false);
-        }
         else
         {
             UpdatePlayerPointsTextUI();
@@ -42,7 +40,7 @@ public class PlayerPoints : MonoBehaviour
         }
     }
 
-    private void UpdatePlayerPointsTextUI()
+    public void UpdatePlayerPointsTextUI()
     {
         playerPoints = GetPlayerPoints();
         playerPointsText.text = "Available Points: " + playerPoints.ToString();
@@ -50,16 +48,18 @@ public class PlayerPoints : MonoBehaviour
 
     public int GetPlayerPoints() => PlayerPrefs.GetInt("playerPoints", playerPoints);
 
+    public void DeletePlayerPoints() => PlayerPrefs.SetInt("playerPoints", 0);
+
     public void DecreasePlayerPoints(int points)
     {
-        int currentPlayerPoints = PlayerPrefs.GetInt("playerPoints", playerPoints);
+        int currentPlayerPoints = GetPlayerPoints();
         currentPlayerPoints -= points;
         PlayerPrefs.SetInt("playerPoints", currentPlayerPoints);
     }
 
     public void AddPlayerPoints(int points)
     {
-        int currentPlayerPoints = PlayerPrefs.GetInt("playerPoints", playerPoints);
+        int currentPlayerPoints = GetPlayerPoints();
         currentPlayerPoints += points;
         PlayerPrefs.SetInt("playerPoints", currentPlayerPoints);
     }

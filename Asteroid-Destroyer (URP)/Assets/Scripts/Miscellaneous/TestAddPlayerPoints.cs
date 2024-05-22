@@ -7,5 +7,5 @@ public class TestAddPlayerPoints : MonoBehaviour
 {
     public void AddPlayerPointsButton() => PlayerPoints.Instance.AddPlayerPoints(100);
 
-    public void DeleteAllPlayerPrefsData() => PlayerPrefs.DeleteAll();
+    public void DeleteAllPlayerPointsButton() => PlayerPoints.Instance.DeletePlayerPoints();
 }

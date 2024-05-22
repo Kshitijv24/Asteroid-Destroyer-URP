@@ -19,8 +19,9 @@ public class DestroyShockwaveCollidedGameObject : MonoBehaviour
     {
         AsteroidCollision asteroid = other.GetComponent<AsteroidCollision>();
         EnemySpaceShipCollision enemy = other.GetComponent<EnemySpaceShipCollision>();
+        EnemyBulletCollision enemyBullet = other.GetComponent<EnemyBulletCollision>();
 
-        if (asteroid != null || enemy != null)
+        if (asteroid != null || enemy != null || enemyBullet != null)
             other.gameObject.SetActive(false);
     }
 

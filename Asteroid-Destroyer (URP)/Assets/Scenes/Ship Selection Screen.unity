@@ -2033,7 +2033,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1437957996}
         m_TargetAssemblyTypeName: TestAddPlayerPoints, Assembly-CSharp
-        m_MethodName: DeleteAllPlayerPrefsData
+        m_MethodName: DeleteAllPlayerPointsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

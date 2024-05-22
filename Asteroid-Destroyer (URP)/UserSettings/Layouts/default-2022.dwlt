@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 695
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 90
+  controlID: 129
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 637
     height: 320
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -295,8 +295,8 @@ MonoBehaviour:
     y: 0
     width: 232
     height: 645
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -811,11 +811,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.6401765, y: 0.010829194, z: -0.009025124, w: -0.76810014}
     speed: 2
-    m_Value: {x: -0.6401765, y: 0.0108291935, z: -0.009025123, w: -0.7681001}
+    m_Value: {x: -0.6401757, y: 0.010829181, z: -0.009025113, w: -0.76809925}
   m_Size:
-    m_Target: 5.5006595
+    m_Target: 19.714563
     speed: 2
-    m_Value: 5.5006595
+    m_Value: 19.714563
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -920,7 +920,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 1
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Prefabs/PlayerSpaceShips
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -963,24 +964,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 66.992485}
+    scrollPos: {x: 0, y: 197.6842}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000078020000547c0000567c0000587c00005a7c00005c7c00005e7c0000607c0000627c0000647c0000667c0000687c00006a7c00006c7c00006e7c0000707c0000727c0000747c0000767c0000
+    m_ExpandedIDs: ffffffff0000000078020000547c0000567c0000587c00005a7c00005c7c00005e7c0000607c0000627c0000647c0000667c0000687c00006a7c00006c7c00006e7c0000707c0000747c00009c7c0000a87c0000b07c0000b67c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: LongLightBlueSpaceShip
+      m_OriginalName: LongLightBlueSpaceShip
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 29460
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -1062,7 +1063,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f6faffff
+      m_ExpandedIDs: b612abfff21cabff8658b2ffc262b2ffa615b5ffe21fb5ff0ae4b7ff46eeb7ff7a5dbaffb667baff9a70beffd67abeff80cebfffbcd8bfff208dc2ff5c97c2ff907fc4ffcc89c4ffd435c8ff1040c8ffb46fcbfff079cbffac2fceffe839ceffb0b0d1ffecbad1ff26c5d4ff62cfd4ff4290d8ff7e9ad8fffab3deff36bedeffacfae2ffe804e3ff320ce5ff6e16e5fff8bde7ff34c8e7ff906eedffa02ef7ffdc38f7ffc699fbff02a4fbffb04cffffec56ffff9ef6fffff6faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

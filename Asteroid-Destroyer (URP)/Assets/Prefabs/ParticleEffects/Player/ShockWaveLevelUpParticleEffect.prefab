@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1172432172329845876}
   - component: {fileID: 6005333994924396310}
+  - component: {fileID: 7160243089875989244}
   - component: {fileID: 2056094740607899637}
   - component: {fileID: -7383902704838725970}
-  - component: {fileID: 7160243089875989244}
   m_Layer: 0
   m_Name: ShockWaveLevelUpParticleEffect
   m_TagString: Untagged
@@ -4816,6 +4816,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!135 &7160243089875989244
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925050388008226631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!199 &2056094740607899637
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4901,25 +4922,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedAtWitchTheSphereColliderExpand: 1.2
-  maxRadiosOfSphereCollider: 160
---- !u!135 &7160243089875989244
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925050388008226631}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  maxRadiosOfSphereCollider: 200

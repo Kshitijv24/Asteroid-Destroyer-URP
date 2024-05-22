@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject GetLevelUpCanvas() => levelUpCanvas;
-
     public bool IsPlayerLevelingUp() => isPlayerLevelingUp;
 
     public void PauseGameAndShowLevelUpPanel()
