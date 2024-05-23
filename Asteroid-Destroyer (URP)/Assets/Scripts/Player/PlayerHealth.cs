@@ -50,7 +50,8 @@ public class PlayerHealth : MonoBehaviour
         playerHP -= damageAmount;
         healthText.text = $"HP: {playerHP}";
 
-        if (playerHP <= 0) PlayerDied();
+        if (playerHP <= 0) 
+            PlayerDied();
     }
 
     private void PlayerDied()

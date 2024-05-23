@@ -16,22 +16,14 @@ public class EnemyBulletCollision : MonoBehaviour
 
         if (player != null)
         {
+            InstantiateBulletDestroyVFX();
             player.DamagePlayer(1);
-            gameObject.SetActive(false);
         }
-
-        if(playerBullet != null)
-        {
+        else if (playerBullet != null)
             InstantiateBulletDestroyVFX();
-            other.gameObject.SetActive(false);
-            gameObject.SetActive(false);
-        }
 
-        if(enemyBullet != null)
-        {
+        else if (enemyBullet != null)
             InstantiateBulletDestroyVFX();
-            gameObject.SetActive(false);
-        }
     }
 
     public void InstantiateBulletDestroyVFX()
@@ -39,5 +31,7 @@ public class EnemyBulletCollision : MonoBehaviour
         Instantiate(
             bulletCollisionParticleEffectArray[Random.Range(0, bulletCollisionParticleEffectArray.Length)],
             transform.position, transform.rotation);
+
+        gameObject.SetActive(false);
     }
 }

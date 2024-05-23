@@ -25,7 +25,7 @@ public class EnemySpaceShipSpawner : MonoBehaviour
             SpawnEnemySpaceShip();
             timer += spawnTime;
 
-            //ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
+            ChangeEnemySpaceShipSpawnRateAccordingToThePlayerLevel();
         }
     }
 

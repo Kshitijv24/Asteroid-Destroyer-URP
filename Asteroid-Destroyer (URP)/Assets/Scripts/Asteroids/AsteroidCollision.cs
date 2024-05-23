@@ -23,10 +23,10 @@ public class AsteroidCollision : MonoBehaviour
 
     private void HandleAsteroidCollisionWithOtherAsteroids(Collider other)
     {
-        if (other.GetComponent<AsteroidCollision>())
-        {
-            AsteroidDestroyedByOtherAsteroid();
-        }
+        AsteroidCollision asteroid = other.GetComponent<AsteroidCollision>();
+
+        if (asteroid != null)
+            DestroyAsteroid();
     }
 
     private void HandleAsteroidCollisionWithPlayer(Collider other)
@@ -40,8 +40,6 @@ public class AsteroidCollision : MonoBehaviour
         }
     }
 
-    private void AsteroidDestroyedByOtherAsteroid() => DestroyAsteroid();
-
     public void AsteroidDestroyedByPlayer()
     {
         SpawnShieldPickUp();
@@ -50,7 +48,7 @@ public class AsteroidCollision : MonoBehaviour
         DestroyAsteroid();
     }
 
-    private void DestroyAsteroid()
+    public void DestroyAsteroid()
     {
         AudioManager.Instance.PlayAsteroidDestroyedSFX(1f);
         Instantiate(asteroidExplosionVFX, transform.position, Quaternion.identity);
@@ -67,7 +65,7 @@ public class AsteroidCollision : MonoBehaviour
     {
         if (Random.value < shieldPickUpDropRate)
         {
-            ShieldPickUp shieldGameObject = GameObject.FindObjectOfType<ShieldPickUp>();
+            ShieldPickUp shieldGameObject = FindObjectOfType<ShieldPickUp>();
 
             if(shieldGameObject == null)
             {
@@ -80,7 +78,7 @@ public class AsteroidCollision : MonoBehaviour
     {
         if (Random.value < healthPickUpDropRate)
         {
-            HealthPickUp healthGameObject = GameObject.FindObjectOfType<HealthPickUp>();
+            HealthPickUp healthGameObject = FindObjectOfType<HealthPickUp>();
 
             if (healthGameObject == null)
             {

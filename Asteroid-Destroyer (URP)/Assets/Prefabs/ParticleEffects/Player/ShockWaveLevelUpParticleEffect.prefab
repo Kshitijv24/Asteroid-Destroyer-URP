@@ -4922,4 +4922,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedAtWitchTheSphereColliderExpand: 1.2
-  maxRadiosOfSphereCollider: 200
+  maxRadiosOfSphereCollider: 400

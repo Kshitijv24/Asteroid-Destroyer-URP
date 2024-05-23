@@ -11,9 +11,13 @@ public class DestroyShockwaveCollidedGameObject : MonoBehaviour
 
     private void Awake() => sphereCollider = GetComponent<SphereCollider>();
 
-    private void Update() => 
-        sphereCollider.radius = 
-        Mathf.Lerp(sphereCollider.radius, maxRadiosOfSphereCollider, speedAtWitchTheSphereColliderExpand * Time.unscaledDeltaTime);
+    private void Update()
+    {
+        sphereCollider.radius = Mathf.Lerp(
+            sphereCollider.radius, 
+            maxRadiosOfSphereCollider, 
+            speedAtWitchTheSphereColliderExpand * Time.unscaledDeltaTime);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,8 +25,12 @@ public class DestroyShockwaveCollidedGameObject : MonoBehaviour
         EnemySpaceShipCollision enemy = other.GetComponent<EnemySpaceShipCollision>();
         EnemyBulletCollision enemyBullet = other.GetComponent<EnemyBulletCollision>();
 
-        if (asteroid != null || enemy != null || enemyBullet != null)
-            other.gameObject.SetActive(false);
+        if (asteroid != null)
+            asteroid.DestroyAsteroid();
+        else if (enemy != null)
+            enemy.DestroyEnemySpaceShip();
+        else if (enemyBullet != null)
+            enemyBullet.InstantiateBulletDestroyVFX();
     }
 
     private void OnDisable() => sphereCollider.radius = 1.0f;

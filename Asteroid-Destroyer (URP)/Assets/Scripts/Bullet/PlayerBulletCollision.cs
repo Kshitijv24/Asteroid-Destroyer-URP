@@ -65,7 +65,6 @@ public class PlayerBulletCollision : MonoBehaviour
         if (enemyBullet != null)
         {
             enemyBullet.InstantiateBulletDestroyVFX();
-            other.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }

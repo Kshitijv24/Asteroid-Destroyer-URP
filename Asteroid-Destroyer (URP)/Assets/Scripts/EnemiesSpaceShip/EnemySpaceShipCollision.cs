@@ -19,16 +19,16 @@ public class EnemySpaceShipCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        HandleEnemySpaceShipCollisionWithOtherAsteroids(other);
+        HandleEnemySpaceShipCollisionWithOtherEnemySpaceShip(other);
         HandleEnemySpaceShipCollisionWithPlayer(other);
     }
 
-    private void HandleEnemySpaceShipCollisionWithOtherAsteroids(Collider other)
+    private void HandleEnemySpaceShipCollisionWithOtherEnemySpaceShip(Collider other)
     {
-        if (other.GetComponent<EnemySpaceShipCollision>())
-        {
+        EnemySpaceShipCollision enemySpaceShip = other.GetComponent<EnemySpaceShipCollision>();
+
+        if (enemySpaceShip != null)
             DestroyEnemySpaceShip();
-        }
     }
 
     private void HandleEnemySpaceShipCollisionWithPlayer(Collider other)
@@ -50,7 +50,7 @@ public class EnemySpaceShipCollision : MonoBehaviour
         DestroyEnemySpaceShip();
     }
 
-    private void DestroyEnemySpaceShip()
+    public void DestroyEnemySpaceShip()
     {
         AudioManager.Instance.PlayEnemySpaceShipDestroyedSFX(1f);
         
