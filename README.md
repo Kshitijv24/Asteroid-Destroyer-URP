@@ -1,3 +1,5 @@
+This is like the classic Asteroids Game but with some Bullet Hell/ Bullet Haven Fun Added To it.
+
 # Asteroid-Destroyer-URP
 
 ![Asteroid Avoider](https://user-images.githubusercontent.com/95018078/215318832-5c69d5a1-48d8-4bd2-acab-c422958a0e79.PNG)
